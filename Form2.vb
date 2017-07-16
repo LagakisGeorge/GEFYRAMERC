@@ -4895,6 +4895,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 MVTP = 6
                 'End If
                 System_sys = "SB" '      'SB =POLISEIS FR
+                IsHand = "" 'LTrim(Str(hand))  IsHand = ""
 
             End If
             KAU_AJIA1 = KAU_AJIA

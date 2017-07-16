@@ -2004,8 +2004,18 @@ check_afm_Err:
         xlApp = New Excel.ApplicationClass
 
 
-        xlWorkBook = xlApp.Workbooks.Open(TextBox1.Text)
 
+        ' xlWorkBook = xlApp.Workbooks.Open(TextBox1.Text)
+
+        If Len(TextBox1.Text) < 2 Then
+            'xlWorkBook = xlApp.Workbooks.Open(TextBox1.Text)
+            MsgBox("διαλεξτε αρχειο")
+            Exit Sub
+
+        Else
+
+            xlWorkBook = xlApp.Workbooks.Open(TextBox1.Text)
+        End If
         xlWorkBook.Worksheets.Add()
         xl = xlWorkBook.Worksheets(2) ' .Add
 
@@ -2119,21 +2129,21 @@ check_afm_Err:
 
             ' ΟΝΟΜΑ  pel(ROW, 1)
 
-            If xlPEL.Cells(ROW, 3).value = Nothing Then
+            If xlPEL.Cells(ROW, 2).value = Nothing Then
                 pel(ROW, 1) = ""
             Else
-                pel(ROW, 1) = xlPEL.Cells(ROW, 3).value.ToString
+                pel(ROW, 1) = xlPEL.Cells(ROW, 2).value.ToString
             End If
 
 
             'AFM
-            If IsDBNull(xlPEL.Cells(ROW, 2).value) Then
+            If IsDBNull(xlPEL.Cells(ROW, 3).value) Then
                 pel(ROW, 2) = ""
             Else
-                If xlPEL.Cells(ROW, 2).value = Nothing Then
+                If xlPEL.Cells(ROW, 3).value = Nothing Then
                     pel(ROW, 2) = ""
                 Else
-                    cc = xlPEL.Cells(ROW, 2).value.ToString
+                    cc = xlPEL.Cells(ROW, 3).value.ToString
                     pel(ROW, 2) = "'" + cc
                 End If
             End If
