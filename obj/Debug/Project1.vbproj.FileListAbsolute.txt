@@ -1,0 +1,14 @@
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\obj\Debug\Interop.MSAdodcLib.dll
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\obj\Debug\Interop.MSDATASRC.dll
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\obj\Debug\Project1.vbproj.ResolveComReference.cache
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\obj\Debug\ResolveAssemblyReference.cache
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\obj\Debug\Project1.Form1.resources
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\obj\Debug\Project1.vbproj.GenerateResource.Cache
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\bin\Project1.exe
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\bin\Project1.pdb
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\bin\Project1.xml
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\bin\Interop.MSAdodcLib.dll
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\bin\Interop.MSDATASRC.dll
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\obj\Debug\Project1.exe
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\obj\Debug\Project1.xml
+D:\adoprog2\GEFYRA-EPSILON\EPSILONXML\Project1.NET1\obj\Debug\Project1.pdb

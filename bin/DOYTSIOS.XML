@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Table>
+  <Product POL13="70-0036" POL23="70-0057" POL16="70-0054" POL9="70-0076" POL0="70-0000" EPIS13="70-0036" EPIS23="70-0057" lian13="70-3036" lian23="70-3057" epislian13="" epislian23="" logfpa13="" logfpa23="" lianlogfpa13="" lianlogfpa23="" LOGfpa16="" logfpa9="" pel30="30-0000" prom50="50-0000" ago13="20-1036" ago23="20-1057" ago16="20-1054" ago9="20-1076" agoepis13="20-1036" agoepis23="20-1057" agoepis16="20-1054" agoepis9="20-1076" agofpa13="" agofpa23="" agofpa16="" agofpa9="" nTimol="1" cTimol="Tt" nLian="1" cLian="lL" nPistTim="1" cPistTim="P" nPistLian="1" cPistLian="p" />
+</Table>
