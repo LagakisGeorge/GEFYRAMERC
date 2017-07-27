@@ -2101,7 +2101,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         Me.logParox.Location = New System.Drawing.Point(250, 217)
         Me.logParox.Name = "logParox"
-        Me.logParox.Size = New System.Drawing.Size(53, 20)
+        Me.logParox.Size = New System.Drawing.Size(86, 20)
         Me.logParox.TabIndex = 111
         Me.logParox.Text = "73-00"
         '
@@ -2110,7 +2110,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.logPistAg.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.logPistAg.Location = New System.Drawing.Point(250, 380)
         Me.logPistAg.Name = "logPistAg"
-        Me.logPistAg.Size = New System.Drawing.Size(53, 20)
+        Me.logPistAg.Size = New System.Drawing.Size(86, 20)
         Me.logPistAg.TabIndex = 110
         Me.logPistAg.Text = "20-10"
         '
@@ -2119,7 +2119,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.logTimAg.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.logTimAg.Location = New System.Drawing.Point(250, 354)
         Me.logTimAg.Name = "logTimAg"
-        Me.logTimAg.Size = New System.Drawing.Size(53, 20)
+        Me.logTimAg.Size = New System.Drawing.Size(86, 20)
         Me.logTimAg.TabIndex = 109
         Me.logTimAg.Text = "20-10"
         '
@@ -2127,7 +2127,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         Me.LogPistLian.Location = New System.Drawing.Point(250, 320)
         Me.LogPistLian.Name = "LogPistLian"
-        Me.LogPistLian.Size = New System.Drawing.Size(53, 20)
+        Me.LogPistLian.Size = New System.Drawing.Size(86, 20)
         Me.LogPistLian.TabIndex = 108
         Me.LogPistLian.Text = "70-40"
         '
@@ -2135,7 +2135,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         Me.logPistTim.Location = New System.Drawing.Point(250, 294)
         Me.logPistTim.Name = "logPistTim"
-        Me.logPistTim.Size = New System.Drawing.Size(53, 20)
+        Me.logPistTim.Size = New System.Drawing.Size(86, 20)
         Me.logPistTim.TabIndex = 107
         Me.logPistTim.Text = "70-00"
         '
@@ -2143,7 +2143,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         Me.logLian.Location = New System.Drawing.Point(250, 269)
         Me.logLian.Name = "logLian"
-        Me.logLian.Size = New System.Drawing.Size(53, 20)
+        Me.logLian.Size = New System.Drawing.Size(86, 20)
         Me.logLian.TabIndex = 106
         Me.logLian.Text = "70-40"
         '
@@ -2151,7 +2151,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         Me.logTimol.Location = New System.Drawing.Point(250, 243)
         Me.logTimol.Name = "logTimol"
-        Me.logTimol.Size = New System.Drawing.Size(53, 20)
+        Me.logTimol.Size = New System.Drawing.Size(86, 20)
         Me.logTimol.TabIndex = 105
         Me.logTimol.Text = "70-00"
         '
@@ -2300,7 +2300,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.logExod.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.logExod.Location = New System.Drawing.Point(250, 415)
         Me.logExod.Name = "logExod"
-        Me.logExod.Size = New System.Drawing.Size(53, 20)
+        Me.logExod.Size = New System.Drawing.Size(86, 20)
         Me.logExod.TabIndex = 131
         Me.logExod.Text = "64-00"
         '
@@ -3511,8 +3511,25 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 PAR24.Text = node.Attributes("PAR24").Value
                 EPISPAR24.Text = node.Attributes("EPISPAR24").Value
 
+
+                logParox.Text = node.Attributes("logParox").Value
+                logTimol.Text = node.Attributes("logTimol").Value
+                logLian.Text = node.Attributes("logLian").Value
+                logPistTim.Text = node.Attributes("logPistTim").Value
+                LogPistLian.Text = node.Attributes("LogPistLian").Value
+                logTimAg.Text = node.Attributes("logTimAg").Value
+                logPistAg.Text = node.Attributes("logPistAg").Value
+                logExod.Text = node.Attributes("logExod").Value
+                
+
+
+
+
+
+
+
             Catch ex As Exception
-                MsgBox("δεν διαβαστηκαν οι παραμετροι λογ/σμων")
+                MsgBox("δεν διαβαστηκαν ΟΛΟΙ οι παραμετροι λογ/σμων")
             End Try
 
 
@@ -3667,6 +3684,34 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         ' ago24_6.Text = node.Attributes("ago24_6").Value
         ' agoepis24_6.Text = node.Attributes("agoepis24_6").Value
         ' agofpa24_6.Text = node.Attributes("agofpa24_6").Value
+
+        'logParox.Text = node.Attributes("logParox").Value
+        'logTimol.Text = node.Attributes("logTimol").Value
+        'logLian.Text = node.Attributes("logLian").Value
+        'logPistTim.Text = node.Attributes("logPistTim").Value
+        'LogPistLian.Text = node.Attributes("LogPistLian").Value
+        'logTimAg.Text = node.Attributes("logTimAg").Value
+        'logPistAg.Text = node.Attributes("logPistAg").Value
+        'logExod.Text = node.Attributes("logExod").Value
+
+
+        writer.WriteAttributeString("logParox", logParox.Text)
+        writer.WriteAttributeString("logTimol", logTimol.Text)
+        writer.WriteAttributeString("logLian", logLian.Text)
+        writer.WriteAttributeString("logPistTim", logPistTim.Text)
+        writer.WriteAttributeString("LogPistLian", LogPistLian.Text)
+        writer.WriteAttributeString("logTimAg", logTimAg.Text)
+        writer.WriteAttributeString("logPistAg", logPistAg.Text)
+        writer.WriteAttributeString("logExod", logExod.Text)
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6050,7 +6095,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'TelLOG(K) = logExod.Text + lfpa(K)
         '         SeXOD(K) = SeXOD(K) + kau(K)
         'Next
-
+        Dim agores As Single
+        agores = kauaro - sspol
 
         kauaro = sspol
         sspol = 0
@@ -6062,6 +6108,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
         ListBox1.Items.Add("ΣΥΝΟΛΟ  " + VB6.Format(sspol, "0000000.00"))
+        ListBox1.Items.Add(" ")
+
+
+        ListBox1.Items.Add("αγορ+εξοδ" + VB6.Format(agores + sspol, "0000000.00"))
         ListBox1.Items.Add(" ")
 
 
