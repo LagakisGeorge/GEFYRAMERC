@@ -193,6 +193,7 @@ Partial Class main
     Friend WithEvents Label71 As System.Windows.Forms.Label
     Friend WithEvents nExod As System.Windows.Forms.TextBox
     Friend WithEvents eispraxeis As System.Windows.Forms.Button
+    Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  

@@ -827,7 +827,7 @@ Public Class FORM3
 
         '==========================================
 
-        Dim pel(2000, 2) As String
+        Dim pel(4000, 2) As String
 
         ROW = 1
 
@@ -1019,7 +1019,7 @@ Public Class FORM3
         Else
 
             c = X  ' Split(X, "-")(0)
-            For K = 1 To 2000
+            For K = 1 To 4000
                 If c = PEL(K, 0) Then
                     SCAN_PEL_SIMPLE = PEL(K, 1) + ";" + PEL(K, 0) + ";" + PEL(K, 2)
                     Exit For
@@ -2066,6 +2066,23 @@ check_afm_Err:
 
 
             xlok.Cells(ROW, 11) = xl.Cells(ROW, nPAR)   'apa
+
+            If xl.Cells(ROW, 11).value = Nothing Then
+                Exit Do
+            End If
+
+            If xlok.Cells(ROW, 11).VALUE.ToString.Substring(0, 3) = "ΑΛΠ" Or xlok.Cells(ROW, 11).VALUE.ToString.Substring(0, 3) = "ΑΑΛ" Then    ' OI LIANIKES STON KAFE EINAI ME 0 FPA KAI Η ΚΑΘΑΡΗ ΕΙΝΑΙ ΣΤΗΝ ΠΡΑΓΜΑΤΙΚΟΤΗΤΑ ΜΕ ΦΠα
+
+                If xlok.Cells(ROW, 7).VALUE + xlok.Cells(ROW, 8).VALUE = 0 Then
+                    xlok.Cells(ROW, 2) = xl.Cells(ROW, nKAU24).VALUE / 1.24
+                    xlok.Cells(ROW, 8) = xl.Cells(ROW, nKAU24).VALUE - xlok.Cells(ROW, 2).VALUE
+
+                End If
+
+            End If
+
+
+
             xlok.Cells(ROW, 12) = xl.Cells(ROW, nHME).value  'hmeromhnia
 
             xlok.Cells(ROW, 13) = xl.Cells(ROW, nEPO)  'epvnymia
@@ -2097,7 +2114,7 @@ check_afm_Err:
 
         '==========================================
 
-        Dim pel(2000, 2) As String
+        Dim pel(4000, 2) As String
 
         ROW = 1
 
@@ -2126,7 +2143,9 @@ check_afm_Err:
             End If
             'PEL(K, 2) + ";" + PEL(K, 0)  ' afm;kodikos
             pel(ROW, 0) = xlPEL.Cells(ROW, 1).value.ToString  ' ΚΩΔΙΚΟΣ   pel(ROW, 0)
-
+            'If pel(ROW, 0) = "6858" Then
+            '    MsgBox("")
+            'End If
             ' ΟΝΟΜΑ  pel(ROW, 1)
 
             If xlPEL.Cells(ROW, 2).value = Nothing Then

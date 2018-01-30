@@ -681,6 +681,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.Label71 = New System.Windows.Forms.Label
         Me.nExod = New System.Windows.Forms.TextBox
         Me.eispraxeis = New System.Windows.Forms.Button
+        Me.ListBox2 = New System.Windows.Forms.ListBox
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -2058,7 +2059,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'Label56
         '
         Me.Label56.AutoSize = True
-        Me.Label56.Location = New System.Drawing.Point(222, 670)
+        Me.Label56.Location = New System.Drawing.Point(555, 563)
         Me.Label56.Name = "Label56"
         Me.Label56.Size = New System.Drawing.Size(77, 13)
         Me.Label56.TabIndex = 103
@@ -2066,7 +2067,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'EPISPAR24
         '
-        Me.EPISPAR24.Location = New System.Drawing.Point(222, 722)
+        Me.EPISPAR24.Location = New System.Drawing.Point(555, 615)
         Me.EPISPAR24.Name = "EPISPAR24"
         Me.EPISPAR24.Size = New System.Drawing.Size(101, 20)
         Me.EPISPAR24.TabIndex = 102
@@ -2074,7 +2075,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'PAR24
         '
-        Me.PAR24.Location = New System.Drawing.Point(222, 696)
+        Me.PAR24.Location = New System.Drawing.Point(555, 589)
         Me.PAR24.Name = "PAR24"
         Me.PAR24.Size = New System.Drawing.Size(101, 20)
         Me.PAR24.TabIndex = 100
@@ -2083,7 +2084,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'Label57
         '
         Me.Label57.AutoSize = True
-        Me.Label57.Location = New System.Drawing.Point(125, 670)
+        Me.Label57.Location = New System.Drawing.Point(458, 563)
         Me.Label57.Name = "Label57"
         Me.Label57.Size = New System.Drawing.Size(65, 13)
         Me.Label57.TabIndex = 101
@@ -2091,7 +2092,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(137, 696)
+        Me.TextBox3.Location = New System.Drawing.Point(470, 589)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(53, 20)
         Me.TextBox3.TabIndex = 104
@@ -2342,10 +2343,19 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.eispraxeis.Text = "XML εισπρ.mercury B' κατη"
         Me.eispraxeis.UseVisualStyleBackColor = False
         '
+        'ListBox2
+        '
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Location = New System.Drawing.Point(23, 636)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(633, 108)
+        Me.ListBox2.TabIndex = 133
+        '
         'main
         '
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(994, 765)
+        Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.eispraxeis)
         Me.Controls.Add(Me.logExod)
         Me.Controls.Add(Me.cexod)
@@ -4737,6 +4747,19 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'sw.Close()
 
 
+        Dim poliseis(20, 2) As Double
+        Dim TYPOS(20) As String
+
+        For K = 1 To 6
+            poliseis(K, 1) = 0
+            poliseis(K, 2) = 0
+            TYPOS(K) = ""
+
+        Next
+
+
+
+
         Dim xlApp As Excel.Application
         Dim xlWorkBook As Excel.Workbook
         Dim xl As Excel.Worksheet
@@ -4789,6 +4812,9 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         fcLian = cLian.Text
         fcPistTim = cPistTim.Text
         fcPistLian = cPistLian.Text
+
+
+
 
 
         '===============================================================================real onomatepvmymo 54100
@@ -4870,7 +4896,9 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 End If
                 MVTP = "1" '6=πιστωτικα 2=αγορες  7=πιστωτικα αγορών
 
-
+                TYPOS(1) = "ΛΙΑΝΙΚΕΣ"
+                poliseis(1, 1) = poliseis(1, 1) + KAU_AJIA
+                poliseis(1, 2) = poliseis(1, 2) + FPA
 
             ElseIf InStr("GΓgΞμ", Mid(Base_INVOICE, 1, 1)) > 0 Then
                 'θελει ψαξιμο.................
@@ -4887,6 +4915,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 AMO_Srl_DSCR = "ΑΓΟΡΕΣ (ΧΕΙΡΟΓΡΑΦΗ)"
                 System_sys = "BP"
 
+                TYPOS(2) = "ΑΓΟΡΕΣ"""
+                poliseis(2, 1) = poliseis(2, 1) + KAU_AJIA
+                poliseis(2, 2) = poliseis(2, 2) + FPA
+
             ElseIf InStr("D", Mid(Base_INVOICE, 1, 1)) > 0 Then
                 'θελει ψαξιμο.................
                 MVTP = 7
@@ -4902,6 +4934,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 AMO_Srl_DSCR = "ΑΓΟΡΕΣ (ΧΕΙΡΟΓΡΑΦΗ)"
                 System_sys = "BP"
 
+                TYPOS(3) = "ΠΙΣΤ.ΑΓΟΡΩΝ"
+                poliseis(3, 1) = poliseis(3, 1) + KAU_AJIA
+                poliseis(3, 2) = poliseis(3, 2) + FPA
+
             ElseIf InStr(fcTimol, Mid(Base_INVOICE, 1, fnTimol)) > 0 Then 'τιμολογια -πιστωτικά
                 cdRetailIdentity = ""
                 IsHand = ""
@@ -4910,6 +4946,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 'LOG0 = POL0.Text
                 MVTP = "1" '6=πιστωτικα 2=αγορες  7=πιστωτικα αγορών
 
+
+                TYPOS(4) = "ΤΙΜΟΛΟΓΙΑ"
+                poliseis(4, 1) = poliseis(4, 1) + KAU_AJIA
+                poliseis(4, 2) = poliseis(4, 2) + FPA
 
 
                 'ElseIf InStr("Y", Mid(Base_INVOICE, 1, 1)) > 0 Then 'yphresies
@@ -4927,6 +4967,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 'FPA = -FPA
                 System_sys = "SB" '      'SB =POLISEIS FR
                 'System_sys = "FR"
+                TYPOS(5) = "ΕΠΙΣΤ.ΛΙΑΝΙΚΩΝ"
+                poliseis(5, 1) = poliseis(5, 1) + KAU_AJIA
+                poliseis(5, 2) = poliseis(5, 2) + FPA
+
 
                 'End If
             ElseIf InStr(fcPistTim, Mid(Base_INVOICE, 1, fnPistTim)) > 0 Then  'pistvtiko timologio
@@ -4942,6 +4986,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 System_sys = "SB" '      'SB =POLISEIS FR
                 IsHand = "" 'LTrim(Str(hand))  IsHand = ""
 
+                TYPOS(6) = "ΠΙΣΤ.ΤΙΜ.ΠΩΛΗΣΗΣ"
+                poliseis(6, 1) = poliseis(6, 1) + KAU_AJIA
+                poliseis(6, 2) = poliseis(6, 2) + FPA
+
             End If
             KAU_AJIA1 = KAU_AJIA
             FPA1 = FPA
@@ -4949,8 +4997,15 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             rowId = rowId + 11
         Loop
 
+        ListBox1.Items.Clear()
+        For K = 1 To 6
+            ListBox1.Items.Add((TYPOS(K)))
+            ListBox1.Items.Add((poliseis(K, 1)))
+            ListBox1.Items.Add((poliseis(K, 2)))
+            ListBox1.Items.Add("-----------------------")
 
 
+        Next
 
 
         writer.WriteEndDocument()
@@ -4964,6 +5019,27 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         xlApp.Quit()
 
     End Sub
+
+    Function CNULL(ByVal DD As VariantType) As String
+        If IsDBNull(DD) Then
+            CNULL = ""
+        Else
+            CNULL = DD
+        End If
+
+
+    End Function
+
+    Function NNULL(ByVal DD As VariantType) As String
+        If IsDBNull(DD) Then
+            NNULL = 0
+        Else
+            NNULL = DD
+        End If
+
+
+    End Function
+
     ''======================================================================================
     Sub writeBAgor_row(ByVal w As XmlTextWriter)
         'DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
@@ -5241,6 +5317,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         For k = 1 To 7
             If kau(k) <> 0 Then
                 rowBAgor_detail(TelLOG(k), kau(k), AJFPA(k), w)
+                ListBox2.Items.Add(TelLOG(k) + " - " + Format(kau(k), "000000.00") + "- ΦΠΑ - " + Format(AJFPA(k), "000000.00"))
             End If
         Next
 
@@ -5477,11 +5554,17 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         End If
         ' ExecuteSQLQuery("update TIM SET AJ7=0 WHERE AJ7 IS NULL")
 
+
+
+        ExecuteSQLQuery("UPDATE TIM SET AJ7=0 WHERE AJ7 IS NULL")
+        ExecuteSQLQuery("UPDATE TIM SET FPA7=0 WHERE FPA7 IS NULL")
+
+
         '  Dim XL As DataTable
         Dim SQL As String   '   ID_NUM GEMISMA NA JEKINA APO 1
         SQL = "SELECT ID_NUM, AJ1  ,AJ2 , AJ3,AJ4,AJ5,AJI,FPA1,FPA2,FPA3,FPA4,ATIM,"
         SQL = SQL + "HME,PEL.EPO,PEL.AFM,KPE,PEL.DIE,PEL.XRVMA"    '"CONVERT(CHAR(10),HME,3) AS HMEP
-        SQL = SQL + ",PEL.EPA,PEL.POL,AJ6,FPA6,AJ7,FPA7"
+        SQL = SQL + ",PEL.EPA,PEL.POL,AJ6,FPA6,AJ7,FPA7 "
 
         SQL = SQL + "   FROM TIM INNER JOIN PEL ON TIM.EIDOS=PEL.EIDOS AND TIM.KPE=PEL.KOD "
         SQL = SQL + " WHERE LEFT(ATIM,1) IN     (  " + par + "  )    and HME>='" + VB6.Format(apo, "mm/dd/yyyy") + "'  AND HME<='" + VB6.Format(eos, "mm/dd/yyyy") + "'  "
@@ -6147,7 +6230,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
     Public Function checkServer() As Boolean
         Dim c As String
         Dim tmpStr As String
-        c = "c:\mercvb\Config.ini"
+        c = "Config.ini"
 
 
         Dim par As String = ""
@@ -6162,7 +6245,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             par = LineInput(1)
             FileClose(1)
         End If
-        par = InputBox("ΒΑΣΗ ΔΕΔΟΜΕΝΩΝ", ":Π.Χ. (local)\sql2012:sa:12345678:1:EMP", par)
+        par = InputBox("ΒΑΣΗ ΔΕΔΟΜΕΝΩΝ  (CONFIG.INI ΣΤΟΝ ΤΡΕΧΟΝΤΑ ΦΑΚΕΛΟ) ", ":Π.Χ. (local)\sql2012:sa:12345678:1:EMP", par)
 
         'Input = InputBox("Text:")
 
