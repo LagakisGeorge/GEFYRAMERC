@@ -24,7 +24,6 @@ Partial Class main
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents pol13 As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents pel30 As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents EPIS13 As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -194,6 +193,14 @@ Partial Class main
     Friend WithEvents nExod As System.Windows.Forms.TextBox
     Friend WithEvents eispraxeis As System.Windows.Forms.Button
     Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents logLOIPES As System.Windows.Forms.TextBox
+    Friend WithEvents cLOIPES As System.Windows.Forms.TextBox
+    Friend WithEvents nLOIPES As System.Windows.Forms.TextBox
+    Friend WithEvents Label72 As System.Windows.Forms.Label
+    Friend WithEvents pel30 As System.Windows.Forms.TextBox
+    Friend WithEvents Label73 As System.Windows.Forms.Label
+    Friend WithEvents Label74 As System.Windows.Forms.Label
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
