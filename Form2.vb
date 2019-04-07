@@ -512,20 +512,11 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.pol13 = New System.Windows.Forms.TextBox
-        Me.Label3 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
         Me.EPIS13 = New System.Windows.Forms.TextBox
         Me.Label5 = New System.Windows.Forms.Label
         Me.EPIS23 = New System.Windows.Forms.TextBox
         Me.Button2 = New System.Windows.Forms.Button
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.episLian13 = New System.Windows.Forms.TextBox
-        Me.Label7 = New System.Windows.Forms.Label
-        Me.episLian23 = New System.Windows.Forms.TextBox
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.Lian13 = New System.Windows.Forms.TextBox
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.Lian23 = New System.Windows.Forms.TextBox
         Me.Button3 = New System.Windows.Forms.Button
         Me.Button4 = New System.Windows.Forms.Button
         Me.Button5 = New System.Windows.Forms.Button
@@ -535,8 +526,6 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.POL16 = New System.Windows.Forms.TextBox
         Me.Label12 = New System.Windows.Forms.Label
         Me.POL0 = New System.Windows.Forms.TextBox
-        Me.Label13 = New System.Windows.Forms.Label
-        Me.LIAN0 = New System.Windows.Forms.TextBox
         Me.Button6 = New System.Windows.Forms.Button
         Me.Button8 = New System.Windows.Forms.Button
         Me.filexml = New System.Windows.Forms.TextBox
@@ -545,21 +534,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.LOGFPA13 = New System.Windows.Forms.TextBox
         Me.Label15 = New System.Windows.Forms.Label
         Me.LOGFPA23 = New System.Windows.Forms.TextBox
-        Me.Label16 = New System.Windows.Forms.Label
-        Me.lianLOGFPA13 = New System.Windows.Forms.TextBox
-        Me.Label17 = New System.Windows.Forms.Label
-        Me.lianLOGFPA23 = New System.Windows.Forms.TextBox
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.Label61 = New System.Windows.Forms.Label
-        Me.arTam = New System.Windows.Forms.TextBox
-        Me.Label52 = New System.Windows.Forms.Label
-        Me.lianLOGFPA24 = New System.Windows.Forms.TextBox
-        Me.Label53 = New System.Windows.Forms.Label
-        Me.episLian24 = New System.Windows.Forms.TextBox
-        Me.Label54 = New System.Windows.Forms.Label
-        Me.lian24 = New System.Windows.Forms.TextBox
         Me.prom50 = New System.Windows.Forms.TextBox
-        Me.Label20 = New System.Windows.Forms.Label
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.Label49 = New System.Windows.Forms.Label
         Me.LOGFPA17 = New System.Windows.Forms.TextBox
@@ -661,28 +636,12 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.logLian = New System.Windows.Forms.TextBox
         Me.logTimol = New System.Windows.Forms.TextBox
         Me.Label62 = New System.Windows.Forms.Label
-        Me.Label63 = New System.Windows.Forms.Label
-        Me.f1 = New System.Windows.Forms.TextBox
-        Me.f7 = New System.Windows.Forms.TextBox
-        Me.f6 = New System.Windows.Forms.TextBox
-        Me.f5 = New System.Windows.Forms.TextBox
-        Me.f4 = New System.Windows.Forms.TextBox
-        Me.f3 = New System.Windows.Forms.TextBox
-        Me.f2 = New System.Windows.Forms.TextBox
-        Me.Label64 = New System.Windows.Forms.Label
-        Me.Label65 = New System.Windows.Forms.Label
-        Me.Label66 = New System.Windows.Forms.Label
-        Me.Label67 = New System.Windows.Forms.Label
-        Me.Label68 = New System.Windows.Forms.Label
-        Me.Label69 = New System.Windows.Forms.Label
-        Me.Label70 = New System.Windows.Forms.Label
         Me.logExod = New System.Windows.Forms.TextBox
         Me.cexod = New System.Windows.Forms.TextBox
         Me.Label71 = New System.Windows.Forms.Label
         Me.nExod = New System.Windows.Forms.TextBox
         Me.eispraxeis = New System.Windows.Forms.Button
         Me.ListBox2 = New System.Windows.Forms.ListBox
-        Me.Panel2 = New System.Windows.Forms.Panel
         Me.logLOIPES = New System.Windows.Forms.TextBox
         Me.cLOIPES = New System.Windows.Forms.TextBox
         Me.nLOIPES = New System.Windows.Forms.TextBox
@@ -690,10 +649,60 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.pel30 = New System.Windows.Forms.TextBox
         Me.Label73 = New System.Windows.Forms.Label
         Me.Label74 = New System.Windows.Forms.Label
-        Me.Panel1.SuspendLayout()
+        Me.TabControl1 = New System.Windows.Forms.TabControl
+        Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.f7 = New System.Windows.Forms.TextBox
+        Me.Label70 = New System.Windows.Forms.Label
+        Me.f6 = New System.Windows.Forms.TextBox
+        Me.Label69 = New System.Windows.Forms.Label
+        Me.f5 = New System.Windows.Forms.TextBox
+        Me.Label68 = New System.Windows.Forms.Label
+        Me.f4 = New System.Windows.Forms.TextBox
+        Me.Label63 = New System.Windows.Forms.Label
+        Me.Label65 = New System.Windows.Forms.Label
+        Me.Label66 = New System.Windows.Forms.Label
+        Me.Label64 = New System.Windows.Forms.Label
+        Me.Label67 = New System.Windows.Forms.Label
+        Me.f3 = New System.Windows.Forms.TextBox
+        Me.f1 = New System.Windows.Forms.TextBox
+        Me.f2 = New System.Windows.Forms.TextBox
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Label61 = New System.Windows.Forms.Label
+        Me.arTam = New System.Windows.Forms.TextBox
+        Me.lianLOGFPA23 = New System.Windows.Forms.TextBox
+        Me.lianLOGFPA13 = New System.Windows.Forms.TextBox
+        Me.Lian13 = New System.Windows.Forms.TextBox
+        Me.Lian23 = New System.Windows.Forms.TextBox
+        Me.Label52 = New System.Windows.Forms.Label
+        Me.lianLOGFPA24 = New System.Windows.Forms.TextBox
+        Me.Label53 = New System.Windows.Forms.Label
+        Me.episLian24 = New System.Windows.Forms.TextBox
+        Me.Label54 = New System.Windows.Forms.Label
+        Me.lian24 = New System.Windows.Forms.TextBox
+        Me.Label16 = New System.Windows.Forms.Label
+        Me.Label17 = New System.Windows.Forms.Label
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.Label13 = New System.Windows.Forms.Label
+        Me.episLian13 = New System.Windows.Forms.TextBox
+        Me.LIAN0 = New System.Windows.Forms.TextBox
+        Me.Label7 = New System.Windows.Forms.Label
+        Me.episLian23 = New System.Windows.Forms.TextBox
+        Me.Label8 = New System.Windows.Forms.Label
+        Me.Label20 = New System.Windows.Forms.Label
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.Label9 = New System.Windows.Forms.Label
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
+        Me.TabPage2 = New System.Windows.Forms.TabPage
+        Me.G_XML_MERCURY = New System.Windows.Forms.Button
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -790,15 +799,6 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.pol13.TabIndex = 9
         Me.pol13.Text = "70-0036"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(199, 65)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(72, 13)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "Λογ.Πελάτες"
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -843,72 +843,6 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.Button2.UseVisualStyleBackColor = True
         Me.Button2.Visible = False
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(201, 43)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(75, 13)
-        Me.Label6.TabIndex = 25
-        Me.Label6.Text = "Επισ.Λιαν13%"
-        '
-        'episLian13
-        '
-        Me.episLian13.Location = New System.Drawing.Point(296, 36)
-        Me.episLian13.Name = "episLian13"
-        Me.episLian13.Size = New System.Drawing.Size(101, 20)
-        Me.episLian13.TabIndex = 24
-        Me.episLian13.Text = "70-0036"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(201, 17)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(75, 13)
-        Me.Label7.TabIndex = 23
-        Me.Label7.Text = "Επισ.Λιαν23%"
-        '
-        'episLian23
-        '
-        Me.episLian23.Location = New System.Drawing.Point(296, 10)
-        Me.episLian23.Name = "episLian23"
-        Me.episLian23.Size = New System.Drawing.Size(101, 20)
-        Me.episLian23.TabIndex = 22
-        Me.episLian23.Text = "70-0057"
-        '
-        'Label8
-        '
-        Me.Label8.Location = New System.Drawing.Point(2, 43)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(98, 17)
-        Me.Label8.TabIndex = 21
-        Me.Label8.Text = "Λιανικες  13%"
-        '
-        'Lian13
-        '
-        Me.Lian13.Location = New System.Drawing.Point(94, 36)
-        Me.Lian13.Name = "Lian13"
-        Me.Lian13.Size = New System.Drawing.Size(101, 20)
-        Me.Lian13.TabIndex = 20
-        Me.Lian13.Text = "70-0036"
-        '
-        'Label9
-        '
-        Me.Label9.Location = New System.Drawing.Point(2, 11)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(86, 18)
-        Me.Label9.TabIndex = 19
-        Me.Label9.Text = "Λιανικές 23%"
-        '
-        'Lian23
-        '
-        Me.Lian23.Location = New System.Drawing.Point(94, 10)
-        Me.Lian23.Name = "Lian23"
-        Me.Lian23.Size = New System.Drawing.Size(101, 20)
-        Me.Lian23.TabIndex = 18
-        Me.Lian23.Text = "70-0057"
-        '
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(593, 41)
@@ -921,7 +855,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(669, 353)
+        Me.Button4.Location = New System.Drawing.Point(711, 358)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(187, 29)
         Me.Button4.TabIndex = 27
@@ -930,7 +864,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(669, 417)
+        Me.Button5.Location = New System.Drawing.Point(710, 419)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(187, 34)
         Me.Button5.TabIndex = 28
@@ -988,23 +922,6 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.POL0.TabIndex = 34
         Me.POL0.Text = "70-0000"
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(3, 65)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(70, 13)
-        Me.Label13.TabIndex = 37
-        Me.Label13.Text = "Λιανικες  0%"
-        '
-        'LIAN0
-        '
-        Me.LIAN0.Location = New System.Drawing.Point(94, 62)
-        Me.LIAN0.Name = "LIAN0"
-        Me.LIAN0.Size = New System.Drawing.Size(101, 20)
-        Me.LIAN0.TabIndex = 36
-        Me.LIAN0.Text = "70-0000"
-        '
         'Button6
         '
         Me.Button6.Location = New System.Drawing.Point(591, 106)
@@ -1017,7 +934,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(669, 320)
+        Me.Button8.Location = New System.Drawing.Point(711, 326)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(186, 26)
         Me.Button8.TabIndex = 40
@@ -1026,7 +943,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'filexml
         '
-        Me.filexml.Location = New System.Drawing.Point(669, 388)
+        Me.filexml.Location = New System.Drawing.Point(710, 393)
         Me.filexml.Name = "filexml"
         Me.filexml.Size = New System.Drawing.Size(187, 20)
         Me.filexml.TabIndex = 41
@@ -1076,156 +993,13 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.LOGFPA23.TabIndex = 43
         Me.LOGFPA23.Text = "70-0057"
         '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(414, 41)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(79, 13)
-        Me.Label16.TabIndex = 50
-        Me.Label16.Text = "Λογ.ΦΠΑ  13%"
-        '
-        'lianLOGFPA13
-        '
-        Me.lianLOGFPA13.Location = New System.Drawing.Point(517, 36)
-        Me.lianLOGFPA13.Name = "lianLOGFPA13"
-        Me.lianLOGFPA13.Size = New System.Drawing.Size(101, 20)
-        Me.lianLOGFPA13.TabIndex = 49
-        Me.lianLOGFPA13.Text = "70-0036"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(415, 16)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(79, 13)
-        Me.Label17.TabIndex = 48
-        Me.Label17.Text = "Λογ.ΦΠΑ  23%"
-        '
-        'lianLOGFPA23
-        '
-        Me.lianLOGFPA23.Location = New System.Drawing.Point(517, 10)
-        Me.lianLOGFPA23.Name = "lianLOGFPA23"
-        Me.lianLOGFPA23.Size = New System.Drawing.Size(101, 20)
-        Me.lianLOGFPA23.TabIndex = 47
-        Me.lianLOGFPA23.Text = "70-0057"
-        '
-        'Panel1
-        '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.Label61)
-        Me.Panel1.Controls.Add(Me.arTam)
-        Me.Panel1.Controls.Add(Me.lianLOGFPA23)
-        Me.Panel1.Controls.Add(Me.lianLOGFPA13)
-        Me.Panel1.Controls.Add(Me.Lian13)
-        Me.Panel1.Controls.Add(Me.Lian23)
-        Me.Panel1.Controls.Add(Me.Label52)
-        Me.Panel1.Controls.Add(Me.lianLOGFPA24)
-        Me.Panel1.Controls.Add(Me.Label53)
-        Me.Panel1.Controls.Add(Me.episLian24)
-        Me.Panel1.Controls.Add(Me.Label54)
-        Me.Panel1.Controls.Add(Me.lian24)
-        Me.Panel1.Controls.Add(Me.Label16)
-        Me.Panel1.Controls.Add(Me.Label17)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.Label13)
-        Me.Panel1.Controls.Add(Me.episLian13)
-        Me.Panel1.Controls.Add(Me.LIAN0)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.episLian23)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Label20)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Location = New System.Drawing.Point(151, 73)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(367, 119)
-        Me.Panel1.TabIndex = 51
-        Me.Panel1.Visible = False
-        '
-        'Label61
-        '
-        Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(0, 126)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(75, 13)
-        Me.Label61.TabIndex = 58
-        Me.Label61.Text = "Αρ.Ταμειακής"
-        '
-        'arTam
-        '
-        Me.arTam.Location = New System.Drawing.Point(94, 123)
-        Me.arTam.Name = "arTam"
-        Me.arTam.Size = New System.Drawing.Size(101, 20)
-        Me.arTam.TabIndex = 57
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(415, 93)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(79, 13)
-        Me.Label52.TabIndex = 56
-        Me.Label52.Text = "Λογ.ΦΠΑ  24%"
-        '
-        'lianLOGFPA24
-        '
-        Me.lianLOGFPA24.Location = New System.Drawing.Point(517, 93)
-        Me.lianLOGFPA24.Name = "lianLOGFPA24"
-        Me.lianLOGFPA24.Size = New System.Drawing.Size(101, 20)
-        Me.lianLOGFPA24.TabIndex = 55
-        Me.lianLOGFPA24.Text = "70-0087"
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(201, 93)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(75, 13)
-        Me.Label53.TabIndex = 54
-        Me.Label53.Text = "Επισ.Λιαν24%"
-        '
-        'episLian24
-        '
-        Me.episLian24.Location = New System.Drawing.Point(296, 93)
-        Me.episLian24.Name = "episLian24"
-        Me.episLian24.Size = New System.Drawing.Size(101, 20)
-        Me.episLian24.TabIndex = 53
-        Me.episLian24.Text = "70-0087"
-        '
-        'Label54
-        '
-        Me.Label54.AutoSize = True
-        Me.Label54.Location = New System.Drawing.Point(0, 96)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(73, 13)
-        Me.Label54.TabIndex = 52
-        Me.Label54.Text = "Λιανικές 24%"
-        '
-        'lian24
-        '
-        Me.lian24.Location = New System.Drawing.Point(94, 93)
-        Me.lian24.Name = "lian24"
-        Me.lian24.Size = New System.Drawing.Size(101, 20)
-        Me.lian24.TabIndex = 51
-        Me.lian24.Text = "70-0087"
-        '
         'prom50
         '
-        Me.prom50.Location = New System.Drawing.Point(380, 482)
+        Me.prom50.Location = New System.Drawing.Point(333, 313)
         Me.prom50.Name = "prom50"
         Me.prom50.Size = New System.Drawing.Size(101, 20)
         Me.prom50.TabIndex = 13
-        Me.prom50.Text = "30-0000"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(427, 68)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(66, 13)
-        Me.Label20.TabIndex = 14
-        Me.Label20.Text = "Λογ.Προμηθ"
+        Me.prom50.Text = "50-0000"
         '
         'Panel3
         '
@@ -1265,11 +1039,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.Label12)
         Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Location = New System.Drawing.Point(593, 482)
+        Me.Panel3.Location = New System.Drawing.Point(20, 16)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(391, 141)
+        Me.Panel3.Size = New System.Drawing.Size(637, 225)
         Me.Panel3.TabIndex = 53
-        Me.Panel3.Visible = False
         '
         'Label49
         '
@@ -1450,11 +1223,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.Panel4.Controls.Add(Me.ago23)
         Me.Panel4.Controls.Add(Me.Label25)
         Me.Panel4.Controls.Add(Me.Label26)
-        Me.Panel4.Location = New System.Drawing.Point(20, 629)
+        Me.Panel4.Location = New System.Drawing.Point(20, 258)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(670, 222)
+        Me.Panel4.Size = New System.Drawing.Size(640, 222)
         Me.Panel4.TabIndex = 54
-        Me.Panel4.Visible = False
         '
         'Label58
         '
@@ -1818,118 +1590,132 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(9, 325)
+        Me.Label35.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label35.Location = New System.Drawing.Point(3, 173)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(81, 13)
+        Me.Label35.Size = New System.Drawing.Size(104, 13)
         Me.Label35.TabIndex = 74
         Me.Label35.Text = "Επιστ.Λιανικης"
         '
         'nPistLian
         '
-        Me.nPistLian.Location = New System.Drawing.Point(107, 322)
+        Me.nPistLian.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.nPistLian.Location = New System.Drawing.Point(113, 163)
         Me.nPistLian.Name = "nPistLian"
-        Me.nPistLian.Size = New System.Drawing.Size(30, 20)
+        Me.nPistLian.Size = New System.Drawing.Size(104, 20)
         Me.nPistLian.TabIndex = 73
         Me.nPistLian.Text = "2"
         '
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(9, 301)
+        Me.Label36.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label36.Location = New System.Drawing.Point(3, 142)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(64, 13)
+        Me.Label36.Size = New System.Drawing.Size(104, 13)
         Me.Label36.TabIndex = 72
         Me.Label36.Text = "Πιστωτ.Τιm"
         '
         'nPistTim
         '
-        Me.nPistTim.Location = New System.Drawing.Point(107, 296)
+        Me.nPistTim.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.nPistTim.Location = New System.Drawing.Point(113, 132)
         Me.nPistTim.Name = "nPistTim"
-        Me.nPistTim.Size = New System.Drawing.Size(30, 20)
+        Me.nPistTim.Size = New System.Drawing.Size(104, 20)
         Me.nPistTim.TabIndex = 71
         Me.nPistTim.Text = "2"
         '
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(9, 274)
+        Me.Label37.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label37.Location = New System.Drawing.Point(3, 111)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(66, 13)
+        Me.Label37.Size = New System.Drawing.Size(104, 13)
         Me.Label37.TabIndex = 70
         Me.Label37.Text = "Δελτίο Λιαν"
         '
         'nLian
         '
-        Me.nLian.Location = New System.Drawing.Point(107, 271)
+        Me.nLian.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.nLian.Location = New System.Drawing.Point(113, 101)
         Me.nLian.Name = "nLian"
-        Me.nLian.Size = New System.Drawing.Size(30, 20)
+        Me.nLian.Size = New System.Drawing.Size(104, 20)
         Me.nLian.TabIndex = 69
         Me.nLian.Text = "2"
         '
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(9, 250)
+        Me.Label38.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label38.Location = New System.Drawing.Point(3, 80)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(54, 13)
+        Me.Label38.Size = New System.Drawing.Size(104, 13)
         Me.Label38.TabIndex = 68
         Me.Label38.Text = "Τιμολογιο"
         '
         'nTimol
         '
-        Me.nTimol.Location = New System.Drawing.Point(107, 245)
+        Me.nTimol.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.nTimol.Location = New System.Drawing.Point(113, 70)
         Me.nTimol.Name = "nTimol"
-        Me.nTimol.Size = New System.Drawing.Size(30, 20)
+        Me.nTimol.Size = New System.Drawing.Size(104, 20)
         Me.nTimol.TabIndex = 67
         Me.nTimol.Text = "2"
         '
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(86, 202)
+        Me.Label39.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label39.Location = New System.Drawing.Point(113, 18)
         Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(62, 13)
+        Me.Label39.Size = New System.Drawing.Size(104, 13)
         Me.Label39.TabIndex = 75
         Me.Label39.Text = "Αρ.Ψηφίων"
         '
         'cPistLian
         '
-        Me.cPistLian.Location = New System.Drawing.Point(163, 322)
+        Me.cPistLian.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.cPistLian.Location = New System.Drawing.Point(223, 163)
         Me.cPistLian.Name = "cPistLian"
-        Me.cPistLian.Size = New System.Drawing.Size(53, 20)
+        Me.cPistLian.Size = New System.Drawing.Size(104, 20)
         Me.cPistLian.TabIndex = 79
         Me.cPistLian.Text = "2"
         '
         'cPistTim
         '
-        Me.cPistTim.Location = New System.Drawing.Point(163, 296)
+        Me.cPistTim.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.cPistTim.Location = New System.Drawing.Point(223, 132)
         Me.cPistTim.Name = "cPistTim"
-        Me.cPistTim.Size = New System.Drawing.Size(53, 20)
+        Me.cPistTim.Size = New System.Drawing.Size(104, 20)
         Me.cPistTim.TabIndex = 78
         Me.cPistTim.Text = "2"
         '
         'cLian
         '
-        Me.cLian.Location = New System.Drawing.Point(163, 271)
+        Me.cLian.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.cLian.Location = New System.Drawing.Point(223, 101)
         Me.cLian.Name = "cLian"
-        Me.cLian.Size = New System.Drawing.Size(53, 20)
+        Me.cLian.Size = New System.Drawing.Size(104, 20)
         Me.cLian.TabIndex = 77
         Me.cLian.Text = "2"
         '
         'cTimol
         '
-        Me.cTimol.Location = New System.Drawing.Point(163, 245)
+        Me.cTimol.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.cTimol.Location = New System.Drawing.Point(223, 70)
         Me.cTimol.Name = "cTimol"
-        Me.cTimol.Size = New System.Drawing.Size(53, 20)
+        Me.cTimol.Size = New System.Drawing.Size(104, 20)
         Me.cTimol.TabIndex = 76
         Me.cTimol.Text = "2"
         '
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(151, 202)
+        Me.Label40.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label40.Location = New System.Drawing.Point(223, 18)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(39, 13)
+        Me.Label40.Size = New System.Drawing.Size(104, 13)
         Me.Label40.TabIndex = 80
         Me.Label40.Text = "Ψηφία"
         '
@@ -2006,18 +1792,20 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'cPistAg
         '
         Me.cPistAg.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cPistAg.Location = New System.Drawing.Point(163, 382)
+        Me.cPistAg.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.cPistAg.Location = New System.Drawing.Point(223, 225)
         Me.cPistAg.Name = "cPistAg"
-        Me.cPistAg.Size = New System.Drawing.Size(53, 20)
+        Me.cPistAg.Size = New System.Drawing.Size(104, 20)
         Me.cPistAg.TabIndex = 94
         Me.cPistAg.Text = "D"
         '
         'cTimAg
         '
         Me.cTimAg.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cTimAg.Location = New System.Drawing.Point(163, 356)
+        Me.cTimAg.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.cTimAg.Location = New System.Drawing.Point(223, 194)
         Me.cTimAg.Name = "cTimAg"
-        Me.cTimAg.Size = New System.Drawing.Size(53, 20)
+        Me.cTimAg.Size = New System.Drawing.Size(104, 20)
         Me.cTimAg.TabIndex = 93
         Me.cTimAg.Text = "Gg"
         '
@@ -2025,18 +1813,20 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         Me.Label43.AutoSize = True
         Me.Label43.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label43.Location = New System.Drawing.Point(9, 385)
+        Me.Label43.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label43.Location = New System.Drawing.Point(3, 235)
         Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(72, 13)
+        Me.Label43.Size = New System.Drawing.Size(104, 13)
         Me.Label43.TabIndex = 91
         Me.Label43.Text = "Πιστ.Αγορών"
         '
         'nPistAg
         '
         Me.nPistAg.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.nPistAg.Location = New System.Drawing.Point(107, 382)
+        Me.nPistAg.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.nPistAg.Location = New System.Drawing.Point(113, 225)
         Me.nPistAg.Name = "nPistAg"
-        Me.nPistAg.Size = New System.Drawing.Size(30, 20)
+        Me.nPistAg.Size = New System.Drawing.Size(104, 20)
         Me.nPistAg.TabIndex = 90
         Me.nPistAg.Text = "1"
         '
@@ -2044,18 +1834,20 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         Me.Label44.AutoSize = True
         Me.Label44.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label44.Location = New System.Drawing.Point(9, 361)
+        Me.Label44.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label44.Location = New System.Drawing.Point(3, 204)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(64, 13)
+        Me.Label44.Size = New System.Drawing.Size(104, 13)
         Me.Label44.TabIndex = 89
         Me.Label44.Text = "Τιμολ. Αγορ"
         '
         'nTimAg
         '
         Me.nTimAg.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.nTimAg.Location = New System.Drawing.Point(107, 356)
+        Me.nTimAg.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.nTimAg.Location = New System.Drawing.Point(113, 194)
         Me.nTimAg.Name = "nTimAg"
-        Me.nTimAg.Size = New System.Drawing.Size(30, 20)
+        Me.nTimAg.Size = New System.Drawing.Size(104, 20)
         Me.nTimAg.TabIndex = 88
         Me.nTimAg.Text = "1"
         '
@@ -2081,242 +1873,124 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'cParox
         '
-        Me.cParox.Location = New System.Drawing.Point(163, 219)
+        Me.cParox.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.cParox.Location = New System.Drawing.Point(223, 39)
         Me.cParox.Name = "cParox"
-        Me.cParox.Size = New System.Drawing.Size(53, 20)
+        Me.cParox.Size = New System.Drawing.Size(104, 20)
         Me.cParox.TabIndex = 99
         Me.cParox.Text = "2"
         '
         'Label55
         '
         Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(9, 219)
+        Me.Label55.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label55.Location = New System.Drawing.Point(3, 49)
         Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(68, 13)
+        Me.Label55.Size = New System.Drawing.Size(104, 13)
         Me.Label55.TabIndex = 98
         Me.Label55.Text = "Παροχ.Υπηρ"
         '
         'nParox
         '
-        Me.nParox.Location = New System.Drawing.Point(107, 219)
+        Me.nParox.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.nParox.Location = New System.Drawing.Point(113, 39)
         Me.nParox.Name = "nParox"
-        Me.nParox.Size = New System.Drawing.Size(30, 20)
+        Me.nParox.Size = New System.Drawing.Size(104, 20)
         Me.nParox.TabIndex = 97
         Me.nParox.Text = "2"
         '
         'logParox
         '
-        Me.logParox.Location = New System.Drawing.Point(250, 217)
+        Me.logParox.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.logParox.Location = New System.Drawing.Point(333, 39)
         Me.logParox.Name = "logParox"
-        Me.logParox.Size = New System.Drawing.Size(231, 20)
+        Me.logParox.Size = New System.Drawing.Size(105, 20)
         Me.logParox.TabIndex = 111
         Me.logParox.Text = "73-00"
         '
         'logPistAg
         '
         Me.logPistAg.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.logPistAg.Location = New System.Drawing.Point(250, 380)
+        Me.logPistAg.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.logPistAg.Location = New System.Drawing.Point(333, 225)
         Me.logPistAg.Name = "logPistAg"
-        Me.logPistAg.Size = New System.Drawing.Size(231, 20)
+        Me.logPistAg.Size = New System.Drawing.Size(105, 20)
         Me.logPistAg.TabIndex = 110
         Me.logPistAg.Text = "20-10"
         '
         'logTimAg
         '
         Me.logTimAg.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.logTimAg.Location = New System.Drawing.Point(250, 354)
+        Me.logTimAg.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.logTimAg.Location = New System.Drawing.Point(333, 194)
         Me.logTimAg.Name = "logTimAg"
-        Me.logTimAg.Size = New System.Drawing.Size(231, 20)
+        Me.logTimAg.Size = New System.Drawing.Size(105, 20)
         Me.logTimAg.TabIndex = 109
         Me.logTimAg.Text = "20-10"
         '
         'LogPistLian
         '
-        Me.LogPistLian.Location = New System.Drawing.Point(250, 320)
+        Me.LogPistLian.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LogPistLian.Location = New System.Drawing.Point(333, 163)
         Me.LogPistLian.Name = "LogPistLian"
-        Me.LogPistLian.Size = New System.Drawing.Size(231, 20)
+        Me.LogPistLian.Size = New System.Drawing.Size(105, 20)
         Me.LogPistLian.TabIndex = 108
         Me.LogPistLian.Text = "70-40"
         '
         'logPistTim
         '
-        Me.logPistTim.Location = New System.Drawing.Point(250, 294)
+        Me.logPistTim.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.logPistTim.Location = New System.Drawing.Point(333, 132)
         Me.logPistTim.Name = "logPistTim"
-        Me.logPistTim.Size = New System.Drawing.Size(231, 20)
+        Me.logPistTim.Size = New System.Drawing.Size(105, 20)
         Me.logPistTim.TabIndex = 107
         Me.logPistTim.Text = "70-00"
         '
         'logLian
         '
-        Me.logLian.Location = New System.Drawing.Point(250, 269)
+        Me.logLian.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.logLian.Location = New System.Drawing.Point(333, 101)
         Me.logLian.Name = "logLian"
-        Me.logLian.Size = New System.Drawing.Size(231, 20)
+        Me.logLian.Size = New System.Drawing.Size(105, 20)
         Me.logLian.TabIndex = 106
         Me.logLian.Text = "70-40"
         '
         'logTimol
         '
-        Me.logTimol.Location = New System.Drawing.Point(250, 243)
+        Me.logTimol.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.logTimol.Location = New System.Drawing.Point(333, 70)
         Me.logTimol.Name = "logTimol"
-        Me.logTimol.Size = New System.Drawing.Size(231, 20)
+        Me.logTimol.Size = New System.Drawing.Size(105, 20)
         Me.logTimol.TabIndex = 105
         Me.logTimol.Text = "70-00"
         '
         'Label62
         '
         Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(246, 197)
+        Me.Label62.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label62.Location = New System.Drawing.Point(333, 18)
         Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(53, 13)
+        Me.Label62.Size = New System.Drawing.Size(105, 13)
         Me.Label62.TabIndex = 112
         Me.Label62.Text = "Λογ/σμοι"
-        '
-        'Label63
-        '
-        Me.Label63.AutoSize = True
-        Me.Label63.Location = New System.Drawing.Point(74, 10)
-        Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(53, 13)
-        Me.Label63.TabIndex = 120
-        Me.Label63.Text = "Λογ.ΦΠΑ"
-        '
-        'f1
-        '
-        Me.f1.Location = New System.Drawing.Point(77, 171)
-        Me.f1.Name = "f1"
-        Me.f1.Size = New System.Drawing.Size(53, 20)
-        Me.f1.TabIndex = 119
-        Me.f1.Text = "36"
-        '
-        'f7
-        '
-        Me.f7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.f7.Location = New System.Drawing.Point(77, 145)
-        Me.f7.Name = "f7"
-        Me.f7.Size = New System.Drawing.Size(53, 20)
-        Me.f7.TabIndex = 118
-        Me.f7.Text = "84"
-        '
-        'f6
-        '
-        Me.f6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.f6.Location = New System.Drawing.Point(77, 126)
-        Me.f6.Name = "f6"
-        Me.f6.Size = New System.Drawing.Size(53, 20)
-        Me.f6.TabIndex = 117
-        Me.f6.Text = "87"
-        '
-        'f5
-        '
-        Me.f5.Location = New System.Drawing.Point(77, 100)
-        Me.f5.Name = "f5"
-        Me.f5.Size = New System.Drawing.Size(53, 20)
-        Me.f5.TabIndex = 116
-        Me.f5.Text = "00"
-        '
-        'f4
-        '
-        Me.f4.Location = New System.Drawing.Point(77, 77)
-        Me.f4.Name = "f4"
-        Me.f4.Size = New System.Drawing.Size(53, 20)
-        Me.f4.TabIndex = 115
-        Me.f4.Tag = ""
-        Me.f4.Text = "84"
-        '
-        'f3
-        '
-        Me.f3.Location = New System.Drawing.Point(77, 45)
-        Me.f3.Name = "f3"
-        Me.f3.Size = New System.Drawing.Size(53, 20)
-        Me.f3.TabIndex = 114
-        Me.f3.Text = "76"
-        '
-        'f2
-        '
-        Me.f2.Location = New System.Drawing.Point(77, 197)
-        Me.f2.Name = "f2"
-        Me.f2.Size = New System.Drawing.Size(53, 20)
-        Me.f2.TabIndex = 113
-        Me.f2.Text = "57"
-        '
-        'Label64
-        '
-        Me.Label64.AutoSize = True
-        Me.Label64.Location = New System.Drawing.Point(32, 173)
-        Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(42, 13)
-        Me.Label64.TabIndex = 121
-        Me.Label64.Text = "1 (13%)"
-        '
-        'Label65
-        '
-        Me.Label65.AutoSize = True
-        Me.Label65.Location = New System.Drawing.Point(32, 202)
-        Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(42, 13)
-        Me.Label65.TabIndex = 122
-        Me.Label65.Text = "2 (23%)"
-        '
-        'Label66
-        '
-        Me.Label66.AutoSize = True
-        Me.Label66.Location = New System.Drawing.Point(32, 52)
-        Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(36, 13)
-        Me.Label66.TabIndex = 123
-        Me.Label66.Text = "3 (9%)"
-        '
-        'Label67
-        '
-        Me.Label67.AutoSize = True
-        Me.Label67.Location = New System.Drawing.Point(26, 81)
-        Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(42, 13)
-        Me.Label67.TabIndex = 124
-        Me.Label67.Text = "4 (17%)"
-        '
-        'Label68
-        '
-        Me.Label68.AutoSize = True
-        Me.Label68.Location = New System.Drawing.Point(29, 107)
-        Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(39, 13)
-        Me.Label68.TabIndex = 125
-        Me.Label68.Text = "5  (0%)"
-        '
-        'Label69
-        '
-        Me.Label69.AutoSize = True
-        Me.Label69.Location = New System.Drawing.Point(29, 130)
-        Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(42, 13)
-        Me.Label69.TabIndex = 126
-        Me.Label69.Text = "6 (24%)"
-        '
-        'Label70
-        '
-        Me.Label70.AutoSize = True
-        Me.Label70.Location = New System.Drawing.Point(29, 148)
-        Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(42, 13)
-        Me.Label70.TabIndex = 127
-        Me.Label70.Text = "7 (17%)"
         '
         'logExod
         '
         Me.logExod.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.logExod.Location = New System.Drawing.Point(250, 415)
+        Me.logExod.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.logExod.Location = New System.Drawing.Point(333, 256)
         Me.logExod.Name = "logExod"
-        Me.logExod.Size = New System.Drawing.Size(231, 20)
+        Me.logExod.Size = New System.Drawing.Size(105, 20)
         Me.logExod.TabIndex = 131
         Me.logExod.Text = "64-00"
         '
         'cexod
         '
         Me.cexod.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cexod.Location = New System.Drawing.Point(163, 417)
+        Me.cexod.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.cexod.Location = New System.Drawing.Point(223, 256)
         Me.cexod.Name = "cexod"
-        Me.cexod.Size = New System.Drawing.Size(53, 20)
+        Me.cexod.Size = New System.Drawing.Size(104, 20)
         Me.cexod.TabIndex = 130
         Me.cexod.Text = "Ξ"
         '
@@ -2324,18 +1998,20 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         Me.Label71.AutoSize = True
         Me.Label71.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label71.Location = New System.Drawing.Point(9, 420)
+        Me.Label71.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label71.Location = New System.Drawing.Point(3, 266)
         Me.Label71.Name = "Label71"
-        Me.Label71.Size = New System.Drawing.Size(44, 13)
+        Me.Label71.Size = New System.Drawing.Size(104, 13)
         Me.Label71.TabIndex = 129
         Me.Label71.Text = "Εξόδων"
         '
         'nExod
         '
         Me.nExod.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.nExod.Location = New System.Drawing.Point(107, 417)
+        Me.nExod.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.nExod.Location = New System.Drawing.Point(113, 256)
         Me.nExod.Name = "nExod"
-        Me.nExod.Size = New System.Drawing.Size(30, 20)
+        Me.nExod.Size = New System.Drawing.Size(104, 20)
         Me.nExod.TabIndex = 128
         Me.nExod.Text = "1"
         '
@@ -2352,10 +2028,103 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(15, 512)
+        Me.ListBox2.Location = New System.Drawing.Point(28, 383)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(574, 108)
+        Me.ListBox2.Size = New System.Drawing.Size(441, 108)
         Me.ListBox2.TabIndex = 133
+        '
+        'logLOIPES
+        '
+        Me.logLOIPES.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.logLOIPES.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.logLOIPES.Location = New System.Drawing.Point(333, 287)
+        Me.logLOIPES.Name = "logLOIPES"
+        Me.logLOIPES.Size = New System.Drawing.Size(105, 20)
+        Me.logLOIPES.TabIndex = 135
+        Me.logLOIPES.Text = "64-00"
+        '
+        'cLOIPES
+        '
+        Me.cLOIPES.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cLOIPES.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.cLOIPES.Location = New System.Drawing.Point(223, 287)
+        Me.cLOIPES.Name = "cLOIPES"
+        Me.cLOIPES.Size = New System.Drawing.Size(104, 20)
+        Me.cLOIPES.TabIndex = 136
+        Me.cLOIPES.Text = "Ξ"
+        '
+        'nLOIPES
+        '
+        Me.nLOIPES.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.nLOIPES.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.nLOIPES.Location = New System.Drawing.Point(113, 287)
+        Me.nLOIPES.Name = "nLOIPES"
+        Me.nLOIPES.Size = New System.Drawing.Size(104, 20)
+        Me.nLOIPES.TabIndex = 137
+        Me.nLOIPES.Text = "1"
+        '
+        'Label72
+        '
+        Me.Label72.AutoSize = True
+        Me.Label72.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label72.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label72.Location = New System.Drawing.Point(3, 297)
+        Me.Label72.Name = "Label72"
+        Me.Label72.Size = New System.Drawing.Size(104, 13)
+        Me.Label72.TabIndex = 138
+        Me.Label72.Text = "Λοιπές Δαπάνες"
+        '
+        'pel30
+        '
+        Me.pel30.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pel30.Location = New System.Drawing.Point(113, 313)
+        Me.pel30.Name = "pel30"
+        Me.pel30.Size = New System.Drawing.Size(104, 20)
+        Me.pel30.TabIndex = 139
+        Me.pel30.Text = "30-0000"
+        '
+        'Label73
+        '
+        Me.Label73.AutoSize = True
+        Me.Label73.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label73.Location = New System.Drawing.Point(3, 324)
+        Me.Label73.Name = "Label73"
+        Me.Label73.Size = New System.Drawing.Size(104, 13)
+        Me.Label73.TabIndex = 140
+        Me.Label73.Text = "Λογ.Πελατών"
+        '
+        'Label74
+        '
+        Me.Label74.AutoSize = True
+        Me.Label74.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label74.Location = New System.Drawing.Point(223, 324)
+        Me.Label74.Name = "Label74"
+        Me.Label74.Size = New System.Drawing.Size(104, 13)
+        Me.Label74.TabIndex = 141
+        Me.Label74.Text = "Λογ.Προμηθ."
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(8, 313)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(696, 629)
+        Me.TabControl1.TabIndex = 142
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.Panel2)
+        Me.TabPage1.Controls.Add(Me.TableLayoutPanel1)
+        Me.TabPage1.Controls.Add(Me.ListBox2)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(688, 603)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "MERCURY"
+        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'Panel2
         '
@@ -2375,140 +2144,487 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.Panel2.Controls.Add(Me.f1)
         Me.Panel2.Controls.Add(Me.f2)
         Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Location = New System.Drawing.Point(709, 629)
+        Me.Panel2.Location = New System.Drawing.Point(499, 23)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(145, 231)
-        Me.Panel2.TabIndex = 134
+        Me.Panel2.TabIndex = 135
         Me.Panel2.Visible = False
         '
-        'logLOIPES
+        'f7
         '
-        Me.logLOIPES.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.logLOIPES.Location = New System.Drawing.Point(250, 452)
-        Me.logLOIPES.Name = "logLOIPES"
-        Me.logLOIPES.Size = New System.Drawing.Size(231, 20)
-        Me.logLOIPES.TabIndex = 135
-        Me.logLOIPES.Text = "64-00"
+        Me.f7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.f7.Location = New System.Drawing.Point(77, 145)
+        Me.f7.Name = "f7"
+        Me.f7.Size = New System.Drawing.Size(53, 20)
+        Me.f7.TabIndex = 118
+        Me.f7.Text = "84"
         '
-        'cLOIPES
+        'Label70
         '
-        Me.cLOIPES.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cLOIPES.Location = New System.Drawing.Point(163, 452)
-        Me.cLOIPES.Name = "cLOIPES"
-        Me.cLOIPES.Size = New System.Drawing.Size(53, 20)
-        Me.cLOIPES.TabIndex = 136
-        Me.cLOIPES.Text = "Ξ"
+        Me.Label70.AutoSize = True
+        Me.Label70.Location = New System.Drawing.Point(29, 148)
+        Me.Label70.Name = "Label70"
+        Me.Label70.Size = New System.Drawing.Size(42, 13)
+        Me.Label70.TabIndex = 127
+        Me.Label70.Text = "7 (17%)"
         '
-        'nLOIPES
+        'f6
         '
-        Me.nLOIPES.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.nLOIPES.Location = New System.Drawing.Point(107, 452)
-        Me.nLOIPES.Name = "nLOIPES"
-        Me.nLOIPES.Size = New System.Drawing.Size(30, 20)
-        Me.nLOIPES.TabIndex = 137
-        Me.nLOIPES.Text = "1"
+        Me.f6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.f6.Location = New System.Drawing.Point(77, 126)
+        Me.f6.Name = "f6"
+        Me.f6.Size = New System.Drawing.Size(53, 20)
+        Me.f6.TabIndex = 117
+        Me.f6.Text = "87"
         '
-        'Label72
+        'Label69
         '
-        Me.Label72.AutoSize = True
-        Me.Label72.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label72.Location = New System.Drawing.Point(11, 455)
-        Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(89, 13)
-        Me.Label72.TabIndex = 138
-        Me.Label72.Text = "Λοιπές Δαπάνες"
+        Me.Label69.AutoSize = True
+        Me.Label69.Location = New System.Drawing.Point(29, 130)
+        Me.Label69.Name = "Label69"
+        Me.Label69.Size = New System.Drawing.Size(42, 13)
+        Me.Label69.TabIndex = 126
+        Me.Label69.Text = "6 (24%)"
         '
-        'pel30
+        'f5
         '
-        Me.pel30.Location = New System.Drawing.Point(115, 483)
-        Me.pel30.Name = "pel30"
-        Me.pel30.Size = New System.Drawing.Size(101, 20)
-        Me.pel30.TabIndex = 139
-        Me.pel30.Text = "30-0000"
+        Me.f5.Location = New System.Drawing.Point(77, 100)
+        Me.f5.Name = "f5"
+        Me.f5.Size = New System.Drawing.Size(53, 20)
+        Me.f5.TabIndex = 116
+        Me.f5.Text = "00"
         '
-        'Label73
+        'Label68
         '
-        Me.Label73.AutoSize = True
-        Me.Label73.Location = New System.Drawing.Point(14, 485)
-        Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(74, 13)
-        Me.Label73.TabIndex = 140
-        Me.Label73.Text = "Λογ.Πελατών"
+        Me.Label68.AutoSize = True
+        Me.Label68.Location = New System.Drawing.Point(29, 107)
+        Me.Label68.Name = "Label68"
+        Me.Label68.Size = New System.Drawing.Size(39, 13)
+        Me.Label68.TabIndex = 125
+        Me.Label68.Text = "5  (0%)"
         '
-        'Label74
+        'f4
         '
-        Me.Label74.AutoSize = True
-        Me.Label74.Location = New System.Drawing.Point(254, 485)
-        Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(69, 13)
-        Me.Label74.TabIndex = 141
-        Me.Label74.Text = "Λογ.Προμηθ."
+        Me.f4.Location = New System.Drawing.Point(77, 77)
+        Me.f4.Name = "f4"
+        Me.f4.Size = New System.Drawing.Size(53, 20)
+        Me.f4.TabIndex = 115
+        Me.f4.Tag = ""
+        Me.f4.Text = "84"
+        '
+        'Label63
+        '
+        Me.Label63.AutoSize = True
+        Me.Label63.Location = New System.Drawing.Point(74, 10)
+        Me.Label63.Name = "Label63"
+        Me.Label63.Size = New System.Drawing.Size(53, 13)
+        Me.Label63.TabIndex = 120
+        Me.Label63.Text = "Λογ.ΦΠΑ"
+        '
+        'Label65
+        '
+        Me.Label65.AutoSize = True
+        Me.Label65.Location = New System.Drawing.Point(32, 202)
+        Me.Label65.Name = "Label65"
+        Me.Label65.Size = New System.Drawing.Size(42, 13)
+        Me.Label65.TabIndex = 122
+        Me.Label65.Text = "2 (23%)"
+        '
+        'Label66
+        '
+        Me.Label66.AutoSize = True
+        Me.Label66.Location = New System.Drawing.Point(32, 52)
+        Me.Label66.Name = "Label66"
+        Me.Label66.Size = New System.Drawing.Size(36, 13)
+        Me.Label66.TabIndex = 123
+        Me.Label66.Text = "3 (9%)"
+        '
+        'Label64
+        '
+        Me.Label64.AutoSize = True
+        Me.Label64.Location = New System.Drawing.Point(32, 173)
+        Me.Label64.Name = "Label64"
+        Me.Label64.Size = New System.Drawing.Size(42, 13)
+        Me.Label64.TabIndex = 121
+        Me.Label64.Text = "1 (13%)"
+        '
+        'Label67
+        '
+        Me.Label67.AutoSize = True
+        Me.Label67.Location = New System.Drawing.Point(26, 81)
+        Me.Label67.Name = "Label67"
+        Me.Label67.Size = New System.Drawing.Size(42, 13)
+        Me.Label67.TabIndex = 124
+        Me.Label67.Text = "4 (17%)"
+        '
+        'f3
+        '
+        Me.f3.Location = New System.Drawing.Point(77, 45)
+        Me.f3.Name = "f3"
+        Me.f3.Size = New System.Drawing.Size(53, 20)
+        Me.f3.TabIndex = 114
+        Me.f3.Text = "76"
+        '
+        'f1
+        '
+        Me.f1.Location = New System.Drawing.Point(77, 171)
+        Me.f1.Name = "f1"
+        Me.f1.Size = New System.Drawing.Size(53, 20)
+        Me.f1.TabIndex = 119
+        Me.f1.Text = "36"
+        '
+        'f2
+        '
+        Me.f2.Location = New System.Drawing.Point(77, 197)
+        Me.f2.Name = "f2"
+        Me.f2.Size = New System.Drawing.Size(53, 20)
+        Me.f2.TabIndex = 113
+        Me.f2.Text = "57"
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Label61)
+        Me.Panel1.Controls.Add(Me.arTam)
+        Me.Panel1.Controls.Add(Me.lianLOGFPA23)
+        Me.Panel1.Controls.Add(Me.lianLOGFPA13)
+        Me.Panel1.Controls.Add(Me.Lian13)
+        Me.Panel1.Controls.Add(Me.Lian23)
+        Me.Panel1.Controls.Add(Me.Label52)
+        Me.Panel1.Controls.Add(Me.lianLOGFPA24)
+        Me.Panel1.Controls.Add(Me.Label53)
+        Me.Panel1.Controls.Add(Me.episLian24)
+        Me.Panel1.Controls.Add(Me.Label54)
+        Me.Panel1.Controls.Add(Me.lian24)
+        Me.Panel1.Controls.Add(Me.Label16)
+        Me.Panel1.Controls.Add(Me.Label17)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label13)
+        Me.Panel1.Controls.Add(Me.episLian13)
+        Me.Panel1.Controls.Add(Me.LIAN0)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.episLian23)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.Label20)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Location = New System.Drawing.Point(151, 73)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(367, 119)
+        Me.Panel1.TabIndex = 51
+        Me.Panel1.Visible = False
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Location = New System.Drawing.Point(0, 126)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(75, 13)
+        Me.Label61.TabIndex = 58
+        Me.Label61.Text = "Αρ.Ταμειακής"
+        '
+        'arTam
+        '
+        Me.arTam.Location = New System.Drawing.Point(94, 123)
+        Me.arTam.Name = "arTam"
+        Me.arTam.Size = New System.Drawing.Size(101, 20)
+        Me.arTam.TabIndex = 57
+        '
+        'lianLOGFPA23
+        '
+        Me.lianLOGFPA23.Location = New System.Drawing.Point(517, 10)
+        Me.lianLOGFPA23.Name = "lianLOGFPA23"
+        Me.lianLOGFPA23.Size = New System.Drawing.Size(101, 20)
+        Me.lianLOGFPA23.TabIndex = 47
+        Me.lianLOGFPA23.Text = "70-0057"
+        '
+        'lianLOGFPA13
+        '
+        Me.lianLOGFPA13.Location = New System.Drawing.Point(517, 36)
+        Me.lianLOGFPA13.Name = "lianLOGFPA13"
+        Me.lianLOGFPA13.Size = New System.Drawing.Size(101, 20)
+        Me.lianLOGFPA13.TabIndex = 49
+        Me.lianLOGFPA13.Text = "70-0036"
+        '
+        'Lian13
+        '
+        Me.Lian13.Location = New System.Drawing.Point(94, 36)
+        Me.Lian13.Name = "Lian13"
+        Me.Lian13.Size = New System.Drawing.Size(101, 20)
+        Me.Lian13.TabIndex = 20
+        Me.Lian13.Text = "70-0036"
+        '
+        'Lian23
+        '
+        Me.Lian23.Location = New System.Drawing.Point(94, 10)
+        Me.Lian23.Name = "Lian23"
+        Me.Lian23.Size = New System.Drawing.Size(101, 20)
+        Me.Lian23.TabIndex = 18
+        Me.Lian23.Text = "70-0057"
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Location = New System.Drawing.Point(415, 93)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(79, 13)
+        Me.Label52.TabIndex = 56
+        Me.Label52.Text = "Λογ.ΦΠΑ  24%"
+        '
+        'lianLOGFPA24
+        '
+        Me.lianLOGFPA24.Location = New System.Drawing.Point(517, 93)
+        Me.lianLOGFPA24.Name = "lianLOGFPA24"
+        Me.lianLOGFPA24.Size = New System.Drawing.Size(101, 20)
+        Me.lianLOGFPA24.TabIndex = 55
+        Me.lianLOGFPA24.Text = "70-0087"
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Location = New System.Drawing.Point(201, 93)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(75, 13)
+        Me.Label53.TabIndex = 54
+        Me.Label53.Text = "Επισ.Λιαν24%"
+        '
+        'episLian24
+        '
+        Me.episLian24.Location = New System.Drawing.Point(296, 93)
+        Me.episLian24.Name = "episLian24"
+        Me.episLian24.Size = New System.Drawing.Size(101, 20)
+        Me.episLian24.TabIndex = 53
+        Me.episLian24.Text = "70-0087"
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Location = New System.Drawing.Point(0, 96)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(73, 13)
+        Me.Label54.TabIndex = 52
+        Me.Label54.Text = "Λιανικές 24%"
+        '
+        'lian24
+        '
+        Me.lian24.Location = New System.Drawing.Point(94, 93)
+        Me.lian24.Name = "lian24"
+        Me.lian24.Size = New System.Drawing.Size(101, 20)
+        Me.lian24.TabIndex = 51
+        Me.lian24.Text = "70-0087"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(414, 41)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(79, 13)
+        Me.Label16.TabIndex = 50
+        Me.Label16.Text = "Λογ.ΦΠΑ  13%"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(415, 16)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(79, 13)
+        Me.Label17.TabIndex = 48
+        Me.Label17.Text = "Λογ.ΦΠΑ  23%"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(201, 43)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(75, 13)
+        Me.Label6.TabIndex = 25
+        Me.Label6.Text = "Επισ.Λιαν13%"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(3, 65)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(70, 13)
+        Me.Label13.TabIndex = 37
+        Me.Label13.Text = "Λιανικες  0%"
+        '
+        'episLian13
+        '
+        Me.episLian13.Location = New System.Drawing.Point(296, 36)
+        Me.episLian13.Name = "episLian13"
+        Me.episLian13.Size = New System.Drawing.Size(101, 20)
+        Me.episLian13.TabIndex = 24
+        Me.episLian13.Text = "70-0036"
+        '
+        'LIAN0
+        '
+        Me.LIAN0.Location = New System.Drawing.Point(94, 62)
+        Me.LIAN0.Name = "LIAN0"
+        Me.LIAN0.Size = New System.Drawing.Size(101, 20)
+        Me.LIAN0.TabIndex = 36
+        Me.LIAN0.Text = "70-0000"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(201, 17)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(75, 13)
+        Me.Label7.TabIndex = 23
+        Me.Label7.Text = "Επισ.Λιαν23%"
+        '
+        'episLian23
+        '
+        Me.episLian23.Location = New System.Drawing.Point(296, 10)
+        Me.episLian23.Name = "episLian23"
+        Me.episLian23.Size = New System.Drawing.Size(101, 20)
+        Me.episLian23.TabIndex = 22
+        Me.episLian23.Text = "70-0057"
+        '
+        'Label8
+        '
+        Me.Label8.Location = New System.Drawing.Point(2, 43)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(98, 17)
+        Me.Label8.TabIndex = 21
+        Me.Label8.Text = "Λιανικες  13%"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(427, 68)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(66, 13)
+        Me.Label20.TabIndex = 14
+        Me.Label20.Text = "Λογ.Προμηθ"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(199, 65)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(72, 13)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "Λογ.Πελάτες"
+        '
+        'Label9
+        '
+        Me.Label9.Location = New System.Drawing.Point(2, 11)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(86, 18)
+        Me.Label9.TabIndex = 19
+        Me.Label9.Text = "Λιανικές 23%"
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 4
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Label55, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label74, 2, 10)
+        Me.TableLayoutPanel1.Controls.Add(Me.nParox, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.pel30, 1, 10)
+        Me.TableLayoutPanel1.Controls.Add(Me.prom50, 3, 10)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label73, 0, 10)
+        Me.TableLayoutPanel1.Controls.Add(Me.cParox, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.logParox, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.logLOIPES, 3, 9)
+        Me.TableLayoutPanel1.Controls.Add(Me.cLOIPES, 2, 9)
+        Me.TableLayoutPanel1.Controls.Add(Me.nLOIPES, 1, 9)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label72, 0, 9)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label39, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label40, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label62, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label38, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.nTimol, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.cTimol, 2, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.logExod, 3, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.logTimol, 3, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.cexod, 2, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label37, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.nExod, 1, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label71, 0, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.nLian, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.cLian, 2, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.logPistAg, 3, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.logLian, 3, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.logTimAg, 3, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label36, 0, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.LogPistLian, 3, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.nPistTim, 1, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.logPistTim, 3, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.cPistAg, 2, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.cPistTim, 2, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.nPistAg, 1, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label43, 0, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label35, 0, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.nPistLian, 1, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.cTimAg, 2, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.cPistLian, 2, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label44, 0, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.nTimAg, 1, 6)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(28, 25)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 11
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(441, 337)
+        Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.Panel4)
+        Me.TabPage2.Controls.Add(Me.Panel3)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(688, 603)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "EXCEL"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'G_XML_MERCURY
+        '
+        Me.G_XML_MERCURY.BackColor = System.Drawing.Color.Aquamarine
+        Me.G_XML_MERCURY.Location = New System.Drawing.Point(211, 160)
+        Me.G_XML_MERCURY.Name = "G_XML_MERCURY"
+        Me.G_XML_MERCURY.Size = New System.Drawing.Size(168, 52)
+        Me.G_XML_MERCURY.TabIndex = 143
+        Me.G_XML_MERCURY.Text = "Δημιουργία XML Γ κατηγ mercury"
+        Me.G_XML_MERCURY.UseVisualStyleBackColor = False
         '
         'main
         '
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(994, 954)
-        Me.Controls.Add(Me.Label74)
-        Me.Controls.Add(Me.Label73)
-        Me.Controls.Add(Me.pel30)
-        Me.Controls.Add(Me.Label72)
-        Me.Controls.Add(Me.nLOIPES)
-        Me.Controls.Add(Me.cLOIPES)
-        Me.Controls.Add(Me.logLOIPES)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.ListBox2)
+        Me.ClientSize = New System.Drawing.Size(1284, 781)
+        Me.Controls.Add(Me.G_XML_MERCURY)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.eispraxeis)
-        Me.Controls.Add(Me.logExod)
-        Me.Controls.Add(Me.cexod)
-        Me.Controls.Add(Me.Label71)
-        Me.Controls.Add(Me.nExod)
-        Me.Controls.Add(Me.Label62)
-        Me.Controls.Add(Me.logParox)
-        Me.Controls.Add(Me.logPistAg)
-        Me.Controls.Add(Me.logTimAg)
-        Me.Controls.Add(Me.LogPistLian)
-        Me.Controls.Add(Me.logPistTim)
-        Me.Controls.Add(Me.logLian)
-        Me.Controls.Add(Me.logTimol)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.prom50)
         Me.Controls.Add(Me.mercury)
-        Me.Controls.Add(Me.cParox)
-        Me.Controls.Add(Me.Label55)
-        Me.Controls.Add(Me.nParox)
-        Me.Controls.Add(Me.nPistLian)
         Me.Controls.Add(Me.epan)
         Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.cPistAg)
-        Me.Controls.Add(Me.cTimAg)
-        Me.Controls.Add(Me.Label43)
-        Me.Controls.Add(Me.nPistAg)
-        Me.Controls.Add(Me.Label44)
-        Me.Controls.Add(Me.nTimAg)
         Me.Controls.Add(Me.Label41)
         Me.Controls.Add(Me.Label34)
         Me.Controls.Add(Me.eos)
         Me.Controls.Add(Me.apo)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.agoresB)
-        Me.Controls.Add(Me.Label40)
-        Me.Controls.Add(Me.cPistLian)
-        Me.Controls.Add(Me.cPistTim)
-        Me.Controls.Add(Me.cLian)
-        Me.Controls.Add(Me.cTimol)
-        Me.Controls.Add(Me.Label39)
-        Me.Controls.Add(Me.Label35)
-        Me.Controls.Add(Me.Label36)
-        Me.Controls.Add(Me.nPistTim)
-        Me.Controls.Add(Me.Label37)
-        Me.Controls.Add(Me.nLian)
-        Me.Controls.Add(Me.Label38)
-        Me.Controls.Add(Me.nTimol)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Label33)
         Me.Controls.Add(Me.ApoSeira)
-        Me.Controls.Add(Me.Panel4)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.xmlG)
         Me.Controls.Add(Me.filexml)
         Me.Controls.Add(Me.Button8)
@@ -2523,14 +2639,19 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.Controls.Add(Me.EXCELTOXML)
         Me.Controls.Add(Me.Button1)
         Me.Name = "main"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3420,7 +3541,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         End If
     End Sub
 
-    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
+    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
@@ -4524,7 +4645,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             w.WriteAttributeString("FL_Dgrs_Dscr", "ΓΕΝΙΚΗ ΛΟΓΙΣΤΙΚΗ / ΕΣΟΔΑ - ΕΞΟΔΑ")
             w.WriteAttributeString("cdRetailIdentity", "ΑΝΕΥ")
             w.WriteAttributeString("JrnCnt", "0")
-            w.WriteAttributeString("KepyoCatData_SUMKEPYOVAT", FPA1)
+            w.WriteAttributeString("KepyoCatData_SUMKEPYOVAT", Replace(FPA1, ",", "."))
             w.WriteAttributeString("Party_CASTVAT", "1")
             w.WriteAttributeString("CDt", Base_dt)
             w.WriteAttributeString("F_Coin_ShCut", "€")
@@ -4539,7 +4660,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             w.WriteAttributeString("Party_AFM", "000000000")
             w.WriteAttributeString("Cnt", mBase_INVOICE)
             w.WriteAttributeString("Party_IDParty", "1")
-            w.WriteAttributeString("KepyoCatData_SUMKEPYOYP", KAU_AJIA1)
+            w.WriteAttributeString("KepyoCatData_SUMKEPYOYP", Replace(KAU_AJIA1, ",", "."))
             w.WriteAttributeString("IsHand", "1")
             w.WriteAttributeString("AP_Party_cd", "01")
             w.WriteAttributeString("dt", Base_dt)
@@ -4617,7 +4738,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             w.WriteAttributeString("Party_SNAME", "-" + Party_SNAME) '==========
             w.WriteAttributeString("Party_IDParty", Party_IDParty) '  "1881")
             w.WriteAttributeString("KEPYO_BClass", "0")
-            w.WriteAttributeString("KEPYO_Val", KAU_AJIA1)
+            w.WriteAttributeString("KEPYO_Val", Replace(KAU_AJIA1, ",", "."))
             w.WriteAttributeString("AP_Party_Dscr", Party_SNAME) '==========
             w.WriteAttributeString("AP_Party_cd", "18-015")
             w.WriteAttributeString("F_Coin_Dscr", "ΕURO")
@@ -4660,8 +4781,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             ' old  rowG_detail(f_aitiologia, lianLOGFPA23.Text, fpa23, 0, w)
         End If
         If kau13 <> 0 Then
-            rowG_detail(f_aitiologia, LOG13, kau13, fpa13, w)
-            rowG_detail(f_aitiologia, LOGFPA13.Text, fpa23, 0, w)
+            rowG_detail(f_aitiologia, LOG13, kau13, 0, w) 'fpa13, w)
+            rowG_detail(f_aitiologia, LOGFPA13.Text, fpa13, 0, w)
 
         End If
         If kau16 <> 0 Then
@@ -4675,7 +4796,22 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         If kau0 <> 0 Then
             rowG_detail("", LOG0, kau0, 0, w)
         End If
-        rowG_detail(f_aitiologia, f_logPel, 0, kau23 + kau13 + kau16 + kau9 + fpa23 + fpa13 + fpa16 + fpa9, w)
+
+        If kau24 <> 0 Then
+            rowG_detail(f_aitiologia, LOG24, kau24, 0, w)
+            rowG_detail(f_aitiologia, LOGFPA24.Text, fpa24, 0, w)
+        End If
+
+        If kau17 <> 0 Then
+            rowG_detail(f_aitiologia, LOG17, kau17, 0, w)
+            rowG_detail(f_aitiologia, LOGFPA17.Text, fpa17, 0, w)
+        End If
+
+
+
+
+
+        rowG_detail(f_aitiologia, f_logPel, 0, kau24 + kau17 + kau23 + kau13 + kau16 + kau0 + kau9 + fpa24 + fpa17 + fpa23 + fpa13 + fpa16 + fpa9, w)
 
         If Metrhtaxond = True Then  'metrhta
 
@@ -4941,8 +5077,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         fcPistLian = cPistLian.Text
 
 
-
-
+        F_PEL30 = pel30.Text
+        f_System_Dscr_1 = "Πωλήσεις"
 
         '===============================================================================real onomatepvmymo 54100
         Do While True
@@ -5022,7 +5158,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                     IsHand = "0" 'LTrim(Str(hand))
                 End If
                 MVTP = "1" '6=πιστωτικα 2=αγορες  7=πιστωτικα αγορών
-
+                F_PEL30 = pel30.Text
                 TYPOS(1) = "ΛΙΑΝΙΚΕΣ"
                 poliseis(1, 1) = poliseis(1, 1) + KAU_AJIA
                 poliseis(1, 2) = poliseis(1, 2) + FPA
@@ -5073,7 +5209,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 'LOG0 = POL0.Text
                 MVTP = "1" '6=πιστωτικα 2=αγορες  7=πιστωτικα αγορών
 
-
+                F_PEL30 = pel30.Text
                 TYPOS(4) = "ΤΙΜΟΛΟΓΙΑ"
                 poliseis(4, 1) = poliseis(4, 1) + KAU_AJIA
                 poliseis(4, 2) = poliseis(4, 2) + FPA
@@ -7638,6 +7774,460 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
 
+
+    End Sub
+
+    Private Sub G_XML_MERCURY_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles G_XML_MERCURY.Click
+        Dim a As String
+        Dim K As Short
+        Dim C As String
+
+        ' CO TO DIAXORISTIKO DEKADIKON ARITMON
+        Dim CO As String = String.Format(1.1).Substring(1, 1)
+
+
+        ' MsgBox("ΠΡΟΣΟΧΗ ΔΙΑΒΑΖΕΙ ΑΠΟ ΤΗΝ " + ApoSeira.Text + "η ΣΕΙΡΑ ΜΕ ΓΡΑΜΟΓΡΑΦΗΣΗ:" + Chr(13) + "AJ1 AJ2	AJ3	AJ4	AJ5	AJI	FPA1	FPA2	FPA3	FPA4	ATIM	HME	EPO	AFM")
+
+
+        ' Write the string as utf-8.
+        ' This also writes the 3-byte utf-8 preamble at the beginning of the file.
+        Dim appendMode As Boolean = False ' This overwrites the entire file.
+        ' Dim sw As New StreamWriter("C:\MERCVB\out_utf9.export", appendMode, System.Text.Encoding.UTF8)
+        'sw.Write(TextBox1.Text)
+        'sw.Close()
+
+
+
+        If checkServer() = False Then
+            MsgBox("αποτυχία ενημέρωσης")
+            Exit Sub
+        End If
+
+
+        Dim pol As String = " "
+        Dim polepis As String = " "
+        Dim ago As String = " "
+        Dim AGOEPIS As String = " "
+
+        Dim lfpa(7) As String
+
+
+
+
+
+
+
+        Get_AJ_ASCII(pol, polepis, ago, AGOEPIS)
+
+
+
+        '   Dim xlApp As Excel.Application
+        '   Dim xlWorkBook As Excel.Workbook
+        '    Dim xl As Excel.Worksheet
+
+        '   xlApp = New Excel.ApplicationClass
+        Dim par As String = " "
+        Dim mf As String
+        mf = "c:\mercvb\err3.txt"
+        If Len(Dir(UCase(mf))) = 0 Then
+            par = pol '  " 'G','g','Ξ','D'  "
+            par = InputBox("ΠΑΡΑΣΤΑΤΙΚΑ", , par)
+        Else
+            FileOpen(1, mf, OpenMode.Input)
+            '   Input(1, par)
+            par = LineInput(1)
+            FileClose(1)
+        End If
+
+        '  par = InputBox("ΠΑΡΑΣΤΑΤΙΚΑ", , par)
+
+        FileOpen(1, mf, OpenMode.Output)
+        PrintLine(1, par)
+        FileClose(1)
+
+
+
+        par = cParox.Text + cTimol.Text + cLian.Text + cPistLian.Text + cPistTim.Text + cTimAg.Text + cPistAg.Text + cexod.Text + cLOIPES.Text
+
+
+
+        Dim ccc As String = ""
+
+        For K = 1 To Len(par)
+            ccc = ccc + "'" + Mid(par, K, 1) + "',"
+        Next
+        ccc = Mid(ccc, 1, Len(ccc) - 1)
+        par = ccc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Dim synt As String
+        If epan.CheckState = CheckState.Checked Then
+            synt = ""
+
+        Else
+            synt = " and (B_C1 is null or LEFT(B_C1,1)<>'*') "
+
+        End If
+        ' ExecuteSQLQuery("update TIM SET AJ7=0 WHERE AJ7 IS NULL")
+
+
+
+        ExecuteSQLQuery("UPDATE TIM SET AJ7=0 WHERE AJ7 IS NULL")
+        ExecuteSQLQuery("UPDATE TIM SET FPA7=0 WHERE FPA7 IS NULL")
+
+
+        '  Dim XL As DataTable
+        Dim SQL As String   '   ID_NUM GEMISMA NA JEKINA APO 1
+        SQL = "SELECT ID_NUM, AJ1  ,AJ2 , AJ3,AJ4,AJ5,AJI,FPA1,FPA2,FPA3,FPA4,ATIM,"
+        SQL = SQL + "HME,PEL.EPO,PEL.AFM,KPE,PEL.DIE,PEL.XRVMA"    '"CONVERT(CHAR(10),HME,3) AS HMEP
+        SQL = SQL + ",PEL.EPA,PEL.POL,AJ6,FPA6,AJ7,FPA7 "
+
+        SQL = SQL + "   FROM TIM INNER JOIN PEL ON TIM.EIDOS=PEL.EIDOS AND TIM.KPE=PEL.KOD "
+        SQL = SQL + " WHERE LEFT(ATIM,1) IN     (  " + par + "  )    and HME>='" + VB6.Format(apo, "mm/dd/yyyy") + "'  AND HME<='" + VB6.Format(eos, "mm/dd/yyyy") + "'  "
+        SQL = SQL + "  AND AJ1+AJ2+AJ3+AJ4+AJ5+AJ6+AJ7>0  " + synt
+        SQL = SQL + " order by HME"
+
+
+
+
+
+        '  SQL = "SELECT  top 20  AJ1 ,AJ2  from TIM  order by HME"
+
+        ExecuteSQLQuery(SQL)
+
+
+
+
+
+
+
+
+
+
+
+
+        'Dim xlApp As Excel.Application
+        'Dim xlWorkBook As Excel.Workbook
+        'Dim xl As Excel.Worksheet
+
+        'xlApp = New Excel.ApplicationClass
+        'Try
+        '    xlWorkBook = xlApp.Workbooks.Open(TextBox1.Text)
+        '    xl = xlWorkBook.Worksheets(1) ' .Add
+        'Catch
+        '    MsgBox("Δεν ανοιγει το αρχείο excel")
+        '    Exit Sub
+
+        'End Try
+
+
+        '====================================================================================
+        Dim ff As String = "c:\mercvb\m" + VB6.Format(Now, "YYYYddmmHHMM") + ".export" ' "\\Logisthrio\333\pr.export" '
+
+        Dim writer As New XmlTextWriter(ff, System.Text.Encoding.UTF8)
+        writer.WriteStartDocument(True)
+        writer.Formatting = Formatting.Indented
+        writer.Indentation = 2
+        ' Create a Continent element and set its value to
+        ' that of the New Continent dialog box
+        'writer.WriteAttributeString("Table", , "sadasasd sdsd")
+
+        '<Data Name="SX" Style="BRowse"><row name="Hd" mode="3" rowId="7">
+        writer.WriteStartElement("Data")
+        writer.WriteAttributeString("Name", "GL")
+        writer.WriteAttributeString("Style", "Browse")
+        '====================================================================================
+
+
+        Dim enter_Renamed As String
+        enter_Renamed = Chr(13)
+
+        'FileOpen(1, "C:\MERCVB\A778.XML", OpenMode.Output)
+        ROW = Val(ApoSeira.Text) - 1
+
+        Dim hand As Integer = 0
+        Dim suma As Single = 0
+        Dim SXETIKO As String
+
+
+
+
+
+
+
+        For ROW = 0 To sqlDT.Rows.Count - 1
+            Me.Text = ROW
+            kau13 = 0
+            kau23 = 0
+            kau16 = 0
+            kau9 = 0
+            kau0 = 0
+            kau24 = 0
+            kau13 = 0
+
+            For K = 1 To 7
+                kau(K) = 0
+            Next
+            AM_DcTp_Dscr = "Τιμολόγιο"
+            Party_AFM = Trim(IIf(IsDBNull(sqlDT.Rows(ROW)(14)), "", sqlDT.Rows(ROW)(14)))  'Dim Party_AFM As String ' =""999349996
+            If Len(Trim(Party_AFM)) <= 4 Then
+                Party_AFM = "000000000"
+            End If
+            Party_ADDRESS = IIf(IsDBNull(sqlDT.Rows(ROW)(16)), "", sqlDT.Rows(ROW)(16))  'ToString  ' "ΠΟΛΥΣΤΗΛΟ ΚΑΒΑΛΑΣ"
+            AM_DcTp_cd = "#ΤΥΠ-0"
+            AMO_Srl_DSCR = "Πωλήσεις" '"ΠΩΛΗΣΕΙΣ"
+            Base_dt = VB6.Format(sqlDT.Rows(ROW)(12), "YYYY-mm-dd")
+            Base_INVOICE = sqlDT.Rows(ROW)(11)  ' =""#ΤΥΠ-0/Π000/1/Τιμολόγιο Παροχής Υπηρεσιών"
+            Party_SNAME = sqlDT.Rows(ROW)(13)  '=""Θ. ΓΡΑΜΜΑΤΗΣ Κ.ΣΙΑ Ε.Ε""
+            f_logPel = "30-01-01-" + sqlDT.Rows(ROW)("KPE").ToString  ' pel30.Text ' "30-00-00-0000"
+            KAU_AJIA = nVal(sqlDT.Rows(ROW)(1)) + nVal(sqlDT.Rows(ROW)(2)) + nVal(sqlDT.Rows(ROW)(3)) + nVal(sqlDT.Rows(ROW)(4)) + nVal(sqlDT.Rows(ROW)(5)) + nVal(sqlDT.Rows(ROW)("AJ6")) + nVal(sqlDT.Rows(ROW)("AJ7"))
+            FPA = nVal(sqlDT.Rows(ROW)(7)) + nVal(sqlDT.Rows(ROW)(8)) + nVal(sqlDT.Rows(ROW)(9)) + nVal(sqlDT.Rows(ROW)(10)) + nVal(sqlDT.Rows(ROW)("FPA6")) + nVal(sqlDT.Rows(ROW)("FPA7"))
+            kau13 = nVal(sqlDT.Rows(ROW)(1))
+            kau23 = nVal(sqlDT.Rows(ROW)(2))
+            kau16 = nVal(sqlDT.Rows(ROW)(3))
+            kau9 = nVal(sqlDT.Rows(ROW)(4))
+            kau0 = nVal(sqlDT.Rows(ROW)(5))
+            kau24 = nVal(sqlDT.Rows(ROW)("AJ6"))
+            kau17 = nVal(sqlDT.Rows(ROW)("AJ7"))
+            KAU_AJIA = 0
+            For K = 1 To 7
+
+                kau(K) = nVal(sqlDT.Rows(ROW)("AJ" + VB6.Format(K, "0")))
+                KAU_AJIA = KAU_AJIA + kau(K)
+            Next
+            FPA = 0
+            For K = 1 To 7
+                If K = 5 Then
+                    AJFPA(5) = 0
+                Else
+                    AJFPA(K) = nVal(sqlDT.Rows(ROW)("FPA" + VB6.Format(K, "0")))
+                End If
+                FPA = FPA + AJFPA(K)
+            Next
+            fpa13 = nVal(sqlDT.Rows(ROW)(7))
+            fpa23 = nVal(sqlDT.Rows(ROW)(8))
+            fpa16 = nVal(sqlDT.Rows(ROW)(9))
+            fpa9 = nVal(sqlDT.Rows(ROW)(10))
+            fpa24 = nVal(sqlDT.Rows(ROW)("FPA6"))
+            fpa17 = nVal(sqlDT.Rows(ROW)("FPA7"))
+            LOG13 = pol13.Text : LOG23 = pol23.Text
+            LOG16 = POL16.Text : LOG9 = POL9.Text
+            LOG0 = POL0.Text
+            LOG24 = POL24.Text : LOG17 = POL17.Text
+            FL_Ledg_Dscr = "ΠΩΛΗΣΕΙΣ ΧΟΝΔΡΙΚΗΣ ΕΣ. ΦΠΑ23%"
+            FL_Ledg_cd = pol23.Text ' "70-00-00-0057"
+            MVTP = "1" '6=πιστωτικα 2=αγορες  7=πιστωτικα αγορών
+            System_sys = "SB" '      'SB =POLISEIS FR
+            F_ExpenditureKind = "0"  ' 1=LOIPES DAPANES 0=OXI
+            F_PEL30 = "30-01-01-" + sqlDT.Rows(ROW)("KPE").ToString  'pel30.Text
+
+            '===============================================================================real onomatepvmymo 54100
+            ' Do While True
+            'ROW = ROW + 1
+
+            Me.Text = ROW
+            'system.doevents
+
+
+
+            'Party_IDParty = xl.Cells(ROW, 14).value  ' As String  '12344   ΚΩΔ ΣΥΝΑΛΛΑΣΟΜΕΝΟΥ
+            'AM_DcTp_Dscr = "Τιμολόγιο"
+            'Party_AFM = Trim(xl.Cells(ROW, 14).value)  'Dim Party_AFM As String ' =""999349996
+            'If Len(Trim(Party_AFM)) <= 4 Then
+            '    Party_AFM = "000000000"
+            'End If
+            'Party_ADDRESS = xl.Cells(ROW, 16).value 'ToString  ' "ΠΟΛΥΣΤΗΛΟ ΚΑΒΑΛΑΣ"
+            'AM_DcTp_cd = "#ΤΥΠ-0"
+            'AMO_Srl_DSCR = "Πωλήσεις" '"ΠΩΛΗΣΕΙΣ"
+            'Base_dt = VB6.Format(xl.Cells(ROW, 12), "YYYY-mm-dd")
+            'SXETIKO = Mid(xl.Cells(ROW, 22).ToString, 9, 7)   'Σχ.Παρ. Τ000123
+            'Base_INVOICE = xl.Cells(ROW, 11).value
+            '' =""#ΤΥΠ-0/Π000/1/Τιμολόγιο Παροχής Υπηρεσιών"
+            'Party_SNAME = xl.Cells(ROW, 13).value  '=""Θ. ΓΡΑΜΜΑΤΗΣ Κ.ΣΙΑ Ε.Ε""
+            'f_logPel = pel30.Text ' "30-00-00-0000"
+            'ListBox1.Items.Add(Str(ROW) + ". " + Party_SNAME)
+            'KAU_AJIA = nVal(xl.Cells(ROW, 1).value) + nVal(xl.Cells(ROW, 2).value) + nVal(xl.Cells(ROW, 3).value) + nVal(xl.Cells(ROW, 4).value) + nVal(xl.Cells(ROW, 5).value)
+            'FPA = nVal(xl.Cells(ROW, 7).value) + nVal(xl.Cells(ROW, 8).value) + nVal(xl.Cells(ROW, 9).value) + nVal(xl.Cells(ROW, 10).value)
+            'suma = suma + KAU_AJIA
+            'kau13 = nVal(xl.Cells(ROW, 1).value)
+            'kau23 = nVal(xl.Cells(ROW, 2).value)
+            'kau16 = nVal(xl.Cells(ROW, 3).value)
+            'kau9 = nVal(xl.Cells(ROW, 4).value)
+            'kau0 = nVal(xl.Cells(ROW, 5).value)
+            'fpa13 = nVal(xl.Cells(ROW, 7).value)
+            'fpa23 = nVal(xl.Cells(ROW, 8).value)
+            'fpa16 = nVal(xl.Cells(ROW, 9).value)
+            'FL_Ledg_Dscr = "ΠΩΛΗΣΕΙΣ ΧΟΝΔΡΙΚΗΣ ΕΣ. ΦΠΑ23%"
+            'FL_Ledg_cd = pol23.Text ' "70-00-00-0057"
+            'MVTP = "1"
+            'System_sys = "SB" '    
+
+
+
+
+
+
+
+            'SB =POLISEIS FR   η ειναι ακυρωτικο 
+            If InStr("Lρ", Mid(Base_INVOICE, 1, 1)) > 0 Or (Mid(Base_INVOICE, 1, 1) = "κ" And InStr("Lρ", Mid(SXETIKO, 1, 1)) > 0) Then
+                IsHand = "1" 'LTrim(Str(hand))
+                cdRetailIdentity = ""
+                LOG13 = Lian13.Text : LOG23 = Lian23.Text
+                logarFpa23 = lianLOGFPA23.Text : logarFpa13 = lianLOGFPA13.Text
+                LOG0 = LIAN0.Text
+                f_logPel = "38-00-00-0000"
+                Party_AFM = "000000000"
+                f_aitiologia = "ΛΙΑΝΙΚΕΣ ΠΩΛΗΣΕΙΣ"
+                Party_IDParty = ""
+                tit_paras = "ΑΠΛ"
+
+                'αν ειναι ακυρωτικό λιανικής
+                If Mid(Base_INVOICE, 1, 1) = "κ" And InStr("Lρ", Mid(SXETIKO, 1, 1)) > 0 Then
+                    f_aitiologia = "ΑΚΥΡΩΤΙΚΟ ΛΙΑΝΙΚΩΝ ΠΩΛΗΣΕΩΝ"
+                    Party_IDParty = ""
+                    tit_paras = "ΑΚΥΡ"
+                End If
+                Metrhtaxond = False
+
+
+                'ElseIf
+            Else
+                Metrhtaxond = False
+                IsHand = ""
+                Party_IDParty = Mid(Party_AFM, 5, 5)
+
+                If InStr("Ttυ", Mid(Base_INVOICE, 1, 1)) > 0 Then
+
+                    LOG13 = pol13.Text : LOG23 = pol23.Text
+                    LOG16 = POL16.Text : LOG9 = POL9.Text
+                    LOG0 = POL0.Text
+                    logarFpa23 = LOGFPA23.Text : logarFpa13 = LOGFPA13.Text
+                    tit_paras = "ΤΠ"
+                    f_aitiologia = "ΧΟΝΔΡΙΚΕΣ ΠΩΛΗΣΕΙΣ"
+                    'If xl.Cells(ROW, 1).ToString = "ΜΕ" Then
+                    '    Metrhtaxond = True
+                    'End If
+                End If
+
+
+
+
+                'αν ειναι ακυρωτικό ΧΟΝΔΡΙΚΗς
+                If Mid(Base_INVOICE, 1, 1) = "κ" And InStr("Tt", Mid(SXETIKO, 1, 1)) > 0 Then
+
+                    LOG13 = pol13.Text : LOG23 = pol23.Text
+                    LOG16 = POL16.Text : LOG9 = POL9.Text
+                    LOG0 = POL0.Text
+                    logarFpa23 = LOGFPA23.Text : logarFpa13 = LOGFPA13.Text
+                    f_aitiologia = "ΑΚΥΡΩΤΙΚΟ ΧΟΝΔΡΙΚΩΝ ΠΩΛΗΣΕΩΝ"
+                    Party_IDParty = ""
+                    tit_paras = "ΑΚΥΡ"
+                End If
+
+
+
+
+
+                If Mid(Base_INVOICE, 1, 1) = "P" Or (Mid(Base_INVOICE, 1, 1) = "κ" And InStr("P", Mid(SXETIKO, 1, 1)) > 0) Then
+                    LOG13 = EPIS13.Text : LOG23 = EPIS23.Text
+                    MVTP = 6
+                    f_aitiologia = "ΕΠΙΣΤΡΟΦΕΣ ΠΩΛΗΣΕΩΝ"
+                    tit_paras = "ΠΤ"
+                    kau13 = -kau13
+                    kau23 = -kau23
+                    fpa13 = -fpa13
+                    fpa23 = -fpa23
+                    KAU_AJIA = -KAU_AJIA
+                    FPA = -FPA
+                    'αν ειναι ακυρωτικό pistotikoy ΧΟΝΔΡΙΚΗς
+                    If Mid(Base_INVOICE, 1, 1) = "κ" And InStr("P", Mid(SXETIKO, 1, 1)) > 0 Then
+                        f_aitiologia = "ΑΚΥΡΩΤΙΚΟ ΠΙΣΤΩΤΙΚΩΝ ΠΩΛΗΣΕΩΝ"
+                        Party_IDParty = ""
+                        tit_paras = "ΑΚΥΡ"
+                    End If
+
+
+
+
+
+                End If
+
+
+
+
+                If Mid(Base_INVOICE, 1, 1) = "p" Or Mid(Base_INVOICE, 1, 1) = "κ" And InStr("p", Mid(SXETIKO, 1, 1)) > 0 Then
+                    Party_IDParty = ""
+                    LOG13 = episLian13.Text : LOG23 = episLian23.Text
+                    logarFpa23 = lianLOGFPA23.Text : logarFpa13 = lianLOGFPA13.Text
+                    f_logPel = "38-00-00-0000"
+                    Party_AFM = "000000000"
+                    MVTP = 6
+                    IsHand = "1"
+                    kau13 = -kau13
+                    kau23 = -kau23
+                    fpa13 = -fpa13
+                    fpa23 = -fpa23
+                    KAU_AJIA = -KAU_AJIA
+                    FPA = -FPA
+                    f_aitiologia = "ΕΠΙΣΤΡΟΦΕΣ ΛΙΑΝΙΚΩΝ ΠΩΛΗΣΕΩΝ"
+                    tit_paras = "ΔΕΠ"
+
+                    'αν ειναι ακυρωτικό pistotikoy ΧΟΝΔΡΙΚΗς
+                    If Mid(Base_INVOICE, 1, 1) = "κ" And InStr("p", Mid(SXETIKO, 1, 1)) > 0 Then
+                        f_aitiologia = "ΑΚΥΡΩΤΙΚΟ επιστροφων λιανικων"
+                        Party_IDParty = ""
+                        tit_paras = "ΑΚΥΡ"
+                    End If
+
+                End If
+                If Mid(Base_INVOICE, 1, 2) = "ΠΤ" Then
+                    kau13 = -kau13
+                    kau23 = -kau23
+                    fpa13 = -fpa13
+                    fpa23 = -fpa23
+                    KAU_AJIA = -KAU_AJIA
+                    FPA = -FPA
+                    LOG13 = EPIS13.Text : LOG23 = EPIS23.Text
+                    MVTP = 6
+                    f_aitiologia = "ΕΠΙΣΤΡΟΦΕΣ ΠΩΛΗΣΕΩΝ"
+                    Party_IDParty = Mid(Party_AFM, 5, 5)
+                    tit_paras = "ΠΤ"
+                End If
+                cdRetailIdentity = ""
+
+            End If
+            KAU_AJIA1 = KAU_AJIA
+            FPA1 = FPA
+            writeG_row(writer)
+            rowId = rowId + 11
+        Next
+
+
+
+
+
+        writer.WriteEndDocument()
+        writer.Close()
+
+
+
+
+
+        MsgBox("Δημιουργήθηκε στο " + ff)
+        ' xlApp.Quit()
+        Me.Text = "ΣΥΝΟΛΟ ΚΑΘ.ΑΞΙΑΣ " + VB6.Format(suma, "#####,###,###.00")
 
     End Sub
 End Class

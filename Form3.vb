@@ -965,6 +965,11 @@ Public Class FORM3
             If InStr(cc, ";") > 0 Then
                 xlok.Cells(ROW, 14) = Split(cc, ";")(2)  'afm
                 xlok.Cells(ROW, 15) = Split(cc, ";")(1)  'kodikos
+
+                ListBox2.Items.Add(Split(cc, ";")(2))
+
+            Else
+                xlok.Cells(ROW, 14) = ""
             End If
 
 
@@ -1022,6 +1027,7 @@ Public Class FORM3
             For K = 1 To 4000
                 If c = PEL(K, 0) Then
                     SCAN_PEL_SIMPLE = PEL(K, 1) + ";" + PEL(K, 0) + ";" + PEL(K, 2)
+
                     Exit For
                 End If
 
@@ -1192,16 +1198,31 @@ Public Class FORM3
 
         ALL = PolTim + "," + PolPis + "," + PolTamMhx + "," + PolTam + "," + AgoTim + "," + AgoPis + "," + AGOEXO + "," + PolTamMhxPIS
 
-        Dim sql As String, pol As String, ag As String
+        Dim sql As String, SQL1 As String, SQL2 As String, pol As String, ag As String
 
 180:    sql = "select 1 AS POLHS,'normal' AS PIS,'          ' as TAM, "
         sql = sql + "(TIM.AJ1+TIM.AJ2+TIM.AJ3+TIM.AJ4+TIM.AJ5+TIM.AJ6+TIM.AJ7) as AJIA,KR2 AS TYPOS,"
         sql = sql + "(TIM.FPA1+TIM.FPA2+TIM.FPA3+TIM.FPA4+TIM.FPA6+TIM.FPA7) as FPA," & "1 AS AEG,PEL.AFM,PEL.EPO,PEL.DOY,"
-        sql = sql + "PEL.EPA,PEL.DIE,PEL.POL,PLAISIO AS TK,TIM.EIDOS,HME " & " INTO TIMKEPYO "
+        sql = sql + "PEL.EPA,PEL.DIE,PEL.POL,PLAISIO AS TK,TIM.EIDOS,HME "
+        SQL1 = sql
 
-        sql = sql + "FROM TIM  INNER JOIN PEL ON TIM.EIDOS=PEL.EIDOS AND TIM.KPE=PEL.KOD  " & " "
+
+        sql = ""
+        sql = sql + " FROM TIM  INNER JOIN PEL ON TIM.EIDOS=PEL.EIDOS AND TIM.KPE=PEL.KOD  " & " "
         sql = sql + "WHERE TIM.AJ1+TIM.AJ2+TIM.AJ3+TIM.AJ4+TIM.AJ5+TIM.AJ6+TIM.AJ7>=0 AND KR2 IN (" + ALL + ")"
-190:    sql = sql + " and HME>='" + Format(D1, "MM/DD/YYYY") + "' AND HME<='" + Format(d2, "MM/DD/YYYY") + "'"
+190:    sql = sql + " and HME>='" + Format(D1, "MM/DD/YYYY") + "' AND HME<='" + Format(D2, "MM/DD/YYYY") + "'"
+
+        SQL2 = sql
+
+        R.Open("select count(*) " + SQL2, gdb, ADODB.CursorTypeEnum.adOpenDynamic, ADODB.LockTypeEnum.adLockOptimistic)
+        If R(0).Value = 0 Then
+            MsgBox("ΔΕΝ ΒΡΕΘΗΚΑΝ ΤΕΤΟΙΕΣ ΕΓΓΡΑΦΕΣ")
+        Else
+            MsgBox(" ΒΡΕΘΗΚΑΝ " + Str(R(0).Value) + "  ΕΓΓΡΑΦΕΣ")
+        End If
+        R.Close()
+
+        sql = SQL1 + " INTO TIMKEPYO " + SQL2
 
         On Error Resume Next
 
@@ -1212,6 +1233,12 @@ Public Class FORM3
 220:    ' Gdb.Execute "DROP TABLE PEL22"
 
         Dim nn As Integer, NNAG As Integer
+
+
+
+
+
+
 
 230:    gdb.Execute(sql, nn)
 
@@ -1232,7 +1259,7 @@ Public Class FORM3
 
 
 
-        R.Open("select count(*) from TIMKEPYO  WHERE AFM='000000000' and TYPOS IN (" + PolTim + ")")
+        R.Open("select count(*) from TIMKEPYO  WHERE AFM='000000000' and TYPOS IN (" + PolTim + ")", gdb, ADODB.CursorTypeEnum.adOpenDynamic, ADODB.LockTypeEnum.adLockOptimistic)
         If R(0).Value > 0 Then
 
             MsgBox("Προσοχή βρέθηκαν " + Str(R(0)) + " πελατες με ΑΦΜ=000000000 και θα μεταφερθούν στις λιανικές")
@@ -1949,11 +1976,19 @@ check_afm_Err:
     Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         'αμβροσιαδης
 
-        'ΣΤΟ ΦΥΛΛΟ 2 ΕΧΩ ΤΟΥΣ ΠΕΛΑΤΕΣ ΜΕ ΑΦΜ ΚΑΙ ΣΤΟ ΦΥΛΛΟ1 ΤΑ ΤΙΜΟΛΟΓΙΑ ΜΕ ΤΑ ΠΟΣΑ
+        'ΣΤΟ excel 2(πελατες)  ΕΧΩ ΤΟΥΣ ΠΕΛΑΤΕΣ ΜΕ ΑΦΜ ΚΑΙ ΣΤΟ excel κινησεων ΤΑ ΤΙΜΟΛΟΓΙΑ ΜΕ ΤΑ ΠΟΣΑ
         'μεταφέρει το ΑΦΜ ΣΤΟ ΦΥΛΛΟ1(στηλη 14)  ΑΠΟ ΤΟ ΦΥΛΛΟ2
 
-        ' pel(ROW, 2)  πινακας που φορτώνει ολους τους πελατες απο το φυλλο 2
+        ' pel(ROW, 2)  πινακας που φορτώνει ολους τους πελατες απο το excel 2
         ' 
+
+        'ΦΑΣΗ 1 : ΔΗΜΙΟΥΡΓΩ ΕΝΑ ΦΥΛΛΟ(1) ΓΙΑ ΝΑ ΚΑΘΗΣΟΥΝ ΟΙ ΤΙΜΕΣ ΟΠΩΣ ΘΕΛΕΙ Η ΔΗΜΙΟΥΡΗΙΑ XML 6% 13% 24%......
+        'ΦΑΣΗ 2¨: pel(ROW, 2)  πινακας που φορτώνει ολους τους πελατες απο το excel 2
+        'ΦΑΣΗ 3 : STO NEO FYLLO TOY EXCEL ΚΙΝΗΣΕΩΝ ΠΟΥ ΔΗΜΙΟΥΡΓΗΘΗΚΕ ΑΝΤΙΚΑΘΙΣΤΩ ΤΟΝ ΚΩΔΙΚΟ ΑΠΟ ΤΟ ΑΦΜ
+
+
+
+
         Dim nHME As Integer = Val(cHME.Text)
         Dim nPAR As Integer = Val(cPAR.Text)
 
@@ -2016,6 +2051,13 @@ check_afm_Err:
 
             xlWorkBook = xlApp.Workbooks.Open(TextBox1.Text)
         End If
+
+
+
+        'ΦΑΣΗ 1 : ΔΗΜΙΟΥΡΓΩ ΕΝΑ ΦΥΛΛΟ(1) ΓΙΑ ΝΑ ΚΑΘΗΣΟΥΝ ΟΙ ΤΙΜΕΣ ΟΠΩΣ ΘΕΛΕΙ Η ΔΗΜΙΟΥΡΗΙΑ XML 6% 13% 24%......
+
+
+
         xlWorkBook.Worksheets.Add()
         xl = xlWorkBook.Worksheets(2) ' .Add
 
@@ -2042,7 +2084,7 @@ check_afm_Err:
 
 
 
-            If xl.Cells(ROW, 1).value = Nothing Then
+            If xl.Cells(ROW, 1).value = Nothing And ROW > 10 Then
                 Exit Do
             End If
             xlok.Cells(ROW, 1) = xl.Cells(ROW, nKAU13) '13% kauarh
@@ -2068,19 +2110,20 @@ check_afm_Err:
             xlok.Cells(ROW, 11) = xl.Cells(ROW, nPAR)   'apa
 
             If xl.Cells(ROW, 11).value = Nothing Then
-                Exit Do
+                ' Exit Do
             End If
 
-            If xlok.Cells(ROW, 11).VALUE.ToString.Substring(0, 3) = "ΑΛΠ" Or xlok.Cells(ROW, 11).VALUE.ToString.Substring(0, 3) = "ΑΑΛ" Then    ' OI LIANIKES STON KAFE EINAI ME 0 FPA KAI Η ΚΑΘΑΡΗ ΕΙΝΑΙ ΣΤΗΝ ΠΡΑΓΜΑΤΙΚΟΤΗΤΑ ΜΕ ΦΠα
+            If Not xlok.Cells(ROW, 11).VALUE = Nothing Then
 
-                If xlok.Cells(ROW, 7).VALUE + xlok.Cells(ROW, 8).VALUE = 0 Then
-                    xlok.Cells(ROW, 2) = xl.Cells(ROW, nKAU24).VALUE / 1.24
-                    xlok.Cells(ROW, 8) = xl.Cells(ROW, nKAU24).VALUE - xlok.Cells(ROW, 2).VALUE
+                If xlok.Cells(ROW, 11).VALUE.ToString.Substring(0, 3) = "ΑΛΠ" Or xlok.Cells(ROW, 11).VALUE.ToString.Substring(0, 3) = "ΑΑΛ" Then    ' OI LIANIKES STON KAFE EINAI ME 0 FPA KAI Η ΚΑΘΑΡΗ ΕΙΝΑΙ ΣΤΗΝ ΠΡΑΓΜΑΤΙΚΟΤΗΤΑ ΜΕ ΦΠα
+                    If xlok.Cells(ROW, 7).VALUE + xlok.Cells(ROW, 8).VALUE = 0 Then
+                        xlok.Cells(ROW, 2) = xl.Cells(ROW, nKAU24).VALUE / 1.24
+                        xlok.Cells(ROW, 8) = xl.Cells(ROW, nKAU24).VALUE - xlok.Cells(ROW, 2).VALUE
 
+                    End If
                 End If
 
             End If
-
 
 
             xlok.Cells(ROW, 12) = xl.Cells(ROW, nHME).value  'hmeromhnia
@@ -2113,6 +2156,7 @@ check_afm_Err:
 
 
         '==========================================
+        'ΦΑΣΗ 2¨: pel(ROW, 2)  πινακας που φορτώνει ολους τους πελατες απο το excel 2
 
         Dim pel(4000, 2) As String
 
@@ -2209,13 +2253,20 @@ check_afm_Err:
         'MsgBox("ok ")
 
 
+
+
+
+
+        'ΦΑΣΗ 3 : STO NEO FYLLO TOY EXCEL ΚΙΝΗΣΕΩΝ ΠΟΥ ΔΗΜΙΟΥΡΓΗΘΗΚΕ ΑΝΤΙΚΑΘΙΣΤΩ ΤΟΝ ΚΩΔΙΚΟ ΑΠΟ ΤΟ ΑΦΜ
+
+
         '=========================================================real onomatepvmymo 54100
         ROW = 1
         Do While True
             ROW = ROW + 1
 
             If debug Then
-                If ROW > 100 Then Exit Do
+                ' If ROW > 100 Then Exit Do
             End If
 
             If ROW >= nRows And xl.Cells(ROW, 13).value = Nothing Then

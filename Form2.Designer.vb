@@ -23,20 +23,11 @@ Partial Class main
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents pol13 As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents EPIS13 As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents EPIS23 As System.Windows.Forms.TextBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents episLian13 As System.Windows.Forms.TextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents episLian23 As System.Windows.Forms.TextBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Lian13 As System.Windows.Forms.TextBox
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Lian23 As System.Windows.Forms.TextBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
@@ -46,8 +37,6 @@ Partial Class main
     Friend WithEvents POL16 As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents POL0 As System.Windows.Forms.TextBox
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents LIAN0 As System.Windows.Forms.TextBox
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents filexml As System.Windows.Forms.TextBox
@@ -56,11 +45,6 @@ Partial Class main
     Friend WithEvents LOGFPA13 As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents LOGFPA23 As System.Windows.Forms.TextBox
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents lianLOGFPA13 As System.Windows.Forms.TextBox
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents lianLOGFPA23 As System.Windows.Forms.TextBox
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents LOGFPA9 As System.Windows.Forms.TextBox
@@ -68,7 +52,6 @@ Partial Class main
     Friend WithEvents LOGFPA16 As System.Windows.Forms.TextBox
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents prom50 As System.Windows.Forms.TextBox
-    Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents agofpa13 As System.Windows.Forms.TextBox
     Friend WithEvents Label22 As System.Windows.Forms.Label
@@ -142,12 +125,6 @@ Partial Class main
     Friend WithEvents POL17 As System.Windows.Forms.TextBox
     Friend WithEvents Label51 As System.Windows.Forms.Label
     Friend WithEvents epan As System.Windows.Forms.CheckBox
-    Friend WithEvents Label52 As System.Windows.Forms.Label
-    Friend WithEvents lianLOGFPA24 As System.Windows.Forms.TextBox
-    Friend WithEvents Label53 As System.Windows.Forms.Label
-    Friend WithEvents episLian24 As System.Windows.Forms.TextBox
-    Friend WithEvents Label54 As System.Windows.Forms.Label
-    Friend WithEvents lian24 As System.Windows.Forms.TextBox
     Friend WithEvents cParox As System.Windows.Forms.TextBox
     Friend WithEvents Label55 As System.Windows.Forms.Label
     Friend WithEvents nParox As System.Windows.Forms.TextBox
@@ -161,8 +138,6 @@ Partial Class main
     Friend WithEvents agoepis24_6 As System.Windows.Forms.TextBox
     Friend WithEvents ago24_6 As System.Windows.Forms.TextBox
     Friend WithEvents Label60 As System.Windows.Forms.Label
-    Friend WithEvents Label61 As System.Windows.Forms.Label
-    Friend WithEvents arTam As System.Windows.Forms.TextBox
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents logParox As System.Windows.Forms.TextBox
     Friend WithEvents logPistAg As System.Windows.Forms.TextBox
@@ -172,28 +147,12 @@ Partial Class main
     Friend WithEvents logLian As System.Windows.Forms.TextBox
     Friend WithEvents logTimol As System.Windows.Forms.TextBox
     Friend WithEvents Label62 As System.Windows.Forms.Label
-    Friend WithEvents Label63 As System.Windows.Forms.Label
-    Friend WithEvents f1 As System.Windows.Forms.TextBox
-    Friend WithEvents f7 As System.Windows.Forms.TextBox
-    Friend WithEvents f6 As System.Windows.Forms.TextBox
-    Friend WithEvents f5 As System.Windows.Forms.TextBox
-    Friend WithEvents f4 As System.Windows.Forms.TextBox
-    Friend WithEvents f3 As System.Windows.Forms.TextBox
-    Friend WithEvents f2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label64 As System.Windows.Forms.Label
-    Friend WithEvents Label65 As System.Windows.Forms.Label
-    Friend WithEvents Label66 As System.Windows.Forms.Label
-    Friend WithEvents Label67 As System.Windows.Forms.Label
-    Friend WithEvents Label68 As System.Windows.Forms.Label
-    Friend WithEvents Label69 As System.Windows.Forms.Label
-    Friend WithEvents Label70 As System.Windows.Forms.Label
     Friend WithEvents logExod As System.Windows.Forms.TextBox
     Friend WithEvents cexod As System.Windows.Forms.TextBox
     Friend WithEvents Label71 As System.Windows.Forms.Label
     Friend WithEvents nExod As System.Windows.Forms.TextBox
     Friend WithEvents eispraxeis As System.Windows.Forms.Button
     Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents logLOIPES As System.Windows.Forms.TextBox
     Friend WithEvents cLOIPES As System.Windows.Forms.TextBox
     Friend WithEvents nLOIPES As System.Windows.Forms.TextBox
@@ -201,6 +160,52 @@ Partial Class main
     Friend WithEvents pel30 As System.Windows.Forms.TextBox
     Friend WithEvents Label73 As System.Windows.Forms.Label
     Friend WithEvents Label74 As System.Windows.Forms.Label
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents G_XML_MERCURY As System.Windows.Forms.Button
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents f7 As System.Windows.Forms.TextBox
+    Friend WithEvents Label70 As System.Windows.Forms.Label
+    Friend WithEvents f6 As System.Windows.Forms.TextBox
+    Friend WithEvents Label69 As System.Windows.Forms.Label
+    Friend WithEvents f5 As System.Windows.Forms.TextBox
+    Friend WithEvents Label68 As System.Windows.Forms.Label
+    Friend WithEvents f4 As System.Windows.Forms.TextBox
+    Friend WithEvents Label63 As System.Windows.Forms.Label
+    Friend WithEvents Label65 As System.Windows.Forms.Label
+    Friend WithEvents Label66 As System.Windows.Forms.Label
+    Friend WithEvents Label64 As System.Windows.Forms.Label
+    Friend WithEvents Label67 As System.Windows.Forms.Label
+    Friend WithEvents f3 As System.Windows.Forms.TextBox
+    Friend WithEvents f1 As System.Windows.Forms.TextBox
+    Friend WithEvents f2 As System.Windows.Forms.TextBox
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label61 As System.Windows.Forms.Label
+    Friend WithEvents arTam As System.Windows.Forms.TextBox
+    Friend WithEvents lianLOGFPA23 As System.Windows.Forms.TextBox
+    Friend WithEvents lianLOGFPA13 As System.Windows.Forms.TextBox
+    Friend WithEvents Lian13 As System.Windows.Forms.TextBox
+    Friend WithEvents Lian23 As System.Windows.Forms.TextBox
+    Friend WithEvents Label52 As System.Windows.Forms.Label
+    Friend WithEvents lianLOGFPA24 As System.Windows.Forms.TextBox
+    Friend WithEvents Label53 As System.Windows.Forms.Label
+    Friend WithEvents episLian24 As System.Windows.Forms.TextBox
+    Friend WithEvents Label54 As System.Windows.Forms.Label
+    Friend WithEvents lian24 As System.Windows.Forms.TextBox
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents episLian13 As System.Windows.Forms.TextBox
+    Friend WithEvents LIAN0 As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents episLian23 As System.Windows.Forms.TextBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
