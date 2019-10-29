@@ -695,6 +695,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
         Me.TabPage2 = New System.Windows.Forms.TabPage
         Me.G_XML_MERCURY = New System.Windows.Forms.Button
+        Me.eispraxGkathg = New System.Windows.Forms.Button
+        Me.ListBox3 = New System.Windows.Forms.ListBox
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -749,11 +751,11 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'xmlFin
         '
         Me.xmlFin.BackColor = System.Drawing.Color.Lime
-        Me.xmlFin.Location = New System.Drawing.Point(744, 113)
+        Me.xmlFin.Location = New System.Drawing.Point(15, 206)
         Me.xmlFin.Name = "xmlFin"
-        Me.xmlFin.Size = New System.Drawing.Size(206, 37)
+        Me.xmlFin.Size = New System.Drawing.Size(193, 37)
         Me.xmlFin.TabIndex = 5
-        Me.xmlFin.Text = "Δημιουργία XML Β κατηγ OLD"
+        Me.xmlFin.Text = "Δημιουργία XML ΠΩΛΗΣΕΩΝ               Β κατηγ "
         Me.xmlFin.UseVisualStyleBackColor = False
         '
         'bres_file
@@ -2018,9 +2020,9 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'eispraxeis
         '
         Me.eispraxeis.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.eispraxeis.Location = New System.Drawing.Point(20, 160)
+        Me.eispraxeis.Location = New System.Drawing.Point(15, 160)
         Me.eispraxeis.Name = "eispraxeis"
-        Me.eispraxeis.Size = New System.Drawing.Size(188, 25)
+        Me.eispraxeis.Size = New System.Drawing.Size(193, 25)
         Me.eispraxeis.TabIndex = 132
         Me.eispraxeis.Text = "XML εισπρ.mercury B' κατη"
         Me.eispraxeis.UseVisualStyleBackColor = False
@@ -2115,6 +2117,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.ListBox3)
         Me.TabPage1.Controls.Add(Me.Panel2)
         Me.TabPage1.Controls.Add(Me.TableLayoutPanel1)
         Me.TabPage1.Controls.Add(Me.ListBox2)
@@ -2605,10 +2608,29 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.G_XML_MERCURY.Text = "Δημιουργία XML Γ κατηγ mercury"
         Me.G_XML_MERCURY.UseVisualStyleBackColor = False
         '
+        'eispraxGkathg
+        '
+        Me.eispraxGkathg.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.eispraxGkathg.Location = New System.Drawing.Point(211, 218)
+        Me.eispraxGkathg.Name = "eispraxGkathg"
+        Me.eispraxGkathg.Size = New System.Drawing.Size(168, 25)
+        Me.eispraxGkathg.TabIndex = 144
+        Me.eispraxGkathg.Text = "XML εισπρ.mercury Γ' κατη"
+        Me.eispraxGkathg.UseVisualStyleBackColor = False
+        '
+        'ListBox3
+        '
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.Location = New System.Drawing.Point(481, 377)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.Size = New System.Drawing.Size(201, 69)
+        Me.ListBox3.TabIndex = 136
+        '
         'main
         '
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1284, 781)
+        Me.Controls.Add(Me.eispraxGkathg)
         Me.Controls.Add(Me.G_XML_MERCURY)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.eispraxeis)
@@ -3383,7 +3405,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         w.WriteAttributeString("AM_DcTp_Dscr", AM_DcTp_Dscr)
         w.WriteAttributeString("GlbCff", "1")
         w.WriteAttributeString("Party_Sts", "1") ' neo
-        w.WriteAttributeString("Party_IDParty", Mid(Party_AFM, 5, 5)) ' κωδικος πελατη 13 
+        w.WriteAttributeString("Party_IDParty", Mid(Party_AFM, 1, 9)) ' κωδικος πελατη 13 
         w.WriteAttributeString("AMO_Srl_cd", "πλ00")
         w.WriteAttributeString("KepyoCatData_SUMKEPYOVAT", Replace(Str(FPA1), ",", "."))  'FPA1)
         w.WriteAttributeString("Party_PHONE2", "")
@@ -4421,7 +4443,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             Else
                 Metrhtaxond = False
                 IsHand = ""
-                Party_IDParty = Mid(Party_AFM, 5, 5)
+                Party_IDParty = Mid(Party_AFM, 1, 9)
 
                 If InStr("Tt", Mid(Base_INVOICE, 1, 1)) > 0 Then
 
@@ -4517,7 +4539,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                     LOG13 = EPIS13.Text : LOG23 = EPIS23.Text
                     MVTP = 6
                     f_aitiologia = "ΕΠΙΣΤΡΟΦΕΣ ΠΩΛΗΣΕΩΝ"
-                    Party_IDParty = Mid(Party_AFM, 5, 5)
+                    Party_IDParty = Mid(Party_AFM, 1, 9)
                     tit_paras = "ΠΤ"
                 End If
                 cdRetailIdentity = ""
@@ -4750,8 +4772,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             w.WriteAttributeString("AM_DcTp_cd", tit_paras)
             w.WriteAttributeString("AMO_Srl_DSCR", f_aitiologia)
             w.WriteAttributeString("AMO_Srl_cd", "")
-            w.WriteAttributeString("KepyoCatData_SUMKEPYOVAT", FPA1)
-            w.WriteAttributeString("KepyoCatData_SUMKEPYOYP", KAU_AJIA1)
+            '  w.WriteAttributeString("KepyoCatData_SUMKEPYOVAT", FPA1)
+            w.WriteAttributeString("KepyoCatData_SUMKEPYOVAT", Replace(FPA1, ",", "."))
+            w.WriteAttributeString("KepyoCatData_SUMKEPYOYP", Replace(KAU_AJIA1, ",", "."))
+            ' w.WriteAttributeString("KepyoCatData_SUMKEPYOYP", KAU_AJIA1)
             w.WriteAttributeString("Party_CASTVAT", "1")
             w.WriteAttributeString("System_sys", "SB")
 
@@ -4866,6 +4890,87 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
     End Sub
+
+
+
+
+
+    Sub writeEGG_row(ByVal w As XmlTextWriter, ByVal logpel As String, ByVal logtameio As String, ByVal poso As Single)
+        Dim mBase_INVOICE As String = LTrim(Str(Val(Mid(Base_INVOICE, 2, 6))))
+
+        'big row
+        w.WriteStartElement("row") : w.WriteAttributeString("rowid", LTrim(Str(rowId))) : w.WriteAttributeString("mode", "3") : w.WriteAttributeString("name", "Hd")
+        f_aitiologia = "ΕΙΣΠΡΑΞΕΙΣ"
+
+        '========================================================
+        w.WriteStartElement("data")
+        w.WriteStartElement("new")
+
+        If Mid(Base_INVOICE, 1, 1) = "L" Or Mid(Base_INVOICE, 1, 1) = "p" Then
+        Else
+            '<new 
+            w.WriteAttributeString("GlbCff", "1")
+            w.WriteAttributeString("authDt", Base_dt)
+            w.WriteAttributeString("Reserved", "0")
+            w.WriteAttributeString("CDt", Base_dt)
+            w.WriteAttributeString("Cnt", mBase_INVOICE)
+            w.WriteAttributeString("dscr", "")
+            w.WriteAttributeString("dt", Base_dt)
+            w.WriteAttributeString("JrnCnt", "0")
+            w.WriteAttributeString("Party_ADDRESS", Party_SNAME) '==========
+            w.WriteAttributeString("Party_JOB", "")
+            w.WriteAttributeString("Party_DOY", "5111")
+            w.WriteAttributeString("Party_CASTVAT_Dscr", "")
+            w.WriteAttributeString("Party_ISK_D_A_Dscr", "")
+            w.WriteAttributeString("Party_AFM", Trim(Party_AFM))
+            w.WriteAttributeString("Party_SNAME", "-" + Party_SNAME) '==========
+            w.WriteAttributeString("Party_IDParty", Party_IDParty) '  "1881")
+            w.WriteAttributeString("KEPYO_BClass", "2")
+            w.WriteAttributeString("KEPYO_Val", "0")
+            w.WriteAttributeString("AP_Party_Dscr", Party_SNAME) '==========
+            w.WriteAttributeString("AP_Party_cd", "18-015")
+            w.WriteAttributeString("F_Coin_Dscr", "ΕURO")
+            w.WriteAttributeString("F_Coin_ShCut", "€")
+            w.WriteAttributeString("FL_Dgrs_Dscr", "ΓΕΝΙΚΗ ΛΟΓΙΣΤΙΚΗ / ΕΣΟΔΑ - ΕΞΟΔΑ")
+            w.WriteAttributeString("XU_Usr_dscr", "inner")
+            w.WriteAttributeString("XU_Usr_cd", "inner")
+            w.WriteAttributeString("AM_DcTp_Dscr", AM_DcTp_Dscr)
+            w.WriteAttributeString("AM_DcTp_cd", "ΕΙΣΠ")   'AM_DcTp_cd)
+            w.WriteAttributeString("AMO_Srl_DSCR", f_aitiologia)
+            w.WriteAttributeString("AMO_Srl_cd", "")
+            w.WriteAttributeString("KepyoCatData_SUMKEPYOVAT", "0")
+            w.WriteAttributeString("KepyoCatData_SUMKEPYOYP", "0")
+            w.WriteAttributeString("Party_CASTVAT", "0")
+            w.WriteAttributeString("System_sys", "FR")
+            w.WriteAttributeString("MVTP", "3")
+
+            w.WriteAttributeString("IsHand", IsHand)
+
+
+        End If
+
+
+
+        w.WriteEndElement() ' new />  w.WriteAttributeString("KepyoCatData_SUMKEPYOVAT", FPA1)
+        w.WriteEndElement() ' /data
+        '========================================================
+        w.WriteStartElement("detail")  'big
+
+        rowG_detail(f_aitiologia, logpel, poso, 0, w)
+        rowG_detail(f_aitiologia, logtameio, 0, poso, w)
+
+
+
+
+        ' rowG_detail(f_aitiologia, f_logPel, 0, kau24 + kau17 + kau23 + kau13 + kau16 + kau0 + kau9 + fpa24 + fpa17 + fpa23 + fpa13 + fpa16 + fpa9, w)
+
+
+
+        w.WriteEndElement()  'detail  big
+        '========================================================
+        w.WriteEndElement() 'row hd
+    End Sub
+
 
 
 
@@ -5406,7 +5511,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         w.WriteAttributeString("Ledger_Supl", F_PEL30) 'pel30.Text)  'neo 
 
         w.WriteAttributeString("Party_Sts", "1")
-        w.WriteAttributeString("Party_IDParty", Mid(Party_AFM, 5, 5)) ' κωδικος πελατη 13 
+        w.WriteAttributeString("Party_IDParty", Mid(Party_AFM, 1, 9)) ' κωδικος πελατη 13 
         w.WriteAttributeString("Party_DOY", "")
         w.WriteAttributeString("Base_dt", Base_dt)
         w.WriteAttributeString("Party_CASTVAT_Dscr", "ΚΑΝΟΝΙΚΟ")
@@ -5557,7 +5662,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
         w.WriteAttributeString("Ledger_Supl", F_PEL30) 'pel30.Text)  'neo 
         w.WriteAttributeString("Party_Sts", "1")
-        w.WriteAttributeString("Party_IDParty", Mid(Party_AFM, 5, 5)) ' κωδικος πελατη 13 
+        w.WriteAttributeString("Party_IDParty", Mid(Party_AFM, 1, 9)) ' κωδικος πελατη 13 
         w.WriteAttributeString("Party_DOY", "")
         w.WriteAttributeString("Base_dt", Base_dt)
         w.WriteAttributeString("Party_CASTVAT_Dscr", "ΚΑΝΟΝΙΚΟ")
@@ -5592,6 +5697,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 If Len(TelLOG(k)) < 2 Then
                     ListBox2.BackColor = Color.Red
                     ListBox2.Items.Add("--ΔΕΝ ΕΧΕΙ ΛΟΓΑΡΙΑΣΜΟ ΣΤΟ " + Base_INVOICE)
+                    ListBox3.Items.Add("κατηγ ΦΠΑ" + Str(k) + Base_INVOICE + "ΔΕΝ ΕΧΕΙ ΛΟΓΑΡΙΑΣΜΟ ")
                 End If
                 rowBAgor_detail(TelLOG(k), kau(k), AJFPA(k), w)
                 ListBox2.Items.Add(TelLOG(k) + " - " + Format(kau(k), "000000.00") + "- ΦΠΑ - " + Format(AJFPA(k), "000000.00"))
@@ -5614,7 +5720,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
     Private Sub rowBAgor_detail(ByVal mlog As String, ByVal mKau As Single, ByVal mFpa As Single, ByVal w As XmlTextWriter)
 
-        FileOpen(11, "LOG.TXT", OpenMode.Append)
+        FileOpen(11, "C:\MERCVB\LOG.TXT", OpenMode.Append)
 
         'Type Visual Basic 6 code here...
         WriteLine(11, mlog + ";" + Str(mKau) + ";" + Str(mFpa))
@@ -5704,6 +5810,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '======================================================================================================
         ' mercury
 
+        MsgBox("αντιστοίχηση λογαριασμων λογκατ1;λογ κατ 2;λογ κατ 3;;;λογκατ 6 π.χ. 70-0030;70-0087;70-0084;;70-000;70-0087")
+
+
+
         Dim a As String
         Dim K As Short
         Dim C As String
@@ -5734,6 +5844,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
         Dim sb0 As Single = 0
         Dim esb0 As Single = 0
+        ListBox2.Items.Clear()
+        ListBox2.BackColor = Color.White
 
 
         ' CO TO DIAXORISTIKO DEKADIKON ARITMON
@@ -5875,8 +5987,11 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
         '====================================================================================
         Dim ff As String = "c:\mercvb\m" + VB6.Format(Now, "YYYYddmmHHMM") + ".export" ' "\\Logisthrio\333\pr.export" '
+        ff = InputBox(ff, "Oνομα Αρχείου export", ff)
 
         Dim ffTXT As String = "c:\mercvb\SYNOLA----" + VB6.Format(Now, "YYYYddmmHHMM") + ".TXT" ' "\\Logisthrio\333\pr.export" '
+        ListBox1.Items.Clear()
+
 
 
         Dim writer As New XmlTextWriter(ff, System.Text.Encoding.UTF8)
@@ -6345,8 +6460,11 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 System_sys = "SB" '      'SB =POLISEIS FR
 
             Else
-                MsgBox("δεν βρηκα αντιστοιχηση στο " + Base_INVOICE)
-
+                Dim latos As Integer
+                latos = MsgBox("Δεν βρέθηκε αντιστοιχηση στο " + Base_INVOICE + " Συνεχίζω;", MsgBoxStyle.YesNo)
+                If latos = vbNo Then
+                    End
+                End If
 
 
             End If
@@ -7119,7 +7237,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             AMO_Srl_DSCR = "Πωλήσεις" '"ΠΩΛΗΣΕΙΣ"
             Base_dt = VB6.Format(sqlDT.Rows(ROW)("HME"), "YYYY-mm-dd")
             Base_INVOICE = IIf(IsDBNull(sqlDT.Rows(ROW)("atim")), "", sqlDT.Rows(ROW)("atim"))   ' sqlDT.Rows(ROW)("ATIM")  ' =""#ΤΥΠ-0/Π000/1/Τιμολόγιο Παροχής Υπηρεσιών"
-            Party_SNAME = sqlDT.Rows(ROW)("EPO")  '=""Θ. ΓΡΑΜΜΑΤΗΣ Κ.ΣΙΑ Ε.Ε""
+            Party_SNAME = If(IsDBNull(sqlDT.Rows(ROW)("EPO")), "", sqlDT.Rows(ROW)("EPO")) '=""Θ. ΓΡΑΜΜΑΤΗΣ Κ.ΣΙΑ Ε.Ε""
             f_logPel = pel30.Text ' "30-00-00-0000"
 
             KAU_AJIA = nVal(sqlDT.Rows(ROW)("XREOSI")) + nVal(sqlDT.Rows(ROW)("PISTOSI"))
@@ -7847,7 +7965,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
 
-        par = cParox.Text + cTimol.Text + cLian.Text + cPistLian.Text + cPistTim.Text + cTimAg.Text + cPistAg.Text + cexod.Text + cLOIPES.Text
+        par = cParox.Text + cTimol.Text + cLian.Text + cPistLian.Text + cPistTim.Text
+        ' par = par + cTimAg.Text + cPistAg.Text + cexod.Text + cLOIPES.Text
 
 
 
@@ -8106,7 +8225,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             Else
                 Metrhtaxond = False
                 IsHand = ""
-                Party_IDParty = Mid(Party_AFM, 5, 5)
+                Party_IDParty = Mid(Party_AFM, 1, 9)
 
                 If InStr("Ttυ", Mid(Base_INVOICE, 1, 1)) > 0 Then
 
@@ -8202,7 +8321,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                     LOG13 = EPIS13.Text : LOG23 = EPIS23.Text
                     MVTP = 6
                     f_aitiologia = "ΕΠΙΣΤΡΟΦΕΣ ΠΩΛΗΣΕΩΝ"
-                    Party_IDParty = Mid(Party_AFM, 5, 5)
+                    Party_IDParty = Mid(Party_AFM, 1, 9)
                     tit_paras = "ΠΤ"
                 End If
                 cdRetailIdentity = ""
@@ -8228,6 +8347,510 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         MsgBox("Δημιουργήθηκε στο " + ff)
         ' xlApp.Quit()
         Me.Text = "ΣΥΝΟΛΟ ΚΑΘ.ΑΞΙΑΣ " + VB6.Format(suma, "#####,###,###.00")
+
+    End Sub
+
+    Private Sub Button9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eispraxGkathg.Click
+        '======================================================================================================
+        ' mercury  Γ ΚΑΤΗΓΟΡΙΑΣ
+
+        Dim a As String
+        Dim K As Short
+        Dim C As String
+
+
+        Dim sb13 As Single = 0
+        Dim sb23 As Single = 0
+        Dim sb24 As Single = 0
+
+
+        Dim sb17 As Single = 0
+        Dim sb16 As Single = 0
+        Dim sb9 As Single = 0
+
+
+
+        Dim esb13 As Single = 0
+        Dim esb23 As Single = 0
+
+        Dim esb24 As Single = 0
+        Dim esb17 As Single = 0
+
+
+        Dim bp13 As Single = 0
+        Dim bp23 As Single = 0
+        Dim bp0 As Single = 0
+
+
+        Dim sb0 As Single = 0
+        Dim esb0 As Single = 0
+
+
+        ' CO TO DIAXORISTIKO DEKADIKON ARITMON
+        Dim CO As String = String.Format(1.1).Substring(1, 1)
+
+
+        ' MsgBox("ΠΡΟΣΟΧΗ ΔΙΑΒΑΖΕΙ ΑΠΟ ΤΗΝ 2η ΣΕΙΡΑ ΜΕ ΓΡΑΜΟΓΡΑΦΗΣΗ:" + Chr(13) + "AJ1 AJ2	AJ3	AJ4	AJ5	AJI	FPA1	FPA2	FPA3	FPA4	ATIM	HME	EPO	AFM")
+
+
+        ' Write the string as utf-8.
+        ' This also writes the 3-byte utf-8 preamble at the beginning of the file.
+        Dim appendMode As Boolean = False ' This overwrites the entire file.
+        ' Dim sw As New StreamWriter("C:\MERCVB\out_utf9.export", appendMode, System.Text.Encoding.UTF8)
+        'sw.Write(TextBox1.Text)
+        'sw.Close()
+        If checkServer() = False Then
+            MsgBox("αποτυχία ενημέρωσης")
+            Exit Sub
+        End If
+
+
+        Dim pol As String = " "
+        Dim polepis As String = " "
+        Dim ago As String = " "
+        Dim AGOEPIS As String = " "
+
+        Dim lfpa(7) As String
+        Get_AJ_ASCII(pol, polepis, ago, AGOEPIS)
+
+        Dim par As String = " "
+        Dim mf As String
+        mf = "c:\mercvb\err3.txt"
+        If Len(Dir(UCase(mf))) = 0 Then
+            par = pol '  " 'G','g','Ξ','D'  "
+            par = InputBox("ΠΑΡΑΣΤΑΤΙΚΑ", , par)
+        Else
+            FileOpen(1, mf, OpenMode.Input)
+            '   Input(1, par)
+            par = LineInput(1)
+            FileClose(1)
+        End If
+
+        '  par = InputBox("ΠΑΡΑΣΤΑΤΙΚΑ", , par)
+
+        FileOpen(1, mf, OpenMode.Output)
+        PrintLine(1, par)
+        FileClose(1)
+
+
+
+        par = cParox.Text + cTimol.Text + cLian.Text + cPistLian.Text + cPistTim.Text + cTimAg.Text + cPistAg.Text + cexod.Text
+
+
+        Dim ccc As String = ""
+
+        For K = 1 To Len(par)
+            ccc = ccc + "'" + Mid(par, K, 1) + "',"
+        Next
+        ccc = Mid(ccc, 1, Len(ccc) - 1)
+        par = ccc
+        Dim synt As String
+        If epan.CheckState = CheckState.Checked Then
+            synt = ""
+
+        Else
+            synt = " and (B_C1 is null or LEFT(B_C1,1)<>'*') "
+
+        End If
+        Dim SQL As String   '   ID_NUM GEMISMA NA JEKINA APO 1
+        SQL = "SELECT XREOSI,PISTOSI,ATIM,"
+        SQL = SQL + "HME,PEL.EPO,PEL.AFM,EGG.KOD,PEL.DIE,PEL.XRVMA"    '"CONVERT(CHAR(10),HME,3) AS HMEP
+        SQL = SQL + ",PEL.EPA,PEL.POL,EGG.EIDOS,EGG.ID  "
+
+        SQL = SQL + "   FROM EGG INNER JOIN PEL ON EGG.EIDOS=PEL.EIDOS AND EGG.KOD=PEL.KOD "
+        SQL = SQL + " WHERE ( (PISTOSI>0 AND EGG.EIDOS='e') ) and  HME>='" + VB6.Format(apo, "mm/dd/yyyy") + "'  AND HME<='" + VB6.Format(eos, "mm/dd/yyyy") + "'  "
+        ' SQL = SQL + " WHERE LEFT(ATIM,1) IN     (  " + par + "  )    and HME>='" + VB6.Format(apo, "mm/dd/yyyy") + "'  AND HME<='" + VB6.Format(eos, "mm/dd/yyyy") + "'  "
+        SQL = SQL + "  AND XREOSI+PISTOSI>0 AND EGG.KOD<>'9990'  " + synt
+        SQL = SQL + " order by HME"
+
+
+
+
+
+        '  SQL = "SELECT  top 20  AJ1 ,AJ2  from TIM  order by HME"
+
+        ExecuteSQLQuery(SQL)
+
+        If sqlDT.Rows.Count = 0 Then
+            MsgBox("ΔΕΝ ΒΡΕΘΗΚΑΝ ΕΓΓΡΑΦΕΣ")
+            Exit Sub
+        End If
+
+
+        If Len(TextBox1.Text) < 2 Then
+            '  Exit Sub
+        End If
+
+        ' xlWorkBook = xlApp.Workbooks.Open(TextBox1.Text)
+        '  xl = xlWorkBook.Worksheets(1) ' .Add
+
+
+
+
+        '====================================================================================
+        Dim ff As String = "c:\mercvb\m" + VB6.Format(Now, "YYYYddmmHHMM") + ".export" ' "\\Logisthrio\333\pr.export" '
+
+        Dim writer As New XmlTextWriter(ff, System.Text.Encoding.UTF8)
+        writer.WriteStartDocument(True)
+        writer.Formatting = Formatting.Indented
+        writer.Indentation = 2
+        writer.WriteStartElement("Data")
+        writer.WriteAttributeString("Name", "GL")
+        writer.WriteAttributeString("Style", "Browse")
+        '====================================================================================
+
+
+        Dim enter_Renamed As String
+        enter_Renamed = Chr(13)
+
+        'FileOpen(1, "C:\MERCVB\A778.XML", OpenMode.Output)
+        ROW = Val(ApoSeira.Text) - 1
+
+        Dim hand As Integer = 0
+
+        fnTimol = Val(nTimol.Text)
+        fnLian = Val(nLian.Text)
+        fnPistTim = Val(nPistTim.Text)
+        fnPistLian = Val(nPistLian.Text)
+
+        fnPistAg = Val(nPistAg.Text)
+        fnTimAg = Val(nTimAg.Text)
+        fnPAR = Val(nParox.Text)
+
+
+
+
+        ' As Integer
+        fcTimol = cTimol.Text
+        fcLian = cLian.Text
+        fcPistTim = cPistTim.Text
+        fcPistLian = cPistLian.Text
+
+        fcTimAg = cTimAg.Text
+        fcPistAg = cPistAg.Text
+
+        fcPAR = cParox.Text
+        fcexod = cexod.Text
+
+
+
+
+        lfpa(1) = f1.Text
+        lfpa(2) = f2.Text
+        lfpa(3) = f3.Text
+        lfpa(4) = f4.Text
+        lfpa(5) = f5.Text
+        lfpa(6) = f6.Text
+        lfpa(7) = f7.Text
+
+
+
+
+
+
+        Dim ajia_ana_parast(30) As Single
+        Dim parast(30) As String
+        Dim OK, i, nSynal As Integer
+        nSynal = 0
+        Dim SPol(7) As Single
+        Dim SEpPol(7) As Single
+        Dim SAg(7) As Single
+        Dim SEpAg(7) As Single
+        Dim SeXOD(7) As Single
+
+
+
+        'μηδενιζω τους αθροιστές
+        For K = 1 To 7
+            SPol(K) = 0
+            SEpPol(K) = 0 ' As Single
+            SAg(K) = 0 ' As Single
+            SEpAg(K) = 0 ' As Single
+            SAg(K) = 0 ' As Single
+            SeXOD(K) = 0
+        Next
+
+
+
+
+
+
+
+
+
+
+        '===============================================================================real onomatepvmymo 54100
+        'Do While True
+        'ROW = ROW + 1
+
+
+        Dim OK1 As Integer
+
+        For ROW = 0 To sqlDT.Rows.Count - 1
+
+            OK1 = 0
+
+            Me.Text = ROW
+            kau13 = 0
+            kau23 = 0
+            kau16 = 0
+            kau9 = 0
+            kau0 = 0
+            kau24 = 0
+            kau13 = 0
+
+            For K = 1 To 7
+                kau(K) = 0
+            Next
+
+            AM_DcTp_Dscr = "Τιμολόγιο"
+            Party_AFM = Trim(IIf(IsDBNull(sqlDT.Rows(ROW)("AFM")), "", sqlDT.Rows(ROW)("AFM")))  'Dim Party_AFM As String ' =""999349996
+            If Len(Trim(Party_AFM)) <= 4 Then
+                Party_AFM = "000000000"
+            End If
+
+            Party_ADDRESS = IIf(IsDBNull(sqlDT.Rows(ROW)("DIE")), "", sqlDT.Rows(ROW)("DIE"))  'ToString  ' "ΠΟΛΥΣΤΗΛΟ ΚΑΒΑΛΑΣ"
+            AM_DcTp_cd = "ΕΙΣΠ"
+            AMO_Srl_DSCR = "Πωλήσεις" '"ΠΩΛΗΣΕΙΣ"
+            Base_dt = VB6.Format(sqlDT.Rows(ROW)("HME"), "YYYY-mm-dd")
+            Base_INVOICE = IIf(IsDBNull(sqlDT.Rows(ROW)("atim")), "", sqlDT.Rows(ROW)("atim"))   ' sqlDT.Rows(ROW)("ATIM")  ' =""#ΤΥΠ-0/Π000/1/Τιμολόγιο Παροχής Υπηρεσιών"
+            Party_SNAME = If(IsDBNull(sqlDT.Rows(ROW)("EPO")), "", sqlDT.Rows(ROW)("EPO")) '=""Θ. ΓΡΑΜΜΑΤΗΣ Κ.ΣΙΑ Ε.Ε""
+            f_logPel = pel30.Text ' "30-00-00-0000"
+            Party_IDParty = Mid(Party_AFM, 1, 9)
+            KAU_AJIA = nVal(sqlDT.Rows(ROW)("XREOSI")) + nVal(sqlDT.Rows(ROW)("PISTOSI"))
+            FPA = 0 'nVal(sqlDT.Rows(ROW)(7)) + nVal(sqlDT.Rows(ROW)(8)) + nVal(sqlDT.Rows(ROW)(9)) + nVal(sqlDT.Rows(ROW)(10)) + nVal(sqlDT.Rows(ROW)("FPA6")) + nVal(sqlDT.Rows(ROW)("FPA7"))
+
+
+            kau13 = 0 'nVal(sqlDT.Rows(ROW)(1))
+            kau23 = 0 'nVal(sqlDT.Rows(ROW)(2))
+            kau16 = 0 'nVal(sqlDT.Rows(ROW)(3))
+            kau9 = 0 'nVal(sqlDT.Rows(ROW)(4))
+            kau0 = 0 'nVal(sqlDT.Rows(ROW)(5))
+            kau24 = 0 'nVal(sqlDT.Rows(ROW)("AJ6"))
+            kau17 = 0 'nVal(sqlDT.Rows(ROW)("AJ7"))
+
+
+
+
+
+            fpa13 = 0 'nVal(sqlDT.Rows(ROW)(7))
+            fpa23 = 0 'nVal(sqlDT.Rows(ROW)(8))
+            fpa16 = 0 'nVal(sqlDT.Rows(ROW)(9))
+            fpa9 = 0 'nVal(sqlDT.Rows(ROW)(10))
+            fpa24 = 0 'nVal(sqlDT.Rows(ROW)("FPA6"))
+            fpa17 = 0 'nVal(sqlDT.Rows(ROW)("FPA7"))
+
+
+
+
+
+            LOG13 = pol13.Text : LOG23 = pol23.Text
+            LOG16 = POL16.Text : LOG9 = POL9.Text
+            LOG0 = POL0.Text
+
+            LOG24 = POL24.Text : LOG17 = POL17.Text
+
+
+            '  FL_Ledg_Dscr = "ΕΙΣΠΡΑΞΕΙΣ"
+            FL_Ledg_cd = pol23.Text ' "70-00-00-0057"
+
+
+
+
+            KAU_AJIA1 = KAU_AJIA
+            FPA1 = FPA
+
+
+
+
+            If sqlDT.Rows(ROW)("eidos").ToString = "e" And nVal(sqlDT.Rows(ROW)("PISTOSI")) > 0 Then
+
+                MVTP = "7" '6=πιστωτικα 2=αγορες  7=πιστωτικα αγορών  3=ΕΙΣΠΡΑΞΕΙΣ
+                System_sys = "FR" 'ΕΙΣΠΡΑΞΕΙΣ            'SB =POLISEIS FR
+                FL_Ledg_Dscr = "ΕΙΣΠΡΑΞΕΙΣ"
+                TelLOG(1) = "38-01-00-0000"
+                kau(1) = KAU_AJIA
+                AJFPA(1) = 0
+
+                'GIA NA MHN EXEI KEPYO
+                KAU_AJIA1 = 0
+                FPA1 = 0
+                f_logPel = "30-01-01-" + sqlDT.Rows(ROW)("KOD").ToString  ' pel30.Text ' "30-00-00-0000"
+                pel30.Text = f_logPel  '"30-00-00-0000"
+                F_AMO_SRL_DSCR = "ΕΙΣΠΡΑΞΕΙΣ"
+
+                OK1 = 1
+            End If
+
+
+            'If sqlDT.Rows(ROW)("eidos").ToString = "r" And nVal(sqlDT.Rows(ROW)("XREOSI")) > 0 Then
+            '    FL_Ledg_Dscr = "ΠΛΗΡΩΜΕΣ"
+            '    MVTP = "8" '6=πιστωτικα 2=αγορες  7=πιστωτικα αγορών  3=ΕΙΣΠΡΑΞΕΙΣ
+            '    System_sys = "FP" 'πληρωμεσ σε προμηθευτεσ            'SB =POLISEIS FR
+
+            '    TelLOG(1) = "38-00-00-0000"
+            '    kau(1) = KAU_AJIA
+            '    AJFPA(1) = 0
+            '    pel30.Text = "50-00-00-0000"
+            '    F_AMO_SRL_DSCR = "ΠΛΗΡΩΜΕΣ"
+            '    'GIA NA MHN EXEI KEPYO
+            '    KAU_AJIA1 = 0
+            '    FPA1 = 0
+
+            '    OK1 = 2
+
+
+            'End If
+
+
+            'If OK1 > 0 Then
+            '    writeCAgor_row(writer)
+            '    rowId = rowId + 11
+            'End If
+
+            'Loop
+            Application.DoEvents()
+
+            OK = 0
+
+            'τι σουμα βγαζει το καθε παραστατικό 
+            For i = 1 To 30
+                If Mid(Base_INVOICE, 1, 1) = Mid(parast(i), 1, 1) Then
+                    OK = 1
+                    ajia_ana_parast(i) = ajia_ana_parast(i) + KAU_AJIA1
+                End If
+            Next
+            If OK = 0 Then
+                nSynal = nSynal + 1
+                parast(nSynal) = Mid(Base_INVOICE, 1, 1)
+                ajia_ana_parast(nSynal) = KAU_AJIA1
+            End If
+            writeEGG_row(writer, f_logPel, TelLOG(1), KAU_AJIA)
+            ExecuteSQLQuery("UPDATE EGG SET B_C1= '*'+convert(CHAR(10),GETDATE(),3) WHERE ID=" + Str(nVal(sqlDT.Rows(ROW)("ID"))), SQLDT2)
+            rowId = rowId + 1
+        Next
+
+
+
+
+
+
+
+        writer.WriteEndDocument()
+        writer.Close()
+
+        'ListBox1.Items.Clear()
+
+
+
+        'Dim sspol As Single = 0
+        'Dim kauaro As Single = 0
+
+
+
+        'For K = 1 To 7
+        '    sspol = sspol + SPol(K)
+        '    ListBox1.Items.Add("Πωλ.κωδ.φπα " + Str(K) + "  " + VB6.Format(SPol(K), "0000000.00"))
+        'Next
+        'ListBox1.Items.Add(" ")
+
+
+        'ListBox1.Items.Add("ΣΥΝΟΛΟ  " + VB6.Format(sspol, "0000000.00"))
+        'ListBox1.Items.Add(" ")
+        'ListBox1.Items.Add(" ")
+
+        'kauaro = sspol
+        'sspol = 0
+        'For K = 1 To 7
+        '    sspol = sspol + SEpPol(K)
+        '    ListBox1.Items.Add("Πιστωτ.Πωλ.κωδ.φπα " + Str(K) + "  " + VB6.Format(SEpPol(K), "0000000.00"))
+        'Next
+        'ListBox1.Items.Add(" ")
+
+
+        'ListBox1.Items.Add("ΣΥΝΟΛΟ  " + VB6.Format(sspol, "0000000.00"))
+        'ListBox1.Items.Add(" ")
+
+        'ListBox1.Items.Add("ΣΥΝΟΛΟ ΠΩΛ-ΠΙΣΤ " + VB6.Format(kauaro - sspol, "0000000.00"))
+        'ListBox1.Items.Add(" ")
+
+
+        'sspol = 0
+        'For K = 1 To 7
+        '    sspol = sspol + SAg(K)
+        '    ListBox1.Items.Add("Αγορές.κωδ.φπα " + Str(K) + "  " + VB6.Format(SAg(K), "0000000.00"))
+        'Next
+        'ListBox1.Items.Add(" ")
+
+
+        'ListBox1.Items.Add("ΣΥΝΟΛΟ  " + VB6.Format(sspol, "0000000.00"))
+        'ListBox1.Items.Add(" ")
+
+
+
+        'kauaro = sspol
+        'sspol = 0
+        'For K = 1 To 7
+        '    sspol = sspol + SEpAg(K)
+        '    ListBox1.Items.Add("Πιστ.Αγορ.κωδ.φπα " + Str(K) + "  " + VB6.Format(SEpAg(K), "0000000.00"))
+        'Next
+        'ListBox1.Items.Add(" ")
+
+
+        'ListBox1.Items.Add("ΣΥΝΟΛΟ  " + VB6.Format(sspol, "0000000.00"))
+        'ListBox1.Items.Add(" ")
+
+        'ListBox1.Items.Add("ΣΥΝΟΛΟ ΑΓΟΡ-ΠΙΣΤ " + VB6.Format(kauaro - sspol, "0000000.00"))
+        'ListBox1.Items.Add(" ")
+
+        ''    For K = 1 To 7
+        ''TelLOG(K) = logExod.Text + lfpa(K)
+        ''         SeXOD(K) = SeXOD(K) + kau(K)
+        ''Next
+
+
+        'kauaro = sspol
+        'sspol = 0
+        'For K = 1 To 7
+        '    sspol = sspol + SeXOD(K)
+        '    ListBox1.Items.Add("ΕΞΟΔΑ κωδ.φπα " + Str(K) + "  " + VB6.Format(SEpAg(K), "0000000.00"))
+        'Next
+        'ListBox1.Items.Add(" ")
+
+
+        'ListBox1.Items.Add("ΣΥΝΟΛΟ  " + VB6.Format(sspol, "0000000.00"))
+        'ListBox1.Items.Add(" ")
+
+
+        'FileOpen(1, "SYNOLA", OpenMode.Output)
+
+        'For K = 0 To ListBox1.Items.Count - 1
+        '    PrintLine(1, ListBox1.Items(K))
+        'Next
+
+        'FileClose(1)
+
+
+
+
+
+        'For i = 1 To nSynal
+
+        '    ' If Len(parast(i)) >= 1 Then
+        '    ListBox1.Items.Add(parast(i) + " " + VB6.Format(ajia_ana_parast(i), "########.00"))
+        '    ' End If
+
+        'Next
+
+
+
+        MsgBox("Ενημερώθηκαν " + Str(ROW) + " εγγραφές. Δημιουργήθηκε το αρχείο export στο " + ff)
+        'xlApp.Quit()
+
+
+
+
+
 
     End Sub
 End Class
