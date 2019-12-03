@@ -208,6 +208,7 @@ Partial Class main
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents eispraxGkathg As System.Windows.Forms.Button
     Friend WithEvents ListBox3 As System.Windows.Forms.ListBox
+    Friend WithEvents Button9 As System.Windows.Forms.Button
 
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
