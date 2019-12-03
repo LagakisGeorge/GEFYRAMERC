@@ -1584,9 +1584,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.ListBox1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 14
-        Me.ListBox1.Location = New System.Drawing.Point(591, 154)
+        Me.ListBox1.Location = New System.Drawing.Point(385, 154)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(360, 144)
+        Me.ListBox1.ScrollAlwaysVisible = True
+        Me.ListBox1.Size = New System.Drawing.Size(566, 144)
         Me.ListBox1.TabIndex = 57
         Me.ListBox1.UseWaitCursor = True
         '
@@ -3235,9 +3236,23 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Dim SKAU13, SKAU24 As Single
         SKAU13 = 0 : SKAU24 = 0
 
+        Dim MAXR As Long = InputBox("ΔΩΣΤΕ ΑΡΙΘΜΟ ΕΓΓΡΑΦΩΝ , ΜΕ 0 ΌΛΕΣ ΟΙ ΕΓΓΡΑΦΕΣ ", "ΕΓΓΡΑΦΕΣ ΕΝΗΜΕΡΩΣΗΣ", "0")
+
+        FileOpen(1, "c:\mercvb\LOGFILE_" + VB6.Format(Now, "YYYYddmmHHMM") + ".TXT", OpenMode.Output)
+
+        Dim MLOG As String
+
         '===============================================================================real onomatepvmymo 54100
         Do While True
             ROW = ROW + 1
+
+            If MAXR > 0 Then
+                If ROW > MAXR Then
+                    Exit Do
+                End If
+
+
+            End If
 
             Me.Text = ROW
             'system.doevents
@@ -3258,8 +3273,17 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
 
-            If File.Exists("STHLES.TXT") Then
-
+            If File.Exists("STHLES.TXT") Then  'ELMAS ΚΕΦΑΛΑΙΟ
+                'Name(1)
+                'afm(2)
+                'die(3)
+                'hme(5)
+                'kod pel 6
+                'ar.par(7)
+                'fpa24%(39)
+                'kath13%(74)
+                'kath(24 = 79)
+                'fpa13(34)
                 Party_IDParty = xl.Cells(ROW, 2).value  ' As String  '12344   ΚΩΔ ΣΥΝΑΛΛΑΣΟΜΕΝΟΥ
                 AM_DcTp_Dscr = "Τιμολόγιο"
                 Party_AFM = Trim(xl.Cells(ROW, 2).value)  'Dim Party_AFM As String ' =""999349996
@@ -3281,9 +3305,9 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
                 kau13 = nVal(xl.Cells(ROW, 74).value)
                 kau23 = nVal(xl.Cells(ROW, 79).value)
-                kau16 = nVal(xl.Cells(ROW, 300).value)
-                kau9 = nVal(xl.Cells(ROW, 300).value)
-                kau0 = nVal(xl.Cells(ROW, 300).value)
+                kau16 = nVal(xl.Cells(ROW, 300).value) 'GIA NA BGALEI 0
+                kau9 = nVal(xl.Cells(ROW, 300).value) 'GIA NA BGALEI 0
+                kau0 = nVal(xl.Cells(ROW, 300).value) 'GIA NA BGALEI 0
                 KAU_AJIA = kau13 + kau23 + kau16 + kau9 + kau0
 
 
@@ -3430,10 +3454,16 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             End If
             KAU_AJIA1 = KAU_AJIA
             FPA1 = FPA
+            MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + LOG23 + " " + Str(kau23) + " LOG13=" + LOG13 + " " + Str(kau13)
+            ListBox1.Items.Add(MLOG)
+            PrintLine(1, MLOG)
             write_row(writer)
             rowId = rowId + 11
         Loop
 
+        ' FileOpen(1, mf, OpenMode.Output)
+        'PrintLine(1, par)
+        FileClose(1)
 
 
 
