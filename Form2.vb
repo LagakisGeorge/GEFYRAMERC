@@ -3244,6 +3244,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Dim nTim, nPist, nEpisLian, nParox As Long
         Dim sTim, sPist, sEpisLian, sParox As Double
 
+
+
         '===============================================================================real onomatepvmymo 54100
         Do While True
             ROW = ROW + 1
@@ -5927,10 +5929,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
     Private Sub mercury_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mercury.Click
         '======================================================================================================
         ' mercury
-
+        Dim m_OKO As Integer = 0
         MsgBox("αντιστοίχηση λογαριασμων λογκατ1;λογ κατ 2;λογ κατ 3;;;λογκατ 6 π.χ. 70-0030;70-0087;70-0084;;70-000;70-0087")
 
-
+        Dim MLOG As String
 
         Dim a As String
         Dim K As Short
@@ -5994,90 +5996,128 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
 
-
-
-
-
-        Get_AJ_ASCII(pol, polepis, ago, AGOEPIS)
-
-
-
-        '   Dim xlApp As Excel.Application
-        '   Dim xlWorkBook As Excel.Workbook
-        '    Dim xl As Excel.Worksheet
-
-        '   xlApp = New Excel.ApplicationClass
-        Dim par As String = " "
-        Dim mf As String
-        mf = "c:\mercvb\err3.txt"
-        If Len(Dir(UCase(mf))) = 0 Then
-            par = pol '  " 'G','g','Ξ','D'  "
-            par = InputBox("ΠΑΡΑΣΤΑΤΙΚΑ", , par)
-        Else
-            FileOpen(1, mf, OpenMode.Input)
-            '   Input(1, par)
-            par = LineInput(1)
-            FileClose(1)
-        End If
-
-        '  par = InputBox("ΠΑΡΑΣΤΑΤΙΚΑ", , par)
-
-        FileOpen(1, mf, OpenMode.Output)
-        PrintLine(1, par)
-        FileClose(1)
-
-
-
-        par = cParox.Text + cTimol.Text + cLian.Text + cPistLian.Text + cPistTim.Text + cTimAg.Text + cPistAg.Text + cexod.Text + cLOIPES.Text
-
-
-
-        Dim ccc As String = ""
-
-        For K = 1 To Len(par)
-            ccc = ccc + "'" + Mid(par, K, 1) + "',"
-        Next
-        ccc = Mid(ccc, 1, Len(ccc) - 1)
-        par = ccc
-
-
-
-
-
-
-
-
-
-
-
-
-
-        Dim synt As String
-        If epan.CheckState = CheckState.Checked Then
-            synt = ""
-
-        Else
-            synt = " and (B_C1 is null or LEFT(B_C1,1)<>'*') "
-
-        End If
-        ' ExecuteSQLQuery("update TIM SET AJ7=0 WHERE AJ7 IS NULL")
-
-
-
-        ExecuteSQLQuery("UPDATE TIM SET AJ7=0 WHERE AJ7 IS NULL")
-        ExecuteSQLQuery("UPDATE TIM SET FPA7=0 WHERE FPA7 IS NULL")
-
-
-        '  Dim XL As DataTable
         Dim SQL As String   '   ID_NUM GEMISMA NA JEKINA APO 1
-        SQL = "SELECT ID_NUM, AJ1  ,AJ2 , AJ3,AJ4,AJ5,AJI,FPA1,FPA2,FPA3,FPA4,ATIM,"
-        SQL = SQL + "HME,PEL.EPO,PEL.AFM,KPE,PEL.DIE,PEL.XRVMA"    '"CONVERT(CHAR(10),HME,3) AS HMEP
-        SQL = SQL + ",PEL.EPA,PEL.POL,AJ6,FPA6,AJ7,FPA7 "
 
-        SQL = SQL + "   FROM TIM INNER JOIN PEL ON TIM.EIDOS=PEL.EIDOS AND TIM.KPE=PEL.KOD "
-        SQL = SQL + " WHERE LEFT(ATIM,1) IN     (  " + par + "  )    and HME>='" + VB6.Format(apo, "mm/dd/yyyy") + "'  AND HME<='" + VB6.Format(eos, "mm/dd/yyyy") + "'  "
-        SQL = SQL + "  AND AJ1+AJ2+AJ3+AJ4+AJ5+AJ6+AJ7>0  " + synt
-        SQL = SQL + " order by HME"
+        If File.Exists("oko.sql") Then
+            m_OKO = 1
+
+            SQL = ""
+            Dim cOKO As String
+            Dim nOKO As Integer
+
+            FileOpen(1, "oko.sql", OpenMode.Input)
+            Do While Not EOF(1)
+                'Input(1, cOKO)
+                cOKO = LineInput(1)
+                SQL = SQL + cOKO
+            Loop
+            FileClose(1)
+            Dim mYear As String = InputBox("δωσε έτος", "Π.χ.2019", "2019")
+            Dim mMhnes As String = InputBox("δωσε μηνες π.χ. 10,11,12", "", "10,11,12")
+            If Len(mYear) = 0 Or Len(mMhnes) = 0 Then
+                MsgBox("δεν συμπληρωθηκαν οι περίοδοι ή το έτος.Ακυρωνεται η διαδικασία")
+                Exit Sub
+
+
+            End If
+            SQL = Replace(SQL, "2019", mYear)
+            SQL = Replace(SQL, "7,8,9", mMhnes)
+
+
+
+        Else
+
+
+
+
+            Get_AJ_ASCII(pol, polepis, ago, AGOEPIS)
+
+
+
+            '   Dim xlApp As Excel.Application
+            '   Dim xlWorkBook As Excel.Workbook
+            '    Dim xl As Excel.Worksheet
+
+            '   xlApp = New Excel.ApplicationClass
+            Dim par As String = " "
+            Dim mf As String
+            mf = "c:\mercvb\err3.txt"
+            If Len(Dir(UCase(mf))) = 0 Then
+                par = pol '  " 'G','g','Ξ','D'  "
+                par = InputBox("ΠΑΡΑΣΤΑΤΙΚΑ", , par)
+            Else
+                FileOpen(1, mf, OpenMode.Input)
+                '   Input(1, par)
+                par = LineInput(1)
+                FileClose(1)
+            End If
+
+            '  par = InputBox("ΠΑΡΑΣΤΑΤΙΚΑ", , par)
+
+            FileOpen(1, mf, OpenMode.Output)
+            PrintLine(1, par)
+            FileClose(1)
+
+
+
+            par = cParox.Text + cTimol.Text + cLian.Text + cPistLian.Text + cPistTim.Text + cTimAg.Text + cPistAg.Text + cexod.Text + cLOIPES.Text
+
+
+
+            Dim ccc As String = ""
+
+            For K = 1 To Len(par)
+                ccc = ccc + "'" + Mid(par, K, 1) + "',"
+            Next
+            ccc = Mid(ccc, 1, Len(ccc) - 1)
+            par = ccc
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Dim synt As String
+            If epan.CheckState = CheckState.Checked Then
+                synt = ""
+
+            Else
+                synt = " and (B_C1 is null or LEFT(B_C1,1)<>'*') "
+
+            End If
+            ' ExecuteSQLQuery("update TIM SET AJ7=0 WHERE AJ7 IS NULL")
+
+
+
+
+
+
+
+            ExecuteSQLQuery("UPDATE TIM SET AJ7=0 WHERE AJ7 IS NULL")
+            ExecuteSQLQuery("UPDATE TIM SET FPA7=0 WHERE FPA7 IS NULL")
+
+
+            '  Dim XL As DataTable
+
+            SQL = "SELECT ID_NUM, AJ1  ,AJ2 , AJ3,AJ4,AJ5,AJI,FPA1,FPA2,FPA3,FPA4,ATIM,"
+            SQL = SQL + "HME,PEL.EPO,PEL.AFM,KPE,PEL.DIE,PEL.XRVMA"    '"CONVERT(CHAR(10),HME,3) AS HMEP
+            SQL = SQL + ",PEL.EPA,PEL.POL,AJ6,FPA6,AJ7,FPA7 "
+
+            SQL = SQL + "   FROM TIM INNER JOIN PEL ON TIM.EIDOS=PEL.EIDOS AND TIM.KPE=PEL.KOD "
+            SQL = SQL + " WHERE LEFT(ATIM,1) IN     (  " + par + "  )    and HME>='" + VB6.Format(apo, "mm/dd/yyyy") + "'  AND HME<='" + VB6.Format(eos, "mm/dd/yyyy") + "'  "
+            SQL = SQL + "  AND AJ1+AJ2+AJ3+AJ4+AJ5+AJ6+AJ7>0  " + synt
+            SQL = SQL + " order by HME"
+
+        End If
+
+
 
 
 
@@ -6126,6 +6166,12 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         writer.WriteAttributeString("Style", "Browse")
         '====================================================================================
 
+        Dim MAXR As Long = InputBox("ΔΩΣΤΕ ΑΡΙΘΜΟ ΕΓΓΡΑΦΩΝ , ΜΕ 0 ΌΛΕΣ ΟΙ ΕΓΓΡΑΦΕΣ ", "ΕΓΓΡΑΦΕΣ ΕΝΗΜΕΡΩΣΗΣ", "0")
+
+        FileOpen(1, "c:\mercvb\LOGFILE_" + VB6.Format(Now, "YYYYddmmHHMM") + ".TXT", OpenMode.Output)
+
+
+
 
         Dim enter_Renamed As String
         enter_Renamed = Chr(13)
@@ -6142,7 +6188,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
         fnPistAg = Val(nPistAg.Text)
         fnTimAg = Val(nTimAg.Text)
-        fnPAR = Val(nParox.Text)
+        fnPAR = 2 '  Val(nParox.Text)  //   =============================PROSOXH KARFOTO =====================================
 
 
 
@@ -6203,13 +6249,25 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
 
-
+        Dim nTim, nPist, nEpisLian, nParox As Long
+        Dim sTim, sPist, sEpisLian, sParox As Double
 
 
         '===============================================================================real onomatepvmymo 54100
         'Do While True
         'ROW = ROW + 1
         For ROW = 0 To sqlDT.Rows.Count - 1
+
+            If MAXR > 0 Then
+                If ROW > MAXR Then
+                    Exit For
+                End If
+
+
+            End If
+
+
+
             Me.Text = ROW
             kau13 = 0
             kau23 = 0
@@ -6266,6 +6324,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             kau16 = nVal(sqlDT.Rows(ROW)(3))
             kau9 = nVal(sqlDT.Rows(ROW)(4))
             kau0 = nVal(sqlDT.Rows(ROW)(5))
+
+
             kau24 = nVal(sqlDT.Rows(ROW)("AJ6"))
             kau17 = nVal(sqlDT.Rows(ROW)("AJ7"))
 
@@ -6304,6 +6364,15 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             LOG0 = POL0.Text
 
             LOG24 = POL24.Text : LOG17 = POL17.Text
+            'NA BLEPV POIA XRHSIMOPOIEI
+            pol13.BackColor = Color.Green
+
+            pol23.BackColor = Color.Green
+            POL16.BackColor = Color.Green
+
+
+
+
 
 
             FL_Ledg_Dscr = "ΠΩΛΗΣΕΙΣ ΧΟΝΔΡΙΚΗΣ ΕΣ. ΦΠΑ23%"
@@ -6387,8 +6456,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 MVTP = 2
                 IsHand = "" 'LTrim(Str(hand))  BP=AGORES
                 cdRetailIdentity = ""
-                
-               
+
+
                 AMO_Srl_DSCR = "Εξοδα"
                 AMO_Srl_DSCR = "ΕΞΟΔΑ (ΧΕΙΡΟΓΡΑΦΗ)"
                 System_sys = "BP"
@@ -6427,6 +6496,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
             ElseIf InStr(fcPistAg, Mid(Base_INVOICE, 1, fnPistAg)) > 0 Then  'πιστωτικά  τιμολογια αγορας
+
+
                 '          ElseIf InStr("D", Mid(Base_INVOICE, 1, 1)) > 0 Then
                 'θελει ψαξιμο.................
                 For K = 1 To 7
@@ -6480,6 +6551,9 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
             ElseIf InStr(fcTimol, Mid(Base_INVOICE, 1, fnTimol)) > 0 Then 'τιμολογια -πιστωτικά
+                logTimol.BackColor = Color.Green
+
+
 
                 For K = 1 To 7
                     ' TelLOG(K) = logTimol.Text + lfpa(K)
@@ -6487,7 +6561,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                     SPol(K) = SPol(K) + kau(K)
                 Next
                 f_System_Dscr_1 = "ΧΟΝΔΡΙΚΕΣ ΠΩΛΗΣΕΙΣ"
-
+                nTim = nTim + 1 ', nPist, nEpisLian, nParox 
+                sTim = sTim + KAU_AJIA
 
                 cdRetailIdentity = ""
                 IsHand = ""
@@ -6543,6 +6618,9 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                     SEpPol(K) = SEpPol(K) + kau(K)
                 Next
 
+                nEpisLian = nEpisLian + 1 ', nPist, nEpisLian, nParox 
+                sEpisLian = sEpisLian + KAU_AJIA
+
                 f_System_Dscr_1 = "ΕΠΙΣΤΡΟΦΕΣ ΛΙΑΝ.ΠΩΛΗΣΕΩΝ"
 
                 LOG13 = episLian13.Text : LOG23 = episLian23.Text
@@ -6560,12 +6638,16 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
                 'End If
             ElseIf InStr(fcPistTim, Mid(Base_INVOICE, 1, fnPistTim)) > 0 Then  'pistvtiko timologio
-
+                logPistTim.BackColor = Color.Green
                 For K = 1 To 7
                     '   TelLOG(K) = logPistTim.Text + lfpa(K)
                     TelLOG(K) = Split(logPistTim.Text, ";")(K - 1)
                     SEpPol(K) = SEpPol(K) + kau(K)
                 Next
+
+                nPist = nPist + 1 ', nPist, nEpisLian, nParox 
+                sPist = sPist + KAU_AJIA
+
 
                 f_System_Dscr_1 = "ΕΠΙΣΤΡΟΦΕΣ ΠΩΛΗΣΕΩΝ"
 
@@ -6645,20 +6727,29 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
 
+            If m_OKO = 0 Then
 
-
-            ExecuteSQLQuery("UPDATE TIM SET B_C1= '*'+convert(CHAR(10),GETDATE(),3) WHERE ID_NUM=" + Str(nVal(sqlDT.Rows(ROW)("ID_NUM"))), SQLDT2)
+                ExecuteSQLQuery("UPDATE TIM SET B_C1= '*'+convert(CHAR(10),GETDATE(),3) WHERE ID_NUM=" + Str(nVal(sqlDT.Rows(ROW)("ID_NUM"))), SQLDT2)
+            End If
 
             'DoEvents()
 
-
+            MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + LOG23 + " " + Str(kau23) + "  LOG13=" + LOG13 + " " + Str(kau13)
+            ListBox1.Items.Insert(0, MLOG)
+            PrintLine(1, MLOG)
 
 
         Next
 
 
+        ListBox1.Items.Insert(0, "Πιστωτικά: " + Str(nPist) + " Aξίας:" + Str(sPist))
+        ListBox1.Items.Insert(0, "Tιμολόγια: " + Str(nTim) + " Aξίας:" + Str(sTim))
+
+        PrintLine(1, "Πιστωτικά: " + Str(nPist) + " Aξίας:" + Str(sPist))
+        PrintLine(1, "Tιμολόγια: " + Str(nTim) + " Aξίας:" + Str(sTim))
 
 
+        FileClose(1)
 
 
 
