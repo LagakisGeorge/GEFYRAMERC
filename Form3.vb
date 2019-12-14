@@ -38,6 +38,7 @@ Public Class FORM3
 
     Dim ROW As Integer
     Dim COL As Integer
+    Dim textxl As Microsoft.Office.Interop.Excel.Application
 
 
     Dim rowId As Integer = 7

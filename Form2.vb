@@ -3241,6 +3241,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         FileOpen(1, "c:\mercvb\LOGFILE_" + VB6.Format(Now, "YYYYddmmHHMM") + ".TXT", OpenMode.Output)
 
         Dim MLOG As String
+        Dim nTim, nPist, nEpisLian, nParox As Long
+        Dim sTim, sPist, sEpisLian, sParox As Double
 
         '===============================================================================real onomatepvmymo 54100
         Do While True
@@ -3413,6 +3415,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 'LOG13 = pol13.Text : LOG23 = pol23.Text
                 'LOG16 = POL16.Text : LOG9 = POL9.Text
                 'LOG0 = POL0.Text
+                nTim = nTim + 1 ', nPist, nEpisLian, nParox 
+                sTim = sTim + KAU_AJIA
 
             ElseIf InStr("Y", Mid(Base_INVOICE, 1, 1)) > 0 Then 'yphresies
                 LOG23 = "73-0057"
@@ -3436,6 +3440,11 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 KAU_AJIA = -KAU_AJIA
                 FPA = -FPA
 
+                nEpisLian = nEpisLian + 1 ', nPist, nEpisLian, nParox 
+                sEpisLian = sEpisLian + KAU_AJIA
+
+
+
                 System_sys = "FR"
 
                 'End If
@@ -3449,17 +3458,21 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 LOG13 = EPIS13.Text : LOG23 = EPIS23.Text
                 MVTP = 6
                 'End If
-
+                nPist = nPist + 1 ', nPist, nEpisLian, nParox 
+                sPist = sPist + KAU_AJIA
 
             End If
             KAU_AJIA1 = KAU_AJIA
             FPA1 = FPA
-            MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + LOG23 + " " + Str(kau23) + " LOG13=" + LOG13 + " " + Str(kau13)
-            ListBox1.Items.Add(MLOG)
+            MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + LOG23 + " " + Str(kau23) + "  LOG13=" + LOG13 + " " + Str(kau13)
+            ListBox1.Items.Insert(0, MLOG)
             PrintLine(1, MLOG)
             write_row(writer)
             rowId = rowId + 11
         Loop
+        ListBox1.Items.Insert(0, "Πιστωτικά: " + Str(nPist) + " Aξίας:" + Str(sPist))
+        ListBox1.Items.Insert(0, "Tιμολόγια: " + Str(nTim) + " Aξίας:" + Str(sTim))
+
 
         ' FileOpen(1, mf, OpenMode.Output)
         'PrintLine(1, par)
