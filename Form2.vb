@@ -3233,8 +3233,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         fcPistLian = cPistLian.Text
         fcexod = cexod.Text
 
-        Dim SKAU13, SKAU24 As Single
-        SKAU13 = 0 : SKAU24 = 0
+        Dim SKAU13, SKAU24, skau16 As Single
+        SKAU13 = 0 : SKAU24 = 0 : skau16 = 0
 
         Dim MAXR As Long = InputBox("ΔΩΣΤΕ ΑΡΙΘΜΟ ΕΓΓΡΑΦΩΝ , ΜΕ 0 ΌΛΕΣ ΟΙ ΕΓΓΡΑΦΕΣ ", "ΕΓΓΡΑΦΕΣ ΕΝΗΜΕΡΩΣΗΣ", "0")
 
@@ -3309,7 +3309,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
                 kau13 = nVal(xl.Cells(ROW, 74).value)
                 kau23 = nVal(xl.Cells(ROW, 79).value)
-                kau16 = nVal(xl.Cells(ROW, 300).value) 'GIA NA BGALEI 0
+                kau16 = nVal(xl.Cells(ROW, 81).value) 'GIA NA BGALEI 0
                 kau9 = nVal(xl.Cells(ROW, 300).value) 'GIA NA BGALEI 0
                 kau0 = nVal(xl.Cells(ROW, 300).value) 'GIA NA BGALEI 0
                 KAU_AJIA = kau13 + kau23 + kau16 + kau9 + kau0
@@ -3317,7 +3317,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
                 fpa13 = nVal(xl.Cells(ROW, 34).value)
                 fpa23 = nVal(xl.Cells(ROW, 39).value)
-                fpa16 = nVal(xl.Cells(ROW, 300).value)
+                fpa16 = nVal(xl.Cells(ROW, 41).value)
                 fpa9 = nVal(xl.Cells(ROW, 300).value)
 
                 FPA = fpa13 + fpa23 + fpa16 + fpa9
@@ -3362,7 +3362,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             End If
             SKAU13 = SKAU13 + kau13
             SKAU24 = SKAU24 + kau23
-
+            skau16 = skau16 + kau16
 
             LOG13 = pol13.Text : LOG23 = pol23.Text
             LOG16 = POL16.Text : LOG9 = POL9.Text
@@ -3488,7 +3488,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
 
-        MsgBox("ΚΑΘΑΡΗ 13%" + Str(SKAU13) + Chr(13) + "ΚΑΘΑΡΗ 24%" + Str(SKAU24))
+        MsgBox(LOG13 + "ΚΑΘΑΡΗ 13% " + Str(SKAU13) + Chr(13) + LOG23 + " ΚΑΘΑΡΗ 24% " + Str(SKAU24) + Chr(13) + LOG16 + " ΚΑΘΑΡΗ 17% " + Str(skau16))
 
 
         MsgBox("Δημιουργήθηκε στο " + ff)
