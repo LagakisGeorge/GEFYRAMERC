@@ -5,3 +5,15 @@ obj/*.*
 bin/dhmos/*.*
 bin/sos efedrika/*.*
 obj/Release/*.*
+*.suo
+*.exe
+bin/GEFYRA G ANTOP
+bin/LAGAKIS-2019-GEFYRES/
+bin/dhmos/
+bin/kafes/
+bin/Project1.exe
+bin/Project1.pdb
+obj/Debug/Project1.pdb
+obj/Debug/epsilonxml.vbproj.GenerateResource.Cache
+Project1.suo
+bin/Project1.exe
