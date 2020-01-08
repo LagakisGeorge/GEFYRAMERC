@@ -1,0 +1,7 @@
+*.log
+*.rar
+bin/*.*
+obj/*.*
+bin/dhmos/*.*
+bin/sos efedrika/*.*
+obj/Release/*.*
