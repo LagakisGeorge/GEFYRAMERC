@@ -2724,7 +2724,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
         apo.Value = Now
         eos.Value = Now
-
+        ' TableLayoutPanel1.COL()
 
     End Sub
 
@@ -3195,7 +3195,16 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
         '====================================================================================
+        '  Dim ff As String = "c:\mercvb\m" + VB6.Format(Now, "YYYYddmmHHMM") + ".export" ' "\\Logisthrio\333\pr.export" '
+
+
         Dim ff As String = "c:\mercvb\m" + VB6.Format(Now, "YYYYddmmHHMM") + ".export" ' "\\Logisthrio\333\pr.export" '
+        ff = InputBox(ff, "Oνομα Αρχείου export", ff)
+
+        ' Dim ffTXT As String = "c:\mercvb\SYNOLA----" + VB6.Format(Now, "YYYYddmmHHMM") + ".TXT" ' "\\Logisthrio\333\pr.export" '
+
+
+
 
         Dim writer As New XmlTextWriter(ff, System.Text.Encoding.UTF8)
         writer.WriteStartDocument(True)
@@ -3233,8 +3242,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         fcPistLian = cPistLian.Text
         fcexod = cexod.Text
 
-        Dim SKAU13, SKAU24, skau16 As Single
-        SKAU13 = 0 : SKAU24 = 0 : skau16 = 0
+        Dim SKAU13, SKAU24, skau16, skau9 As Single
+        SKAU13 = 0 : SKAU24 = 0 : skau16 = 0 : skau9 = 0
 
         Dim MAXR As Long = InputBox("ΔΩΣΤΕ ΑΡΙΘΜΟ ΕΓΓΡΑΦΩΝ , ΜΕ 0 ΌΛΕΣ ΟΙ ΕΓΓΡΑΦΕΣ ", "ΕΓΓΡΑΦΕΣ ΕΝΗΜΕΡΩΣΗΣ", "0")
 
@@ -3284,10 +3293,18 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 'hme(5)
                 'kod pel 6
                 'ar.par(7)
-                'fpa24%(39)
+
+                'fpa13(34)    αξια 74
+                'fpa24%(39)    αξια 79
+
+                'φπα 17%=36+41     76+81
+
+                'φπα9%=38 στηλη   αξια 78
+
+
                 'kath13%(74)
                 'kath(24 = 79)
-                'fpa13(34)
+
                 Party_IDParty = xl.Cells(ROW, 2).value  ' As String  '12344   ΚΩΔ ΣΥΝΑΛΛΑΣΟΜΕΝΟΥ
                 AM_DcTp_Dscr = "Τιμολόγιο"
                 Party_AFM = Trim(xl.Cells(ROW, 2).value)  'Dim Party_AFM As String ' =""999349996
@@ -3309,8 +3326,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
                 kau13 = nVal(xl.Cells(ROW, 74).value)
                 kau23 = nVal(xl.Cells(ROW, 79).value)
-                kau16 = nVal(xl.Cells(ROW, 81).value) 'GIA NA BGALEI 0
-                kau9 = nVal(xl.Cells(ROW, 300).value) 'GIA NA BGALEI 0
+                kau16 = nVal(xl.Cells(ROW, 76).value) + nVal(xl.Cells(ROW, 81).value)
+                kau9 = nVal(xl.Cells(ROW, 78).value)
                 kau0 = nVal(xl.Cells(ROW, 300).value) 'GIA NA BGALEI 0
                 KAU_AJIA = kau13 + kau23 + kau16 + kau9 + kau0
 
@@ -3363,6 +3380,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             SKAU13 = SKAU13 + kau13
             SKAU24 = SKAU24 + kau23
             skau16 = skau16 + kau16
+            skau9 = skau9 + kau9
 
             LOG13 = pol13.Text : LOG23 = pol23.Text
             LOG16 = POL16.Text : LOG9 = POL9.Text
@@ -3488,7 +3506,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
 
-        MsgBox(LOG13 + "ΚΑΘΑΡΗ 13% " + Str(SKAU13) + Chr(13) + LOG23 + " ΚΑΘΑΡΗ 24% " + Str(SKAU24) + Chr(13) + LOG16 + " ΚΑΘΑΡΗ 17% " + Str(skau16))
+        MsgBox(LOG13 + "ΚΑΘΑΡΗ 13% " + Str(SKAU13) + Chr(13) + LOG23 + " ΚΑΘΑΡΗ 24% " + Str(SKAU24) + Chr(13) + LOG16 + " ΚΑΘΑΡΗ 17% " + " " + Str(skau16) + LOG9 + " ΚΑΘΑΡΗ 9% " + Str(skau9))
 
 
         MsgBox("Δημιουργήθηκε στο " + ff)
@@ -3665,6 +3683,19 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         If Len(Trim(TextBox1.Text)) = 0 Then
             CD1.ShowDialog()
             TextBox1.Text = CD1.FileName
+            mercury.Visible = False
+            eispraxeis.Visible = False
+            agoresB.Visible = False
+            G_XML_MERCURY.Visible = False
+            xmlG.Visible = False
+            eispraxGkathg.Visible = False
+            logTimol.Visible = False
+            logParox.Visible = False
+
+            TableLayoutPanel1.ColumnStyles(3).SizeType = SizeType.Absolute
+            TableLayoutPanel1.ColumnStyles(3).Width = 0
+
+
         Else
             If Len(Dir(LTrim(TextBox1.Text), FileAttribute.Normal)) < 2 Then
                 MsgBox("δεν υπάρχει το αρχείο " & TextBox1.Text)
@@ -6148,6 +6179,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         ff = InputBox(ff, "Oνομα Αρχείου export", ff)
 
         Dim ffTXT As String = "c:\mercvb\SYNOLA----" + VB6.Format(Now, "YYYYddmmHHMM") + ".TXT" ' "\\Logisthrio\333\pr.export" '
+
+
         ListBox1.Items.Clear()
 
 
