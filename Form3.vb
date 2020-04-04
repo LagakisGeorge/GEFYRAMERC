@@ -1339,7 +1339,7 @@ Public Class FORM3
 
         R.Close()
 
-        gdb.Execute("SELECT POLHS,PIS,AFM,SUM(AJIA) AS AJIA,SUM(FPA) AS FPA,SUM(AEG) AS TEM,MAX(HME) AS SHME into SYNOLAKEPYO FROM TIMKEPYO GROUP BY POLHS,AFM,PIS ORDER BY POLHS,AFM")
+        gdb.Execute("SELECT POLHS,PIS,AFM,SUM(ABS(AJIA)) AS AJIA,SUM(ABS(FPA)) AS FPA,SUM(AEG) AS TEM,MAX(HME) AS SHME into SYNOLAKEPYO FROM TIMKEPYO GROUP BY POLHS,AFM,PIS ORDER BY POLHS,AFM")
         ' gdb.Execute("SELECT POLHS,PIS,AFM,SUM(AJIA) AS AJIA,SUM(FPA) AS FPA,SUM(AEG) AS TEM,MAX(HME) AS SHME,EPO,EPA,DIE,DOY into SYNOLAKEPYO FROM TIMKEPYO GROUP BY POLHS,AFM,PIS,EPO,DOY,EPA,DIE ORDER BY POLHS,AFM")
         gdb.Close()
         'print3_xar "SELECT POLHS,AFM,EPO,DOY,EPA,DIE,SUM(AJIA) AS [ΣΥΝ.ΑΞΙΑ],SUM(FPA) AS [ΣΥΝ.ΦΠΑ],SUM(AEG) AS [ΑΡ.ΤΙΜΟΛ]  FROM TIMKEPYO GROUP BY POLHS,AFM,EPO,DOY,EPA,DIE ORDER BY POLHS,AFM", "11111111", "ΣΥΓΚΕΝΤΡΩΤΙΚΗ ΑΠΟ " + Format(D1, "DD/MM/YYYY") + " ΕΩΣ " + Format(d2, "DD/MM/YYYY"), 0 ' RR.RecordSource
@@ -1348,42 +1348,25 @@ Public Class FORM3
         'Adodc1.RecordSource = "SELECT * FROM SYNOLAKEPYO"
         ' Adodc1.Refresh()
     End Sub
-    Function check_afm(ByVal M_AFM As String) As Integer
-
-        '<EhHeader>
-        On Error GoTo check_afm_Err
-        M_AFM = M_AFM.Trim
-        '</EhHeader>
-        Dim SUMA, k As Long
-        Dim l As Integer = Len(M_AFM)
-100:    SUMA = 0
-110:    check_afm = 1
-120:    k = 1
-
-130:    For k = 1 To 8
-140:        SUMA = SUMA + Val(Mid(M_AFM, k, 1)) * 2 ^ (9 - k)
-        Next
-
-150:    If SUMA Mod 11 <> Val(Mid(M_AFM, l, 1)) Then
-160:        If SUMA Mod 11 = 10 And Val(Mid(M_AFM, l, 1)) = 0 Then
-            Else
-170:            MsgBox("Λάθος στο ΑΦΜ " + M_AFM)
-180:            check_afm = 0
-            End If
-        End If
-        If l <> 9 Then
-            check_afm = 0
-        End If
-        '<EhFooter>
-        Exit Function
-
-check_afm_Err:
-
-        Resume Next
-
-        '</EhFooter>
-
-    End Function
+   
+    '    CREATE TABLE [dbo].[TIMKEPYO](
+    '	[POLHS] [int] NOT NULL,
+    '	[PIS] [varchar](6) NOT NULL,
+    '	[TAM] [varchar](10) NOT NULL,
+    '	[AJIA] [float] NULL,
+    '	[TYPOS] [varchar](1) NULL,
+    '	[FPA] [float] NULL,
+    '	[AEG] [int] NOT NULL,
+    '	[AFM] [varchar](255) NULL,
+    '	[EPO] [varchar](255) NULL,
+    '	[DOY] [varchar](255) NULL,
+    '	[EPA] [varchar](255) NULL,
+    '	[DIE] [varchar](255) NULL,
+    '	[POL] [varchar](255) NULL,
+    '	[TK] [varchar](255) NULL,
+    '	[EIDOS] [varchar](255) NULL,
+    '	[HME] [datetime] NULL
+    ') ON [PRIMARY]
 
 
 
@@ -2343,4 +2326,50 @@ check_afm_Err:
         MsgBox("ok")
 
     End Sub
+
+
+
+    Function check_afm(ByVal M_AFM As String) As Integer
+
+        '<EhHeader>
+        On Error GoTo check_afm_Err
+        M_AFM = M_AFM.Trim
+        '</EhHeader>
+        Dim SUMA, k As Long
+        Dim l As Integer = Len(M_AFM)
+100:    SUMA = 0
+110:    check_afm = 1
+120:    k = 1
+
+130:    For k = 1 To 8
+            If Not IsNumeric(Mid(M_AFM, k, 1)) Then
+                check_afm = 0
+                Exit Function
+            End If
+140:        SUMA = SUMA + Val(Mid(M_AFM, k, 1)) * 2 ^ (9 - k)
+
+        Next
+
+150:    If SUMA Mod 11 <> Val(Mid(M_AFM, l, 1)) Then
+160:        If SUMA Mod 11 = 10 And Val(Mid(M_AFM, l, 1)) = 0 Then
+            Else
+170:            MsgBox("Λάθος στο ΑΦΜ " + M_AFM)
+180:            check_afm = 0
+            End If
+        End If
+        If l <> 9 Then
+            check_afm = 0
+        End If
+        '<EhFooter>
+        Exit Function
+
+check_afm_Err:
+
+        Resume Next
+
+        '</EhFooter>
+
+    End Function
+
+
 End Class

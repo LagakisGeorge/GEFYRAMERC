@@ -119,7 +119,6 @@ E:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\ResolveAssembl
 E:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Project1.main.resources
 E:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Project1.FORM3.resources
 E:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\epsilonxml.vbproj.GenerateResource.Cache
-F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Interop.MSAdodcLib.dll
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Interop.MSDATASRC.dll
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\epsilonxml.vbproj.ResolveComReference.cache
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Project1.exe
@@ -133,13 +132,11 @@ F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\office.dll
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\Microsoft.Vbe.Interop.dll
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\office.xml
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\Microsoft.Office.Interop.Excel.xml
-F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\Interop.MSAdodcLib.dll
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\Interop.MSDATASRC.dll
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\ResolveAssemblyReference.cache
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Project1.main.resources
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Project1.FORM3.resources
 F:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\epsilonxml.vbproj.GenerateResource.Cache
-G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Interop.MSAdodcLib.dll
 G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Interop.MSDATASRC.dll
 G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\epsilonxml.vbproj.ResolveComReference.cache
 G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Project1.exe
@@ -153,7 +150,6 @@ G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\office.dll
 G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\Microsoft.Vbe.Interop.dll
 G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\office.xml
 G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\Microsoft.Office.Interop.Excel.xml
-G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\Interop.MSAdodcLib.dll
 G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\Interop.MSDATASRC.dll
 G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\ResolveAssemblyReference.cache
 G:\Adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Project1.main.resources

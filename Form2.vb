@@ -5,6 +5,7 @@ Imports Excel = Microsoft.Office.Interop.Excel
 Imports System.Xml
 Imports System.Text
 Imports System.IO
+Imports Project1.AA
 
 Imports System.Data.OleDb
 Imports System.Net.NetworkInformation
@@ -858,16 +859,16 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(892, 300)
+        Me.Button4.Location = New System.Drawing.Point(849, 300)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(88, 29)
+        Me.Button4.Size = New System.Drawing.Size(158, 29)
         Me.Button4.TabIndex = 27
         Me.Button4.Text = "Αποθήκευση"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(892, 333)
+        Me.Button5.Location = New System.Drawing.Point(849, 328)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(158, 22)
         Me.Button5.TabIndex = 28
@@ -937,7 +938,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(700, 303)
+        Me.Button8.Location = New System.Drawing.Point(615, 304)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(186, 26)
         Me.Button8.TabIndex = 40
@@ -946,7 +947,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         '
         'filexml
         '
-        Me.filexml.Location = New System.Drawing.Point(710, 335)
+        Me.filexml.Location = New System.Drawing.Point(615, 333)
         Me.filexml.Name = "filexml"
         Me.filexml.Size = New System.Drawing.Size(187, 20)
         Me.filexml.TabIndex = 41
@@ -1587,7 +1588,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Me.ListBox1.Location = New System.Drawing.Point(385, 154)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.ScrollAlwaysVisible = True
-        Me.ListBox1.Size = New System.Drawing.Size(566, 144)
+        Me.ListBox1.Size = New System.Drawing.Size(622, 144)
         Me.ListBox1.TabIndex = 57
         Me.ListBox1.UseWaitCursor = True
         '
@@ -3176,6 +3177,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'sw.Write(TextBox1.Text)
         'sw.Close()
 
+        Dim ERRFILE As String = "c:\mercvb\ERROSFILE_" + VB6.Format(Now, "YYYYddmmHHMM") + ".CSV"
+        FileOpen(5, ERRFILE, OpenMode.Output)
+
+
 
         Dim xlApp As Excel.Application
         Dim xlWorkBook As Excel.Workbook
@@ -3253,6 +3258,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Dim nTim, nPist, nEpisLian, nParox As Long
         Dim sTim, sPist, sEpisLian, sParox As Double
 
+        Dim OK_AFM As Integer
+        Dim ERR_COUNT As Integer = 0
 
 
         '===============================================================================real onomatepvmymo 54100
@@ -3312,6 +3319,13 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                     Party_AFM = "000000000"
                 End If
 
+
+                Dim CC As New AA
+                OK_AFM = CC.check_afm(Party_AFM)
+
+
+
+
                 Party_ADDRESS = xl.Cells(ROW, 3).value 'ToString  ' "ΠΟΛΥΣΤΗΛΟ ΚΑΒΑΛΑΣ"
                 AM_DcTp_cd = "#ΤΥΠ-0"
                 AMO_Srl_DSCR = "Πωλήσεις" '"ΠΩΛΗΣΕΙΣ"
@@ -3353,6 +3367,12 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 If Len(Trim(Party_AFM)) <= 4 Then
                     Party_AFM = "000000000"
                 End If
+
+                Dim CC As New AA
+                OK_AFM = CC.check_afm(Party_AFM)
+
+
+
 
                 Party_ADDRESS = xl.Cells(ROW, 16).value 'ToString  ' "ΠΟΛΥΣΤΗΛΟ ΚΑΒΑΛΑΣ"
                 AM_DcTp_cd = "#ΤΥΠ-0"
@@ -3482,12 +3502,26 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 sPist = sPist + KAU_AJIA
 
             End If
-            KAU_AJIA1 = KAU_AJIA
-            FPA1 = FPA
-            MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + LOG23 + " " + Str(kau23) + "  LOG13=" + LOG13 + " " + Str(kau13)
-            ListBox1.Items.Insert(0, MLOG)
-            PrintLine(1, MLOG)
-            write_row(writer)
+
+            If OK_AFM = 0 Then
+                MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + TelLOG(2) + " " + Str(kau23) + "  LOG13=" + TelLOG(1) + " " + Str(kau13)
+                ERR_COUNT = ERR_COUNT + 1
+                PrintLine(5, MLOG)
+            Else
+
+
+
+
+                KAU_AJIA1 = KAU_AJIA
+                FPA1 = FPA
+                MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + LOG23 + " " + Str(kau23) + "  LOG13=" + LOG13 + " " + Str(kau13)
+                ListBox1.Items.Insert(0, MLOG)
+                PrintLine(1, MLOG)
+                write_row(writer)
+
+            End If
+
+
             rowId = rowId + 11
         Loop
         ListBox1.Items.Insert(0, "Πιστωτικά: " + Str(nPist) + " Aξίας:" + Str(sPist))
@@ -3498,7 +3532,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         'PrintLine(1, par)
         FileClose(1)
 
-
+        FileClose(5)
 
 
         writer.WriteEndDocument()
@@ -6024,12 +6058,18 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Dim AGOEPIS As String = " "
 
         Dim lfpa(7) As String
+        Dim OK_AFM As Integer
 
 
 
         Dim SQL As String   '   ID_NUM GEMISMA NA JEKINA APO 1
 
         If File.Exists("oko.sql") Then
+
+
+            MsgBox("OKO VERSION ΛΟΓΩ APXEIOY OKO.SQL")
+
+
             m_OKO = 1
 
             SQL = ""
@@ -6202,7 +6242,8 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Dim MAXR As Long = InputBox("ΔΩΣΤΕ ΑΡΙΘΜΟ ΕΓΓΡΑΦΩΝ , ΜΕ 0 ΌΛΕΣ ΟΙ ΕΓΓΡΑΦΕΣ ", "ΕΓΓΡΑΦΕΣ ΕΝΗΜΕΡΩΣΗΣ", "0")
 
         FileOpen(1, "c:\mercvb\LOGFILE_" + VB6.Format(Now, "YYYYddmmHHMM") + ".TXT", OpenMode.Output)
-
+        Dim ERRFILE As String = "c:\mercvb\ERROSFILE_" + VB6.Format(Now, "YYYYddmmHHMM") + ".CSV"
+        FileOpen(5, ERRFILE, OpenMode.Output)
 
 
 
@@ -6221,10 +6262,10 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
         fnPistAg = Val(nPistAg.Text)
         fnTimAg = Val(nTimAg.Text)
-        fnPAR = 2 '  Val(nParox.Text)  //   =============================PROSOXH KARFOTO =====================================
+        fnPAR = 1 '  Val(nParox.Text)  //   =============================PROSOXH KARFOTO =====================================
 
 
-
+        Dim ERR_COUNT As Integer = 0
 
         ' As Integer
         fcTimol = cTimol.Text
@@ -6339,6 +6380,13 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             If Len(Trim(Party_AFM)) <= 4 Then
                 Party_AFM = "000000000"
             End If
+
+            Dim CC As New AA
+            OK_AFM = CC.check_afm(Party_AFM)
+
+
+
+
 
             Party_ADDRESS = IIf(IsDBNull(sqlDT.Rows(ROW)(16)), "", sqlDT.Rows(ROW)(16))  'ToString  ' "ΠΟΛΥΣΤΗΛΟ ΚΑΒΑΛΑΣ"
             AM_DcTp_cd = "#ΤΥΠ-0"
@@ -6709,67 +6757,71 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
 
 
-            writeCAgor_row(writer)
-            rowId = rowId + 11
-            'Loop
-            Application.DoEvents()
-            'Me.Text = rowId
-            ' Application.DoEvents()
-
-            'If Mid(LOG0, 1, 1) = "7" Or Mid(LOG13, 1, 1) = "7" Or Mid(LOG9, 1, 1) = "7" Or Mid(LOG17, 1, 1) = "7" Or Mid(LOG23, 1, 1) = "7" Or Mid(LOG24, 1, 1) = "7" Then
-
-            '    If MVTP = "6" Then                                     '    POL= "1" Then '6=πιστωτικα 2=αγορες  7=πιστωτικα αγορών
-            '        esb23 = esb23 + kau23
-            '        esb24 = esb24 + kau24
-            '        esb17 = esb17 + kau17
-            '        esb13 = esb13 + kau13
-            '        esb0 = esb0 + kau0
-            '    Else
-            '        sb24 = sb24 + kau24
-            '        sb23 = sb23 + kau23
-            '        sb13 = sb13 + kau13
-            '        sb16 = sb16 + kau16
-            '        sb9 = sb9 + kau9
-            '        sb0 = sb0 + kau0
-            '    End If
-
-            'End If
-            'If Mid(LOG13, 1, 1) = "2" Or Mid(LOG23, 1, 1) = "2" Then
-            '    bp23 = bp23 + kau23
-            '    bp13 = bp13 + kau13
-            '    bp0 = bp0 + kau0
-            'End If
 
 
-            OK = 0
+            If OK_AFM = 0 Then
+                MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + TelLOG(2) + " " + Str(kau23) + "  LOG13=" + TelLOG(1) + " " + Str(kau13)
+                ERR_COUNT = ERR_COUNT + 1
+                PrintLine(5, MLOG)
+            Else
 
-            'τι σουμα βγαζει το καθε παραστατικό 
-            For i = 1 To 30
-                If Mid(Base_INVOICE, 1, 1) = Mid(parast(i), 1, 1) Then
-                    OK = 1
-                    ajia_ana_parast(i) = ajia_ana_parast(i) + KAU_AJIA1
+                If m_OKO = 1 Then
+                    If CDate(sqlDT.Rows(ROW)(12)) >= CDate(apo.Text) And CDate(sqlDT.Rows(ROW)(12)) <= CDate(eos.Text) Then
+                        writeCAgor_row(writer)
+                        rowId = rowId + 11
+                        'Loop
+                        Application.DoEvents()
+                        OK = 0
+                        'τι σουμα βγαζει το καθε παραστατικό 
+                        For i = 1 To 30
+                            If Mid(Base_INVOICE, 1, 1) = Mid(parast(i), 1, 1) Then
+                                OK = 1
+                                ajia_ana_parast(i) = ajia_ana_parast(i) + KAU_AJIA1
+                            End If
+                        Next
+                        If OK = 0 Then
+                            nSynal = nSynal + 1
+                            parast(nSynal) = Mid(Base_INVOICE, 1, 1)
+                            ajia_ana_parast(nSynal) = KAU_AJIA1
+                        End If
+                        MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + TelLOG(2) + " " + Str(kau23) + "  LOG13=" + TelLOG(1) + " " + Str(kau13)
+                        ListBox1.Items.Insert(0, MLOG)
+                        PrintLine(1, MLOG)
+                    Else
+                        ' tipota
+                    End If
+
+                Else
+                    writeCAgor_row(writer)
+
+
+
+                    rowId = rowId + 11
+                    'Loop
+                    Application.DoEvents()
+
+
+
+                    OK = 0
+
+                    'τι σουμα βγαζει το καθε παραστατικό 
+                    For i = 1 To 30
+                        If Mid(Base_INVOICE, 1, 1) = Mid(parast(i), 1, 1) Then
+                            OK = 1
+                            ajia_ana_parast(i) = ajia_ana_parast(i) + KAU_AJIA1
+                        End If
+                    Next
+                    If OK = 0 Then
+                        nSynal = nSynal + 1
+                        parast(nSynal) = Mid(Base_INVOICE, 1, 1)
+                        ajia_ana_parast(nSynal) = KAU_AJIA1
+                    End If
+                    ExecuteSQLQuery("UPDATE TIM SET B_C1= '*'+convert(CHAR(10),GETDATE(),3) WHERE ID_NUM=" + Str(nVal(sqlDT.Rows(ROW)("ID_NUM"))), SQLDT2)
+                    MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + TelLOG(2) + " " + Str(kau23) + "  LOG13=" + TelLOG(1) + " " + Str(kau13)
+                    ListBox1.Items.Insert(0, MLOG)
+                    PrintLine(1, MLOG)
                 End If
-            Next
-            If OK = 0 Then
-                nSynal = nSynal + 1
-                parast(nSynal) = Mid(Base_INVOICE, 1, 1)
-                ajia_ana_parast(nSynal) = KAU_AJIA1
             End If
-
-
-
-
-
-            If m_OKO = 0 Then
-
-                ExecuteSQLQuery("UPDATE TIM SET B_C1= '*'+convert(CHAR(10),GETDATE(),3) WHERE ID_NUM=" + Str(nVal(sqlDT.Rows(ROW)("ID_NUM"))), SQLDT2)
-            End If
-
-            'DoEvents()
-
-            MLOG = Base_dt + " " + Base_INVOICE + " LOG24=" + LOG23 + " " + Str(kau23) + "  LOG13=" + LOG13 + " " + Str(kau13)
-            ListBox1.Items.Insert(0, MLOG)
-            PrintLine(1, MLOG)
 
 
         Next
@@ -6908,8 +6960,15 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         For K = 0 To ListBox1.Items.Count - 1
             PrintLine(1, ListBox1.Items(K))
         Next
-
+        FileClose(5)
         FileClose(1)
+
+        If ERR_COUNT > 0 Then
+            MsgBox("ΥΠΑΡΧΟΥΝ " + Str(ERR_COUNT) + " ΕΓΓΡΑΦΕΣ ΜΕ ΛΑΘΟΣ ΑΦΜ . ΑΠΟΘΗΚΕΥΤΗΚΑΝ ΣΤΟ ΑΡΧΕΙΟ "+ERRFILE)
+        End If
+
+
+
 
         MsgBox("Ενημερώθηκαν " + Str(ROW) + " εγγραφές. Δημιουργήθηκε το αρχείο export στο " + ff)
         'xlApp.Quit()
