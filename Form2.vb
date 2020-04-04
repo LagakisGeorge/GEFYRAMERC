@@ -6060,11 +6060,11 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
         Dim lfpa(7) As String
         Dim OK_AFM As Integer
 
-
+        Dim mFile_oko As String = "oko.sql"  '"E:\adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\oko.sql"
 
         Dim SQL As String   '   ID_NUM GEMISMA NA JEKINA APO 1
 
-        If File.Exists("oko.sql") Then
+        If File.Exists(mFile_oko) Then
 
 
             MsgBox("OKO VERSION ΛΟΓΩ APXEIOY OKO.SQL")
@@ -6076,7 +6076,7 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
             Dim cOKO As String
             Dim nOKO As Integer
 
-            FileOpen(1, "oko.sql", OpenMode.Input)
+            FileOpen(1, mFile_oko, OpenMode.Input)
             Do While Not EOF(1)
                 'Input(1, cOKO)
                 cOKO = LineInput(1)
