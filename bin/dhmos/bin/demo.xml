@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<RootNode>
+  <Parent AttributName="AttributWert">
+    <FirstElement>This is the text from the first element</FirstElement>
+    <SecondElement>This is the text from the second element</SecondElement>
+    <ThirdElement>This is the text from the third element</ThirdElement>
+  </Parent>
+</RootNode>
