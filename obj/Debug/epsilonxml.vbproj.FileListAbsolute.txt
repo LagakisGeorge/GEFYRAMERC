@@ -281,3 +281,5 @@ C:\adoprog2\gefyra-epsilon\mercury\master\obj\Debug\Project1.main.resources
 C:\adoprog2\gefyra-epsilon\mercury\master\obj\Debug\Project1.FORM3.resources
 C:\adoprog2\gefyra-epsilon\mercury\master\obj\Debug\epsilonxml.vbproj.GenerateResource.Cache
 C:\adoprog2\gefyra-epsilon\mercury\master\obj\Debug\Project1.exe
+F:\adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\obj\Debug\Interop.MSAdodcLib.dll
+F:\adoprog2\GEFYRA-EPSILON\EPSILONMERCURY\Project1.NET1\bin\Interop.MSAdodcLib.dll
