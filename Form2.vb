@@ -6466,19 +6466,21 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
 
             F_ExpenditureKind = "0"  ' 1=LOIPES DAPANES 0=OXI
             F_PEL30 = pel30.Text
-            '=============================  ΛΙΑΝΙΚΗ
+            '=============================  ΛΙΑΝΙΚΗ=======================================================
             If InStr(fcLian, Mid(Base_INVOICE, 1, fnLian)) > 0 Then
                 IsHand = "1" 'LTrim(Str(hand))
                 cdRetailIdentity = arTam.Text
                 f_System_Dscr_1 = "ΛΙΑΝΙΚΕΣ ΠΩΛΗΣΕΙΣ"
-
+                Party_AFM = ""
                 For K = 1 To 7
                     ' TelLOG(K) = logLian.Text + lfpa(K)
                     TelLOG(K) = Split(logLian.Text, ";")(K - 1)
                     SPol(K) = SPol(K) + kau(K)
                 Next
 
-
+                If F_PEL30 = "30-0000" Then
+                    F_PEL30 = "30-0100"
+                End If
 
                 LOG13 = Lian13.Text
                 LOG23 = Lian23.Text
@@ -6716,6 +6718,9 @@ Imports Microsoft.VisualBasic.Compatibility.VB6
                 'FPA = -FPA
                 System_sys = "SB" '      'SB =POLISEIS FR
                 'System_sys = "FR"
+                If F_PEL30 = "30-0000" Then
+                    F_PEL30 = "30-0100"
+                End If
 
                 'End If
             ElseIf InStr(fcPistTim, Mid(Base_INVOICE, 1, fnPistTim)) > 0 Then  'pistvtiko timologio
